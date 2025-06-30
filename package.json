@@ -1,11 +1,11 @@
 {
-  "name": "vanilla-app",
+  "name": "FS-Developer",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/vanilla-app/",
+    "build": "vite build --base=/FS-Developer/",
     "preview": "vite preview"
   },
   "devDependencies": {
