@@ -1,12 +1,10 @@
 .header {
-  /* background-color: black; */
   border-bottom: 1px solid lightgray;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-
 }
 
 .nav-brand {
@@ -16,7 +14,7 @@
 .nav-logo-link {
   display: flex;
   justify-content: center;
-  width: 60px; 
+  width: 60px;
   height: 60px;
   background-color: white;
   border: 4px solid black;
@@ -39,14 +37,6 @@
   font-weight: bold;
   margin: auto 16px;
   gap: 8px;
-}
-
-.nav-brand-1st-line {
-  /* color: lightblue; */
-}
-
-.nav-brand-andre-line {
-  /* color: yellow; */
 }
 
 /*menu*/
