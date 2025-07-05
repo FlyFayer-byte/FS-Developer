@@ -1,5 +1,29 @@
-.nav,
-.container {
+.nav {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.container {
+  max-width: calc(1440px - 216px - 32px);
+}
+
+.left-aside {
+  padding: 16px 0 16px 16px;
+}
+
+.left-aside .nav-item {
+  width: 200px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.left-aside .nav-link {
+  display: block;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  color: black;
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 2px 4px;
+  background-color: white;
 }
