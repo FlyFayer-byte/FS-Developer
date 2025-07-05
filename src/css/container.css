@@ -3,20 +3,22 @@
   margin: 0 auto;
 }
 
-.container {
+main .container {
   max-width: calc(1440px - 216px - 32px);
 }
 
-.left-aside {
+.left-aside,
+.hero-left-aside {
   padding: 16px 0 16px 16px;
 }
 
+.hero-left-aside .nav-item,
 .left-aside .nav-item {
   width: 200px;
   text-align: left;
   margin-bottom: 16px;
 }
-
+.hero-left-aside .nav-link,
 .left-aside .nav-link {
   display: block;
   margin-left: 16px;

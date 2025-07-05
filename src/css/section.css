@@ -2,6 +2,7 @@
 .content,
 .footer {
   padding: 16px;
+  width: 100%;
 }
 
 .hero-title {
