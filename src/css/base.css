@@ -9,11 +9,6 @@ body {
   color: #2f2f37;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 main {
   display: flex;
   flex: 1; /* Заповнює весь доступний простір між header і footer */
