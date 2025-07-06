@@ -1,11 +1,17 @@
-.nav {
+.header-container {
+  display: flex;
+  justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 8px 16px;
+  /*===============*/
+  /* background-color: beige; */
+  /* border: 1px solid red; */
 }
 
-main .container {
-  max-width: calc(1440px - 216px - 32px);
-}
+
+
+/*==============================================================================*/
 
 .left-aside,
 .hero-left-aside {

@@ -33,21 +33,30 @@
 .nav-brand-text {
   display: flex;
   flex-direction: column;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin: auto 16px;
-  gap: 8px;
 }
 
 /*menu*/
 .nav-menu {
   display: flex;
   list-style-type: none;
-  gap: 16px;
+  gap: 4px;
   padding: 0;
 }
 .nav-menu-item {
   display: flex;
   margin: auto 0;
-  /* color: white; */
+  min-width: 70px;
+  border: 1px solid black;
+  border-radius: 4px;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  background-color: black;
+}
+.nav-menu-link {
+  color: azure;
+  padding: 0 8px;
 }
