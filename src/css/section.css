@@ -1,31 +1,6 @@
-.header-section {
-  /*===============*/
-  background-color: lightblue;
-  /* border: 1px solid green; */
-}
-.hero-section {
-  /*===============*/
-  background-color: lightcyan;
-  border: 1px solid green;
-}
-
-/*==============================================================================*/
-.content,
-.footer {
-  padding: 16px;
-  width: 100%;
-  border: 1px solid;
-}
-
-.hero-title {
-  /*h1*/
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 16px;
-}
-.course-title {
-  /*h2*/
-  font-size: 20px;
-  margin: 12px 0;
-  text-align: center;
+.course-section {
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
 }
