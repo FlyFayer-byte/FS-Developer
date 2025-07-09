@@ -43,8 +43,7 @@
 /*Content*/
 .course-container {
   width: 1200px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px;
 }
 
 .footer-container {
