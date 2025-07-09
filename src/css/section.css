@@ -1,3 +1,9 @@
+.header-section {
+  border-bottom: 1px solid black;
+}
 .course-section {
-    display: flex;
+  display: flex;
+}
+.footer-section {
+    border-top: 1px solid black;
 }

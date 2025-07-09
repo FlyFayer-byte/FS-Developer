@@ -24,6 +24,7 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  justify-self: center;
 }
 
 input,
