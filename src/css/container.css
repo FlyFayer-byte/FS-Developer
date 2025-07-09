@@ -12,8 +12,9 @@
   margin: 0 auto;
 }
 
+/*Left menu*/
 .left-aside {
-  width: 200px;
+  width: 240px;
   justify-content: left;
   padding: 16px 8px;
   border-right: 1px solid black;
@@ -22,15 +23,26 @@
 .left-aside details {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 8px;
+}
+
+.nav-item {
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 .nav-link {
+  display: block;
+  border: 1px solid lightskyblue;
+  padding: 2px 8px;
   margin-bottom: 8px;
 }
 
+/*Content*/
 .course-container {
-  width: 1224px;
+  width: 1200px;
   padding-left: 16px;
   padding-right: 16px;
 }
