@@ -28,6 +28,10 @@
   font-weight: bold;
   margin: auto 16px;
 }
+.nav-brand-1st-line,
+.nav-brand-andre-line {
+  margin: 0;
+}
 
 /*menu*/
 .nav-menu {
@@ -35,6 +39,7 @@
   list-style-type: none;
   gap: 4px;
   padding: 0;
+  margin: auto 0;
 }
 .nav-menu-item {
   display: flex;
