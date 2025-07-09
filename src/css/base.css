@@ -54,12 +54,7 @@ main {
 }
 
 /* ===== Навігація ===== */
-nav {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
+
 
 nav a {
   font-weight: 500;

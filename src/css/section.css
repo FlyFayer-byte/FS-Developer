@@ -3,7 +3,11 @@
 }
 .course-section {
   display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 16px;
 }
+
 .footer-section {
     border-top: 1px solid black;
 }
