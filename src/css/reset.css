@@ -23,7 +23,9 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
-  justify-self: center;
+  justify-items: center;
+  margin: 0 auto 16px auto;
+  border-radius: 4px;
 }
 
 input,

@@ -3,6 +3,10 @@
     <details open>
       <summary class="nav-item">Основи JavaScript</summary>
       <a class="nav-link" href="#js">Мова JavaScript</a>
+      <a class="nav-link" href="#value">Змінні та типи даних</a>
+      <a class="nav-link" href="#message">Рядки</a>
+      <a class="nav-link" href="#operators">Оператори порівняння</a>
+      <a class="nav-link" href="#functions">Основи функцій</a>
     </details>
   </nav>
   <div class="course-container">
@@ -12,6 +16,2304 @@
       <p>
         <strong>JavaScript</strong> — високорівнева мова програмування, що
         підтримується всіма сучасними веббраузерами.
+      </p>
+      <p>
+        У Front-end розробці JavaScript використовується у зв'язці з HTML та CSS
+        для забезпечення функціональності вебсторінки, такої як:
+      </p>
+      <ul class="ul">
+        <li>нескладні обчислення;</li>
+        <li>перевірка та маніпуляція даними, які було введено користувачем;</li>
+        <li>зберігання інформації у браузері користувача;</li>
+        <li>динамічна зміна HTML-документа;</li>
+        <li>реакція на дії користувача;</li>
+        <li>створення інтерактивних елементів: галерей, графіків тощо;</li>
+        <li>взаємодія з бекендом.</li>
+      </ul>
+      <pre class="ql-blockquote" spellcheck="false">
+Якщо JavaScript-код пишеться для виконання в браузері (Front-end), розробник не має інструментів і доступу до файлової або операційної системи з міркувань безпеки.</pre
+      >
+      <p>
+        Також на сьогоднішній день, використовуючи JavaScript, можна створювати:
+      </p>
+      <ul class="ul">
+        <li>
+          вебдодатки на фреймворках <code>React</code>, <code>Vue</code>,
+          <code>Angular</code> тощо;
+        </li>
+        <li>бекенд програми на <code>Node.js</code>;</li>
+        <li>мобільні додатки на <code>React Native</code>;</li>
+        <li>десктоп програми за допомогою <code>Electron</code>.</li>
+      </ul>
+      <p>
+        <strong>Інструкція</strong> (statement) — це пов'язаний набір слів і
+        символів із синтаксису мови, які об'єднуються, щоб висловити одну ідею,
+        тобто одну інструкцію для машини.
+      </p>
+      <ul class="ul">
+        <li>
+          вебдодатки на фреймворках <code>React</code>, <code>Vue</code>,
+          <code>Angular</code> тощо;
+        </li>
+        <li>бекенд програми на <code>Node.js</code> ;</li>
+        <li>мобільні додатки на <code>React Native</code>;</li>
+        <li>десктоп програми за допомогою <code>Electron</code>.</li>
+      </ul>
+      <pre class="ql-blockquote" spellcheck="false" data-highlighted="yes">
+a = b * 2;</pre
+      >
+      <p>У JavaScript інструкції закінчуються <code>;</code>.</p>
+      <ul class="ul">
+        <li>
+          <code>a</code> і <code>b</code> — змінні (як у рівнянні алгебри).
+          Змінні — це сховища даних, які використовує програма. Вони складаються
+          з ідентифікатора (імені) та пов'язаного з ним значення.
+        </li>
+
+        <li>
+          <code>2</code> — просто число. Це називається
+          <strong>значенням літералу</strong> (literal value), оскільки воно не
+          зберігається у змінній.
+        </li>
+        <li>
+          <code>=</code> і <code>*</code> — оператори, що виконують дії над
+          значеннями та змінними.
+        </li>
+      </ul>
+      <p><strong>Як працюватиме ця інструкція?</strong></p>
+      <p>
+        Уявимо, що змінна <code><strong>b</strong></code> зберігає будь-яке
+        число, наприклад <code><strong>10</strong></code
+        >. Тоді ця інструкція каже машині таке:
+      </p>
+      <ol class="ol">
+        <li>
+          Піди знайди змінну з ідентифікатором <code><strong>b</strong></code> і
+          дізнайся, яке в неї зараз значення.
+        </li>
+        <li>
+          Підстав значення змінної <code><strong>b</strong></code> (наприклад
+          10) в інструкцію замість <code><strong>b</strong></code
+          >.
+        </li>
+        <li>
+          Виконай операцію множення <code><strong>10</strong></code> на
+          <code><strong>2</strong></code
+          >.
+        </li>
+        <li>
+          Запиши результат обчислення виразу з правого боку у змінну
+          <code><strong>a</strong></code
+          >.
+        </li>
+      </ol>
+      <p>
+        Отже, значення змінної <code><strong>a</strong></code> дорівнюватиме
+        <code><strong>20</strong></code
+        >. Ця інструкція виконується послідовно і є основою виконання дій у
+        програмі.
+      </p>
+      <strong class="ql-size-large">Вираз та літерал</strong>
+      <p>
+        У людських мовах є речення, що виражають закінчену думку. Речення
+        складаються із фраз.
+      </p>
+      <p>
+        Аналогічно, у мовах програмування є інструкції, що дають команду
+        комп’ютеру. Інструкції складаються з менших частин — виразів.
+      </p>
+      <p>
+        <strong>Вираз</strong> (expression) — це посилання на змінну чи
+        значення, або на набір змінних і значень у поєднанні з операторами.
+      </p>
+      <img
+        src="../js/images/5e8aade5-549a-44d2-ad5a-359efb201dd3m01-b01-s04.jpg"
+      />
+      <p>
+        У цьому прикладі інструкція містить 5 виразів. Кожна інструкція виділена
+        квадратними дужками для візуалізації (це не синтаксис мови):
+      </p>
+      <ul class="ul">
+        <li>
+          <code>2</code> — вираз значення літерала. Тут використовується
+          числовий літерал, що представляє число 2
+        </li>
+        <li>
+          <code>b</code> та <code>a</code> — вирази змінних. Вони вказують на
+          необхідність використовувати значення змінних <code>b</code> та
+          <code>a</code> відповідно. Однак значення цих змінних будуть
+          використані лише у випадку, якщо змінні стоять у правій частині виразу
+          присвоювання
+        </li>
+        <li>
+          <code>b * 2</code> — арифметичний вираз множення. Тут значення змінної
+          <code>b</code> множиться на число <code>2</code>
+        </li>
+        <li>
+          <code>a = b * 2</code> — вираз присвоювання. У даному випадку він
+          вказує на необхідність обчислення правої частини виразу й присвоювання
+          результату змінній <code>a</code>, що знаходиться в лівій частині
+          виразу
+        </li>
+      </ul>
+      <p>
+        Існують інші типи виразів: вирази виклику функцій, вирази порівняння
+        тощо.
+      </p>
+      <p>
+        <strong>Літерал</strong> — це значення, яке вказується безпосередньо в
+        коді програми та представляє певний тип даних.
+      </p>
+      <ul class="ul">
+        <li>Числовий літерал — це число, записане в коді програми.</li>
+        <li>
+          Рядковий літерал — це послідовність символів, укладених у лапки.
+        </li>
+      </ul>
+      <p>
+        Літерали використовуються, щоб задати початкові значення змінних та
+        інших операцій, де потрібно конкретне значення.
+      </p>
+
+      <pre class="ql-blockquote" spellcheck="false" data-highlighted="yes">
+// Числовий літерал
+10
+        
+// Рядковий літерал
+"JavaScript is awesome!"</pre
+      >
+
+      <strong class="ql-size-large">Підключення скрипта</strong>
+      <p>
+        Для підключення скрипта JavaScript до HTML-сторінки можна використати
+        тег <code>&lt;script&gt;</code>. Існує кілька способів, як це можна
+        зробити:
+      </p>
+      <p><strong>Вбудований скрипт</strong></p>
+      <p>
+        Можна додати JavaScript-код прямо всередині тега
+        <code>&lt;script&gt;</code> всередині тега <code>&lt;head&gt;</code>:
+      </p>
+      <pre
+        class="ql-syntax hljs language-xml"
+        spellcheck="false"
+        data-highlighted="yes"
+      >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My HTML-page&lt;/title&gt;
+      &lt;script&gt;
+        &lt;!--Твій JavaScript-код тут--&gt;
+        console.log("Hello, world");
+      &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Вміст сторінки --&gt;
+  &lt;/body
+&lt;/html&gt;</pre
+      >
+
+      <p><strong>Зовнішній скрипт</strong></p>
+      <p>
+        По-перше, треба створити окремий файл із розширенням <code>.js</code>,
+        що містить JavaScript-код. Потім під'єднати цей файл до HTML-сторінки за
+        допомогою тега &lt;script&gt;, вказавши шлях до файлу в атрибуті
+        <code>src</code>:
+      </p>
+      <pre class="ql-blockquote" spellcheck="false" data-highlighted="yes">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My HTML-page&lt;/title&gt;
+    &lt;script src="my-script.js" defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Вміст сторінки --&gt;
+  &lt;body&gt;
+&lt;/html&gt;</pre
+      >
+
+      <p>
+        Тег <code>&lt;script&gt;</code> з атрибутом <code>defer</code> можна
+        вставити як у <code>&lt;head&gt;</code>, так і в
+        <code>&lt;body&gt;</code> — немає жодної різниці.
+      </p>
+      <p>
+        У цьому прикладі файл <code>my-script.js</code> містить JavaScript-код,
+        який буде виконано на сторінці.
+      </p>
+      <p>
+        Атрибут <code>defer</code> вказує браузеру, що скрипт повинен бути
+        виконаний після того, як HTML-документ буде повністю завантажений. Це
+        дозволяє уникнути затримки відображення вмісту сторінки.
+      </p>
+
+      <p>
+        У багатьох випадках краще використовувати зовнішні скрипти, щоб зробити
+        код більш читабельним, зручним для підтримки та перевикористання.
+      </p>
+
+      <pre class="ql-blockquote" spellcheck="false">
+Зверни увагу, що під час написання коду в редакторі VSCode і встановленому в ньому розширенні Live Server, вебсторінка буде перезавантажуватися щоразу, коли зберігаються нові зміни у файлі скрипта.</pre
+      >
+      <strong class="ql-size-large">Суворий режим</strong>
+      <p>
+        <strong>Суворий режим</strong> (англ. strict mode) у JavaScript — це
+        спеціальний режим виконання коду, який дає змогу переводити скрипт у
+        режим повної відповідності сучасному стандарту. Це запобігає певним
+        помилкам, наприклад, використанню небезпечних і застарілих конструкцій,
+        що робить код надійнішим та дозволяє легше його підтримувати.
+      </p>
+      <p>
+        Щоб увімкнути суворий режим, потрібно додати директиву
+        <code>'use strict';</code> на початок скрипта. Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-javascript"
+          spellcheck="false"
+          data-highlighted="yes"
+        >
+'use strict';
+
+// Код у суворому режимі</pre
+        >
+        <button class="copy"></button>
+      </div>
+      <pre class="ql-blockquote" spellcheck="false">
+Рекомендується завжди використовувати суворий режим у своїх проєктах, щоб уникнути непередбачуваних ситуацій і проблем у коді.</pre
+      >
+      <strong class="ql-size-large">Виведення даних</strong>
+      <p>
+        Розробнику потрібно перевіряти правильність роботи програми в певний
+        момент часу та виводити інформацію в певному місці коду. Для цього є
+        консоль в інструментах розробника браузера на вкладці
+        <code>Console</code>.
+      </p>
+      <img
+        src="../js/images/0656e9d3-94d1-4cba-aba5-8ad39abb85dbScreenshot 2023-07-04 at 16.51.35.png"
+        alt=""
+      />
+      <p>
+        Наступні комбінації клавіш відкривають інструменти розробника на вкладці
+        <code>Console</code>:
+      </p>
+      <ul class="ul">
+        <li>
+          Windows і Linux
+          —&nbsp;<code>Ctrl</code>&nbsp;+&nbsp;<code>Shift</code>&nbsp;+&nbsp;<code>J</code>;
+        </li>
+        <li>
+          MacOS
+          —&nbsp;<code>Command</code>&nbsp;+&nbsp;<code>Option</code>&nbsp;+&nbsp;<code
+            >J</code
+          >
+          .
+        </li>
+      </ul>
+      <p>
+        <strong>Метод </strong><code><strong>console.log()</strong></code>
+      </p>
+      <p>
+        Щоб вивести дані в консоль розробника використовується метод
+        <code>console.log()</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value);</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Значення <code>value</code>, яке вказано в круглих дужках, буде виведено
+        в консоль розробника при виконанні програми.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"JavaScript is awesome!"</span>);
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">10</span>);</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        При виконанні цього коду в консоль розробника будуть послідовно виведені
+        рядок і число.
+      </p>
+      <img
+        src="../js/images/2e0efa32-9ccb-4dcc-80b3-46d0ea254b72Screenshot 2023-07-04 at 16.58.55.png"
+        alt=""
+      />
+    </section>
+    <!--Змінні та типи даних-->
+    <section>
+      <h2 id="value">Змінні та типи даних</h2>
+
+      <strong class="ql-size-large">Оголошення змінних</strong>
+      <p>Змінна — це контейнер, який використовується для зберігання даних.</p>
+      <p>Змінна складається з:</p>
+      <ul class="ul">
+        <li>ідентифікатора (унікального імені);</li>
+        <li>області пам’яті, де зберігається її значення.</li>
+      </ul>
+      <img
+        src="../js/images/2eeb949e-2023-4cff-8858-0b9d76bb64d8m01-b01-s01.jpg"
+        alt=""
+      />
+      <p>Розглянемо приклади оголошення змінних.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const age <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-comment">;</span>
+const username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span></pre>
+        <button class="copy"></button>
+      </div>
+      <ul class="ul">
+        <li>
+          Оголошення змінної починається з ключового слова (у прикладі:
+          <code>const</code>). У сучасному синтаксисі JavaScript змінні краще
+          оголошувати за допомогою ключових слів <code>const</code> і
+          <code>let</code>. Створення змінної без ключового слова може призвести
+          до помилки.
+        </li>
+        <li>
+          Після ключового слова, через пробіл, вказується ім'я змінної (у
+          прикладі:
+          <code>age</code> та <code>username</code>).
+        </li>
+        <li>
+          Щоб присвоїти змінній значення, використовують оператор присвоєння
+          <code><strong>=</strong></code
+          ><strong> </strong>
+        </li>
+        <li>
+          Інструкція оголошення змінної закінчується крапкою з комою
+          <code>;</code> .
+        </li>
+        <li>
+          Для кращої читабельності кожне нове оголошення змінної рекомендується
+          розпочинати з нового рядка.
+        </li>
+      </ul>
+      <p>
+        Після оголошення змінної до неї можна звернутися за допомогою її імені
+        далі у коді. Це необхідно для виконання операцій зі значенням змінної.
+        Наприклад, для виведення її значення в консоль інструментів розробника.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const age <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-comment">;</span>
+console.log(age)<span class="hljs-comment">; // 20</span>
+        
+const username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">; // "Mango"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <strong class="ql-size-large">Перевизначення значення</strong>
+      <p>
+        Для перевизначення значення раніше оголошеної змінної треба після імені
+        такої змінної поставити літерал присвоєння
+        <code><strong>=</strong></code> і після нього записати нове значення.
+        Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+<span class="hljs-attribute">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">"Poly"</span><span class="hljs-comment">;</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Для оголошення
+        <strong>змінної, якій згодом можна задати нове значення</strong>,
+        використовується ключове слово <code>let</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">; // "Mango"</span>
+        
+<span class="hljs-attribute">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">"Poly"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">; // "Poly"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо змінна оголошена як <code>const</code>,
+        <strong>перевизначити її значення неможливо</strong>. При спробі задати
+        їй нове значення буде помилка, яку можна побачити в інструментах
+        розробника.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const username = <span class="hljs-string">"Mango"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username); <span class="hljs-comment">// "Mango"</span>
+        
+<span class="hljs-comment">// ❌ Неправильно, буде помилка</span>
+username = <span class="hljs-string">"Poly"</span>; <span class="hljs-comment">// TypeError: Assignment to constant variable.</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Створення змінної без ключового
+        слова&nbsp;<code>let</code>&nbsp;або&nbsp;<code>const</code>&nbsp;у
+        режимі ”strict mode” призведе до помилки.
+      </p>
+      <p>
+        Змінним, оголошеним через <code>let</code>, необов'язково відразу
+        задавати значення. У разі оголошення змінної без значення, змінна
+        ініціалізується зі спеціальним значенням
+        <code>undefined</code> (<em>англ</em>. не визначено).
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let username<span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">; // undefined</span>
+        
+<span class="hljs-attribute">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">; // "Mango"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        <strong class="ql-size-large">Як вибрати між </strong
+        ><code class="ql-size-large"><strong>const</strong></code
+        ><strong class="ql-size-large"> і </strong
+        ><code class="ql-size-large"><strong>let</strong></code>
+      </p>
+      <p>
+        Основна відмінність між <code>const</code> і <code>let</code> полягає в
+        можливості перевизначення значення змінної після її оголошення.
+      </p>
+      <p>
+        Ключове слово <code>const</code> запобігає перевизначенню значення для
+        змінної.
+      </p>
+      <p>
+        Ключове слово <code>let</code> дозволяє змінювати значення змінної після
+        її оголошення.
+      </p>
+      <p>
+        Більшість змінних не вимагають повторного надання значення. Отже,
+        рекомендовано використовувати <code>const</code> за замовчуванням для
+        оголошення більшості змінних. Це сприяє створенню коду, який легко
+        зрозуміти і підтримувати, адже значення змінних не перевизначаються.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >// Якщо не треба змінювати значення
+const username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">;</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо тобі потрібно оновлювати лічильник або зберігати тимчасові значення
+        — тобто потрібно змінювати значення змінної під час виконання скрипту,
+        <code>let</code> буде кращим вибором.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >// Якщо треба змінювати значення
+let username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">;</span>
+        
+<span class="hljs-attribute">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">"Poly"</span><span class="hljs-comment">;</span>
+console.log(username)<span class="hljs-comment">;</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <pre class="ql-blockquote" spellcheck="false">
+Правило використання const та let може бути таким: — Використовуй const за замовчуванням для оголошення змінних. — Використовуй let, якщо потрібно змінювати значення змінної під час виконання скрипту. Це правило допоможе писати більш надійний, зрозумілий код, який легко підтримувати.</pre
+      >
+
+      <strong class="ql-size-large">Найменування</strong>
+      <p>
+        Є декілька правил, як обрати ім’я для змінної. Ці правила слід
+        враховувати, щоб імена були зрозумілими і відповідали загальноприйнятим
+        стандартам.
+      </p>
+      <ol class="ol">
+        <li>
+          Імена змінних можуть складатися з літер (a-z, A-Z), цифр (0-9),
+          символів підкреслення (_) та знака долара ($).
+        </li>
+        <li>
+          Першим символом в імені змінної має бути літера латиниці, символ
+          підкреслення або знак долара. Інші символи можуть бути будь-якими з
+          допустимих.
+        </li>
+        <li>
+          Імена змінних чутливі до регістру, тобто змінні
+          <code><strong>user</strong></code
+          >, <code><strong>usEr</strong></code> та
+          <code><strong>User</strong></code> вважаються різними змінними.
+        </li>
+      </ol>
+      <p>
+        Хороше ім'я змінної має бути зрозумілим та описувати призначення чи
+        вміст змінної.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// ❌ Погано</span>
+chislo
+korzina_tovariv
+profil_koristuvacha
+        
+<span class="hljs-comment">// ✅ Добре</span>
+<span class="hljs-built_in">number</span>
+cart
+userProfile</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Гарною практикою є використання <strong>camelCase нотації</strong> для
+        іменування змінних. При camelCase нотації ****перше слово пишеться
+        малими літерами, а кожне наступне починається з великої літери,
+        наприклад: <code>user</code>, <code>getUserData</code>,
+        <code>isActive</code>, <code>activeGuestCount</code>. Не забувай про
+        чутливість імен змінних до регістру. Змінні <code>isActive</code> та
+        <code>IsActive</code> — це різні змінні.
+      </p>
+      <p>
+        Варто пам'ятати, що існують зарезервовані
+        <strong>ключові слова</strong>. Ці слова мають спеціальне значення та
+        використовуються для певних конструкцій у мові. Не можна використовувати
+        ключові слова як імена змінних, оскільки це спричинить помилки в коді.
+      </p>
+      <img
+        src="../js/images/9f4e2b98-8e94-46de-a640-f03c05f39327m01-b02-s04.jpg"
+        alt=""
+      />
+
+      <strong class="ql-size-large">Типові помилки</strong>
+      <p>
+        При виконанні коду можуть виникати помилки. Помилки відображаються в
+        консолі інструментів розробника браузера.
+      </p>
+      <p>
+        Ці помилки зазвичай містять описові повідомлення, які вказують на місце
+        та причину помилки, допомагаючи зрозуміти, чому код не працює.
+      </p>
+      <img
+        src="../js/images/0b526edb-7be8-4712-ae19-70ac14a95062Screenshot 2023-06-13 at 17.24.31.png"
+        alt=""
+      />
+      <p>
+        Використання консолі інструментів розробника та читання повідомлень про
+        помилки є важливими інструментами для налагодження та покращення якості
+        твого коду. Це допомагає краще зрозуміти причину виникнення проблем і
+        вжити відповідних заходів для їх виправлення.
+      </p>
+      <p><strong>Неправильне ім’я змінної</strong></p>
+      <p>
+        Уявімо, що є помилка в імені змінної. У коді ми намагаємось отримати
+        значення змінної <code>user</code>, яку ми не оголошували, оскільки
+        оголошували ми <code>username</code>.
+      </p>
+      <p>
+        Помилка буде відображена в консолі з відповідним описом проблеми. Це
+        дозволяє тобі швидко виявити та виправити помилки у своєму коді.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const username <span class="hljs-operator">=</span> <span class="hljs-string">"Mango"</span><span class="hljs-comment">;</span>
+console.log(user)<span class="hljs-comment">; // ReferenceError: user is not defined</span></pre>
+        <button class="copy"></button>
+      </div>
+      <img
+        src="../js/images/3de3378e-813c-4a9b-969a-f5f941fb1ca3Screenshot 2023-06-13 at 17.32.00.png"
+        alt=""
+      />
+
+      <strong>Звернення до змінної до її оголошення</strong>
+      <p>
+        Розробник звертається до змінної до того, як змінна була оголошена через
+        <code>const</code> або <code>let</code>. У цьому разі з’явиться помилка
+        про те, що неможливо отримати доступ до змінної до її ініціалізації.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// ❌ Неправильно, буде помилка</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(age); <span class="hljs-comment">// ReferenceError: age is not defined</span>
+        
+<span class="hljs-comment">// Оголошення змінної age</span>
+let age = <span class="hljs-number">20</span>;
+        
+<span class="hljs-comment">// ✅ Правильно, звертаємося після оголошення</span>
+age = <span class="hljs-number">25</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(age); <span class="hljs-comment">// 25</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <img
+        src="../js/images/57954a3e-4b75-475a-8599-4af259b882ebScreenshot 2023-06-13 at 17.23.37.png"
+        alt=""
+      />
+
+      <p>
+        <strong>Перевизначення значення для змінної оголошеної через </strong
+        ><code><strong>const</strong></code>
+      </p>
+      <p>
+        При спробі перевизначити значення <code>const</code> змінної буде
+        помилка про те, що неможливо змінити значення для такої змінної.
+      </p>
+      <img
+        src="../js/images/18ff6d90-9020-4ce2-8e0b-a7b099b79ec3Screenshot 2023-06-13 at 17.22.40 (1).png"
+        alt=""
+      />
+
+      <strong class="ql-size-large">Типи даних</strong>
+      <p>
+        Примітивні типи даних використовуються для зберігання та обробки різних
+        видів інформації у програмі. Вони відіграють важливу роль у виконанні
+        арифметичних операцій, порівнянь та логічних перевірок. JavaScript
+        змінна не обмежена певним типом даних, тому може зберігати значення
+        різних типів.
+      </p>
+      <p><strong>Number</strong></p>
+      <p>
+        Числа (Number) можуть бути позитивними чи негативними, цілими або
+        дробовими. Ціла та дробова частини числа розділяються крапкою.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const age <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-comment">;</span>
+const salary <span class="hljs-operator">=</span> <span class="hljs-number">3710.84</span><span class="hljs-comment">;</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <pre class="ql-blockquote" spellcheck="false">
+Зверни увагу, що якщо їх розділити комою, то буде помилка.</pre
+      >
+
+      <p><strong>String</strong></p>
+      <p>
+        Рядок (String) є послідовністю символів, вкладених в одинарні
+        <code>''</code> або подвійні лапки <code>""</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-ebnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">const username</span> = <span class="hljs-string">'Mango995'</span>;
+<span class="hljs-attribute">const description</span> = <span class="hljs-string">"JavaScript is awesome!"</span>;</pre>
+        <button class="copy"></button>
+      </div>
+
+      <p><strong>Boolean</strong></p>
+      <p>
+        Логічний тип даних (Boolean) має лише два значення: <code>true</code> і
+        <code>false</code>.
+      </p>
+      <ul class="ul">
+        <li><code>true</code> — це логічне значення;</li>
+        <li>
+          <span style="background-color: rgb(236, 239, 241)">"</span
+          ><code>true</code
+          ><span style="background-color: rgb(236, 239, 241)">"</span> — це
+          рядок, що містить слово true.
+        </li>
+      </ul>
+      <p>
+        Він використовується для виконання логічних операцій та перевірок умов.
+        Наприклад, на запитання "чи ввімкнене світло в кімнаті?" можна
+        відповісти "так" (true) або "ні" (false).
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const isModalOpen <span class="hljs-operator">=</span> true<span class="hljs-comment">;</span>
+const isLoggedIn <span class="hljs-operator">=</span> false<span class="hljs-comment">;</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Зверни увагу, що імена змінних, що містять логічні значення, звучать як
+        питання, на яке можна відповісти “так” чи “ні”.
+      </p>
+
+      <strong class="ql-size-large">Спеціальні значення</strong>
+      <p>
+        У JavaScript існують два спеціальні значення: <code>null</code> і
+        <code>undefined</code>. Обидва означають відсутність значення.
+      </p>
+      <p>
+        <code>null</code> явно вказує на відсутність значення та часто
+        використовується розробниками для позначення порожнього значення. Це
+        значення має бути явно присвоєно змінній, щоб вказати, що змінна не
+        містить ніяких дійсних даних.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let value = <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// null</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Значення <code>undefined</code> автоматично присвоюється змінній, якщо:
+      </p>
+      <ul class="ul">
+        <li>змінній було явно задано значення <code>undefined</code> ;</li>
+        <li>змінна була оголошена, але ще не була ініціалізована значенням.</li>
+      </ul>
+      <p>
+        Значення <code>undefined</code> вказує на невизначеність значення
+        змінної, тобто каже нам, що значення на даний момент невідоме чи
+        невизначене.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let value;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// undefined</span></pre>
+        <button class="copy"></button>
+      </div>
+      <pre class="ql-blockquote" spellcheck="false">
+Хоча обидва значення <code>null</code> і <code>undefined</code> позначають відсутність значення, вони мають трохи різні семантики використання.
+      — null використовується для явної вказівки порожнього значення (точно відомо, що значення немає).
+      — undefined вказує на невизначеність значення змінної.
+</pre
+      >
+
+      <p>
+        <strong class="ql-size-large">Оператор </strong
+        ><code class="ql-size-large"><strong>typeof</strong></code>
+      </p>
+      <p>
+        Оператор <code>typeof</code> використовується для визначення типу даних
+        значення або виразу.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-actionscript"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">typeof</span> operand</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Замість <code>operand</code> ти вказуєш змінну, літерал або вираз, тип
+        якого ти хочеш визначити. Результатом оператора <code>typeof</code> буде
+        рядок, який вказує тип даних.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const quantity = <span class="hljs-number">17</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">typeof</span> quantity); <span class="hljs-comment">// виведе "number"</span>
+        
+const message = <span class="hljs-string">"JavaScript is awesome!"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">typeof</span> message); <span class="hljs-comment">// виведе "string"</span>
+        
+const isSidebarOpen = <span class="hljs-literal">false</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">typeof</span> isSidebarOpen); <span class="hljs-comment">// виведе "boolean"</span>
+        
+let username;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">typeof</span> username); <span class="hljs-comment">// виведе "undefined"</span>
+        
+let status = <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">typeof</span> status); <span class="hljs-comment">// виведе "object"</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Зверни увагу на перевірку типу значення <code>null</code>. Важливо
+        розуміти, що <code>null</code> насправді є примітивним значенням, а не
+        об'єктом.
+      </p>
+      <p>
+        Коли ми використовуємо оператор <code>typeof</code> для перевірки типу
+        значення <code>null</code>, він повертає рядок <code>object</code
+        ><strong>.</strong> Це може здатися дивним, оскільки <code>null</code> —
+        це фактично відсутність значення, а не об'єкт. Про це часто питають на
+        співбесідах.
+      </p>
+      <p>
+        Причина цього полягає в тому, що в ранніх версіях JavaScript
+        <code>null</code> було розглянуто як спеціальний випадок об’єкта. Це
+        була помилка в реалізації мови, збережена для забезпечення зворотної
+        сумісності з існуючим кодом. Тому коли
+        <code>typeof</code> застосовується до <code>null</code>, він повертає
+        <code>object</code>, щоб зберегти цю сумісність.
+      </p>
+
+      <strong class="ql-size-large">Арифметичні операції</strong>
+      <p>
+        У JavaScript доступні різноманітні математичні оператори, які дозволяють
+        виконувати арифметичні обчислення.
+      </p>
+      <img
+        src="../js/images/84879003-1b3b-4c70-9cb2-4d9f1a3fb223m01-b02-s09.jpg"
+        alt=""
+      />
+      <p>
+        Працюючи з цими операторами, необхідно враховувати правила порядку
+        виконання операцій. Ці правила аналогічні тим, які ми вивчали у шкільній
+        алгебрі: спершу дії в дужках, потім степені й корені, потім множення та
+        ділення тощо.
+      </p>
+      <p>
+        Результатом операцій є значення, яке можна використовувати далі у
+        виразах або зберегти у змінних.
+      </p>
+      <p>
+        Оператор (<code>+</code>) використовується для складання двох чисел.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-gml"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const <span class="hljs-variable language_">x</span> = <span class="hljs-number">8</span>;
+const <span class="hljs-variable language_">y</span> = <span class="hljs-number">5</span>;
+console.log(<span class="hljs-variable language_">x</span> + <span class="hljs-variable language_">y</span>); <span class="hljs-comment">// 13</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Оператор (<code>-</code>) використовується для віднімання одного числа
+        від іншого.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const x <span class="hljs-operator">=</span> <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+const y <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+console.log(x - y)<span class="hljs-comment">; // 3</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>Оператор (<code>*</code>) використовується для множення двох чисел.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const x <span class="hljs-operator">=</span> <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+const y <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+console.log(x * y)<span class="hljs-comment">; // 40</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Оператор (<code>/</code>) використовується для ділення одного числа на
+        інше.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const x <span class="hljs-operator">=</span> <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+const y <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+console.log(x / y)<span class="hljs-comment">; // 1.6</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Оператор (<code>%</code>) повертає остачу від ділення одного числа на
+        інше.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const x <span class="hljs-operator">=</span> <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+const y <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+console.log(x % y)<span class="hljs-comment">; // 3</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Оператор (<code>**</code>) використовується для піднесення числа до
+        степеня.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const x <span class="hljs-operator">=</span> <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+const y <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+console.log(x ** y)<span class="hljs-comment">; // 32768</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Комбіновані оператори</strong>
+      <p>
+        Для всіх арифметичних операторів є еквівалентні комбіновані оператори.
+        Вони дозволяють більш компактно виконувати арифметичні операції та
+        одночасно оновлювати значення змінної, виходячи з її попереднього
+        значення.
+      </p>
+      <p>Ось список арифметичних операторів та їх комбінованих еквівалентів:</p>
+      <ul>
+        <li>
+          <strong>Додавання</strong>: <code><strong>+=</strong></code
+          >. Приклад: <code><strong>x += y</strong></code> еквівалентно
+          <code><strong>x = x + y</strong></code>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>Віднімання</strong>: <code>-=</code>. Приклад:
+          <code><strong>x -= y</strong></code> еквівалентно
+          <code><strong>x = x - y</strong></code>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>Множення</strong>: <code>*=</code>. Приклад:
+          <code><strong>x *= y</strong></code> еквівалентно
+          <code><strong>x = x * y</strong></code>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>Ділення</strong>: <code>/=</code>. Приклад:
+          <code><strong>x /= y</strong></code> еквівалентно
+          <code><strong>x = x / y</strong></code>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>Остача від ділення</strong>: <code><strong>%=</strong></code
+          >. Приклад: <code><strong>x %= y</strong></code> еквівалентно
+          <code><strong>x = x % y</strong></code>
+        </li>
+      </ul>
+      <p>
+        Давай розглянемо приклад оновлення віку користувача після дня
+        народження, збільшуючи значення змінної <code>age</code> на одиницю.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">let</span> age = <span class="hljs-number">25</span>;
+<span class="hljs-attribute">age</span> = age + <span class="hljs-number">1</span>;
+<span class="hljs-attribute">console</span>.log(age); // <span class="hljs-number">26</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Спочатку виконується додавання у правій частині виразу присвоєння.
+        Складається поточне значення змінної <code>age</code>, яке дорівнює
+        <code>25</code>, та <code>1</code>. Результат: <code>26</code>. Потім
+        цей результат присвоюється як нове значення змінної <code>age</code>.
+      </p>
+      <p>
+        Однак, ми можемо покращити цей код, використовуючи комбінований оператор
+        присвоєння з додаванням (<code>+=</code>).
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">let</span> age = <span class="hljs-number">25</span>;
+<span class="hljs-attribute">age</span> += <span class="hljs-number">1</span>;
+<span class="hljs-attribute">console</span>.log(age); // <span class="hljs-number">26</span></pre>
+        <button class="copy"></button>
+      </div>
+    </section>
+    <!--Рядки-->
+    <section>
+      <h2 id="message">Рядки</h2>
+      <strong class="ql-size-large">Конкатенація рядків</strong>
+      <p>
+        Якщо застосувати оператор <code>+</code> до рядка та будь-якого іншого
+        типу даних, результатом буде новий рядок, що містить об'єднання вихідних
+        значень. Це називається конкатенація (склеювання).
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-sas"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const <span class="hljs-keyword">message</span> = <span class="hljs-string">"Mango "</span> + <span class="hljs-string">"is"</span> + <span class="hljs-string">" happy"</span>;
+console.<span class="hljs-meta">log</span>(<span class="hljs-keyword">message</span>); // <span class="hljs-string">"Mango is happy"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <pre
+        class="ql-blockquote"
+        spellcheck="false"
+      ><strong>Зверни увагу! </strong>
+Рядки "Mango " і " happy" містять пробіли, щоб текст повідомлення був читабельним.</pre>
+      <p>
+        Під час конкатенації можна використовувати значення змінних, щоб
+        складати рядки з динамічними значеннями. Для цього необхідно вказати
+        ім'я змінної, у це місце буде підставлено її значення.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-ebnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">const age</span> = 24;
+<span class="hljs-attribute">const message</span> = <span class="hljs-string">"Poly is "</span> + age + <span class="hljs-string">" years old!"</span>;</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Під час конкатенації будь-який тип даних буде приведено до рядка та
+        поєднано з іншим рядком.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Mango"</span> + <span class="hljs-number">55</span>); <span class="hljs-comment">// "Mango55"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Mango"</span> + <span class="hljs-literal">true</span>); <span class="hljs-comment">// "Mangotrue"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Проте порядок операндів має значення. Перетворення типів відбувається
+        лише в момент операції додавання з рядком. До цього моменту
+        застосовуються нормальні правила математики.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> + <span class="hljs-string">"2"</span>); <span class="hljs-comment">// "12"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> + <span class="hljs-string">"2"</span> + <span class="hljs-number">4</span>); <span class="hljs-comment">// "124"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> + <span class="hljs-number">2</span> + <span class="hljs-string">"4"</span>); <span class="hljs-comment">// "34"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        В останньому прикладі спочатку виконується математичне додавання для
+        перших двох чисел <code>1</code> і <code>2</code>, потім число
+        <code>3</code> перетворюється на рядок <code>"3"</code> і поєднується з
+        рядком <code>"4"</code>.
+      </p>
+
+      <strong class="ql-size-large">Перетворення типів: рядки</strong>
+      <p>
+        Перетворення типів у JavaScript — це процес зміни значення одного типу
+        даних на інший тип даних. Перетворення типів може відбуватися в різних
+        ситуаціях, наприклад, під час виконання арифметичних операцій з різними
+        типами даних або порівняння значень. У JavaScript існують два типи
+        перетворення: явне та неявне.
+      </p>
+
+      <p><strong>Явне перетворення типів</strong></p>
+      <p>
+        Явне перетворення типів виконується програмістом і використовується за
+        потребою. Для перетворення будь-якого значення на рядок можна
+        використовувати вбудовану функцію <code>String()</code>, яка повертає
+        результат у вигляді рядка.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-number">5</span>)); <span class="hljs-comment">// "5"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-literal">true</span>)); <span class="hljs-comment">// "true"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-literal">false</span>)); <span class="hljs-comment">// "false"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-literal">null</span>)); <span class="hljs-comment">// "null"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-literal">undefined</span>)); <span class="hljs-comment">// "undefined"</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p><strong>Неявне перетворення типів</strong></p>
+      <p>
+        Неявне перетворення типів відбувається автоматично під час виконання
+        операцій або обчислень. Наприклад, якщо виконується операція додавання
+        (<code>+</code>) між рядком та іншим типом даних, JavaScript автоматично
+        перетворює значення операнда на рядок і виконує конкатенацію рядків.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-number">3</span>); <span class="hljs-comment">// "53"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-literal">true</span>); <span class="hljs-comment">// "5true"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-literal">false</span>); <span class="hljs-comment">// "5false"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-literal">null</span>); <span class="hljs-comment">// "5null"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-literal">undefined</span>); <span class="hljs-comment">// "5undefined"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Неявне перетворення — це зручний вбудований механізм JavaScript, але
+        іноді може викликати несподівані результати або помилки. Тому важливо
+        бути уважним при виконанні операцій з різними типами даних і вчитися
+        контролювати та бачити перетворення типів у коді своїх програм.
+      </p>
+
+      <strong class="ql-size-large">Шаблонні рядки</strong>
+      <p>
+        Шаблонні рядки — це синтаксис, який полегшує об'єднання
+        <strong>статичного</strong> тексту з <strong>динамічним</strong> (тобто
+        текстом, що містить змінні, обчислення тощо). Шаблонні рядки дозволяють
+        уникати користування заплутаною конкатенацією та роблять код більш
+        читабельним.
+      </p>
+
+      <p><strong>Синтаксис шаблонного рядка</strong></p>
+      <p>
+        Шаблонні рядки огортаються зворотними лапками (англ. backticks)
+        (<code>``</code>)
+      </p>
+      <pre class="ql-blockquote" spellcheck="false"><strong>Увага! </strong>
+        Код не працюватиме, якщо огорнути шаблонні рядки звичайними одинарними або подвійними лапками.</pre>
+      <p>
+        Для того щоб додати зворотні лапки <code>``</code>, перейди в англійську
+        розкладку та натисни
+      </p>
+      <ul class="ul">
+        <li>клавішу <code>~</code> (див. 1-3 нижче)</li>
+      </ul>
+      <p>або</p>
+      <ul class="ul">
+        <li>поєднання клавіш (див. 4 нижче)</li>
+      </ul>
+      <img
+        src="../js/images/0090b650-ad6b-4e09-a3cb-b8283ba92dfdm01-b03-s03.jpg"
+        alt=""
+      />
+      <p>
+        Шаблонні рядки дозволяють підставляти значення змінних безпосередньо
+        всередині рядка за допомогою синтаксису інтерполяції
+        <code>${змінна}</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-javascript"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> guestName = <span class="hljs-string">"Mango"</span>;
+<span class="hljs-keyword">const</span> roomNumber = <span class="hljs-number">207</span>;
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-string">`Welcome <span class="hljs-subst">${guestName}</span>, your room number is <span class="hljs-subst">${roomNumber}</span>!`</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting); <span class="hljs-comment">// "Welcome Mango, your room number is 207!"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У прикладі вище ми використали інтерполяцію (конструкцію
+        <code>${}</code>) для того, щоб підставити значення змінних
+        <code>guestName</code> та <code>roomNumber</code> прямо в текст рядка.
+        Під час формування цього рядка значення змінних автоматично
+        підставляться в місцях, де є відповідна інтерполяція.
+      </p>
+
+      <strong>Порівняння конкатенації та шаблонних рядків</strong>
+      <p>Код з конкатенацією, де</p>
+      <ul class="ul">
+        <li>
+          "<em>Welcome</em> " "<em>, your room number is</em> " та "<em>!</em>"
+          — це статичний текст
+        </li>
+        <li>
+          <code>guestName</code> та <code>roomNumber</code> — імена змінних.
+        </li>
+      </ul>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-cpp"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-type">const</span> guestName = <span class="hljs-string">"Mango"</span>;
+<span class="hljs-type">const</span> roomNumber = <span class="hljs-number">207</span>;
+<span class="hljs-type">const</span> greeting =
+  <span class="hljs-string">"Welcome "</span> + guestName + <span class="hljs-string">", your room number is "</span> + roomNumber + <span class="hljs-string">"!"</span>;
+console.<span class="hljs-built_in">log</span>(greeting); <span class="hljs-comment">// "Welcome Mango, your room number is 207!"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Код, де значення цих змінних підставляються у шаблонний рядок.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-javascript"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> guestName = <span class="hljs-string">"Mango"</span>;
+<span class="hljs-keyword">const</span> roomNumber = <span class="hljs-number">207</span>;
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-string">`Welcome <span class="hljs-subst">${guestName}</span>, your room number is <span class="hljs-subst">${roomNumber}</span>!`</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(greeting); <span class="hljs-comment">// "Welcome Mango, your room number is 207!"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Код шаблонних рядків є більш читабельним.</p>
+
+      <strong class="ql-size-large">Довжина рядка</strong>
+      <p>Властивості — це описові характеристики сутності.</p>
+      <p>
+        Для опису людини часто використовують такі властивості, як зріст, вага
+        або колір очей.
+      </p>
+      <p>Для опису даних також використовуються властивості.</p>
+      <p>
+        Для доступу до властивості (<code>property</code>) сутності
+        (<code>objectName</code>) використовується синтаксис із крапкою:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-undefined"
+          spellcheck="false"
+          data-highlighted="yes"
+        >
+сутність.властивість</pre
+        >
+        <button class="copy"></button>
+      </div>
+      <p>
+        У програмуванні, наприклад, рядок має властивість <code>length</code>,
+        яка повертає довжину рядка.
+      </p>
+      <p>
+        Довжина рядка визначається кількістю символів у ньому. Щоб дізнатися
+        довжину рядка, використовується вбудована властивість
+        <code>length</code>. Щоб отримати значення цієї властивості, необхідно
+        звернутися до неї через крапку після імені змінної чи рядкового
+        літералу.
+      </p>
+      <p>
+        Наприклад, щоб отримати довжину рядка, ми можемо використовувати
+        властивість <code>length</code> таким чином:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const productName = <span class="hljs-string">"Repair droid"</span>;
+
+<span class="hljs-comment">// Якщо у змінній зберігається рядок</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(productName.<span class="hljs-built_in">length</span>); <span class="hljs-comment">// 12</span>
+        
+<span class="hljs-comment">// Якщо рядковий літерал</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Repair droid"</span>.<span class="hljs-built_in">length</span>); <span class="hljs-comment">// 12</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Використання властивості <code>length</code> дозволяє легко визначити
+        довжину будь-якого рядка та використовувати цю інформацію для виконання
+        різних операцій і перевірок.
+      </p>
+
+      <strong class="ql-size-large">Індексація рядків</strong>
+      <p>
+        Рядки — це набори символів, де кожен символ має свій порядковий номер
+        (індекс). Індексація елементів рядка починається з нуля. Перший символ
+        має індекс 0, другий — індекс 1, третій — 2 і так далі.
+      </p>
+
+      <img
+        src="../js/images/72eb24ab-b422-4ed8-afb7-1c03955121d7m01-b03-s06.jpg"
+        alt=""
+      />
+      <p>
+        Наприклад, у рядку <code>"JavaScript"</code> буква <code>J</code> стоїть
+        на позиції з індексом <code>0</code>.
+      </p>
+      <p>Буква <code>t</code> йде під індексом <code>9</code>.</p>
+      <p>
+        Загальна довжина рядка <code>"JavaScript"</code> дорівнює
+        <code>10</code>, тобто індекс останнього елемента рядка завжди на
+        одиницю менше його довжини.
+      </p>
+      <p>
+        Для доступу до певного символу рядка ми використовуємо синтаксис
+        квадратних дужок, де вказуємо індекс потрібного символу:
+        <code>string[index]</code>, тобто <strong>рядок[індекс]</strong>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const product = <span class="hljs-string">"Repair droid"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(product[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 'R'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(product[<span class="hljs-number">5</span>]); <span class="hljs-comment">// 'r'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(product[<span class="hljs-number">11</span>]); <span class="hljs-comment">// 'd'</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Отримання останнього символу рядка можливе за його індексом
+        <code>string[lastIndex]</code>. Щоб знайти індекс останнього символу
+        рядка, треба від довжини цього рядка відняти одиницю
+        <code>string.length - 1</code>
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const product <span class="hljs-operator">=</span> <span class="hljs-string">"Repair droid"</span><span class="hljs-comment">;</span>
+const lastElementIndex <span class="hljs-operator">=</span> product.length - <span class="hljs-number">1</span><span class="hljs-comment">;</span>
+console.log(product[lastElementIndex])<span class="hljs-comment">; // 'd'</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Для доступу до останнього символу рядка без створення проміжної змінної
+        ми можемо вставити вираз (<code>product.length - 1</code>) безпосередньо
+        у квадратні дужки при зверненні до елемента.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-maxima"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const <span class="hljs-built_in">product</span> = <span class="hljs-string">"Repair droid"</span>;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">product</span>[<span class="hljs-built_in">product</span>.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>]); // 'd'</pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Незмінність рядків</strong>
+      <p>
+        Коли рядок створюється, він зберігає своє значення і стає незмінним. Це
+        означає, що не можна замінити окремі символи всередині рядка.
+      </p>
+      <p>
+        Уяви, що маємо рядок "Droid". Ми не можемо змінити окремий символ у
+        цьому рядку, наприклад, замінити 'o' на 'O'. Спроба надання нового
+        значення елементу рядка не призведе до зміни вихідного рядка.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-maxima"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">let</span> <span class="hljs-built_in">product</span> = <span class="hljs-string">"Droid"</span>;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">product</span>); // <span class="hljs-string">"Droid"</span>
+        
+// Це не має жодного ефекту
+<span class="hljs-built_in">product</span>[<span class="hljs-number">2</span>] = <span class="hljs-string">"O"</span>;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">product</span>); // <span class="hljs-string">"Droid"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Натомість ми повинні створити новий рядок і присвоїти його змінній
+        замість старого рядка.
+      </p>
+      <p>
+        Розгляньмо приклад, де змінено написання о —&gt; О в рядку
+        <code>“Droid”</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-maxima"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">let</span> <span class="hljs-built_in">product</span> = <span class="hljs-string">"Droid"</span>;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">product</span>); // <span class="hljs-string">"Droid"</span>
+        
+<span class="hljs-built_in">product</span> = <span class="hljs-string">"DrOid"</span>;
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">product</span>); // <span class="hljs-string">"DrOid"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Ця властивість незмінності рядків у JavaScript має важливе значення для
+        забезпечення надійності та запобігання випадковим змінам усередині
+        рядків.
+      </p>
+    </section>
+    <!--Оператори порівняння-->
+    <section>
+      <h2 id="operators">Оператори порівняння</h2>
+      <p>
+        Оператори порівняння використовуються для порівняння двох значень і
+        повертають булеве значення (<code>true</code> або <code>false</code>)
+        залежно від результату порівняння.
+      </p>
+      <p>Ось деякі основні оператори порівняння:</p>
+      <ul class="ul">
+        <li>
+          Оператор <code>&gt;</code> (більше) — повертає <code>true</code>, якщо
+          <strong>лівий</strong> операнд <strong>більше</strong> правого. В
+          іншому разі повертає <code>false</code> .
+        </li>
+      </ul>
+      <ul class="ul">
+        <li>
+          Оператор <code>&lt;</code> (менше) — повертає <code>true</code>, якщо
+          <strong>лівий</strong> операнд <strong>менше</strong> правого. В
+          іншому разі повертає <code>false</code> .
+        </li>
+      </ul>
+      <ul class="ul">
+        <li>
+          Оператор <code>&gt;=</code> (більше або дорівнює) — повертає
+          <code>true</code>, якщо <strong>лівий</strong> операнд
+          <strong>більше або дорівнює</strong> правому. Якщо навпаки, повертає
+          <code>false</code> .
+        </li>
+      </ul>
+      <ul class="ul">
+        <li>
+          Оператор <code>&lt;=</code> (менше або дорівнює) — повертає
+          <code>true</code>, якщо <strong>лівий</strong> операнд
+          <strong>менше або дорівнює</strong> правому. Якщо навпаки, повертає
+          <code>false</code> .
+        </li>
+      </ul>
+      <p>Давай розглянемо приклади використання цих операторів:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const a = <span class="hljs-number">2</span>;
+const b = <span class="hljs-number">5</span>;
+        
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a &gt; b); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b &gt; a); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a &gt;= b); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b &gt;= a); <span class="hljs-comment">// true</span>
+        
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a &lt; b); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b &lt; a); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a &lt;= b); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b &lt;= a); <span class="hljs-comment">// false</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Основний принцип використання операторів порівняння полягає в тому, щоб
+        порівнювати значення та отримувати булевий результат. Булевий результат
+        (результат у вигляді <code>true</code> або <code>false</code>) дозволяє
+        приймати певні рішення та контролювати поведінку програми відповідно до
+        умов.
+      </p>
+      <p>
+        Оператори порівняння часто використовуються в умовних виразах або
+        циклах, для перевірки умов та виконання певних дій на основі результатів
+        порівняння. Наприклад, користувачі, старші за 18 років, отримують доступ
+        до певної групи товарів.
+      </p>
+
+      <strong class="ql-size-large">Оператори рівності</strong>
+      <p>
+        У JavaScript існують оператори рівності, які дозволяють порівнювати
+        значення та визначати їхню рівність або нерівність.
+      </p>
+      <p>Оператори <strong>несуворої</strong> рівності:</p>
+      <ul class="ul">
+        <li>
+          Оператор <code><strong>==</strong></code> (дорівнює) — порівнює два
+          значення на рівність і повертає <code>true</code>, якщо
+          <strong>значення операндів рівні.</strong> Якщо навпаки, повертає
+          <code>false</code>
+        </li>
+      </ul>
+      <ul class="ul">
+        <li>
+          Оператор <code>!=</code> (не дорівнює) — порівнює два значення на
+          нерівність і повертає <code>true</code>, якщо
+          <strong>значення операндів не рівні.</strong> Якщо навпаки, повертає
+          <code>false</code>
+        </li>
+      </ul>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> == <span class="hljs-number">5</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> == <span class="hljs-number">3</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> != <span class="hljs-number">3</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> != <span class="hljs-number">5</span>); <span class="hljs-comment">// false</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p><strong>Але є одна проблема.</strong></p>
+      <p>
+        Оператори несуворої рівності можуть приводити значення до різних типів,
+        в залежності від контексту порівняння. Це може призвести до неочікуваних
+        результатів, тому багато розробників намагаються уникати їх
+        використання.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Погано, бо виконується неявне приведення рядків і булевого значення до числа</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> == <span class="hljs-string">"5"</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> != <span class="hljs-string">"5"</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> == <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> != <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Розглянемо ці приклади детальніше.</p>
+      <p>
+        Вираз <code>5 == "5"</code> поверне <code>true</code>, хоча одне зі
+        значень є числом, а інше — рядком. Рядок <code>"5"</code> буде
+        приведений до числа <code>5</code>, і порівняння виглядає як
+        <code>5 == 5</code>. Аналогічно, вираз <code>1 == true</code> поверне
+        <code>true</code>, бо булеве значення <code>true</code> приводиться до
+        числа <code>1</code>.
+      </p>
+      <p>
+        На наступній ілюстрації показано таблицю порівняння значень, із
+        використанням операторів несуворої рівності.
+      </p>
+      <img
+        src="../js/images/2a95447d-3c0f-4d4a-9f85-f0d80da68f97m01-b04-s02.jpg"
+        alt=""
+      />
+      <p>
+        Неявне перетворення типів може призводити до помилок, особливо в
+        розробників-початківців. Для уникнення таких проблем рекомендується
+        використовувати оператори суворої рівності, які не виконують
+        перетворення типів операндів.
+      </p>
+      <ul class="ul">
+        <li>
+          Оператор <code><strong>===</strong></code> (сувора рівність) —
+          порівнює два значення на рівність, повертає <code>true</code>, якщо
+          <strong>значення операндів рівні</strong> та мають
+          <strong>однаковий тип даних.</strong> В іншому випадку, повертає
+          <code>false</code>
+        </li>
+      </ul>
+
+      <ul class="ul">
+        <li>
+          Оператор <code><strong>!==</strong></code> (сувора нерівність) —
+          порівнює два значення на нерівність, повертає <code>true</code>, якщо
+          значення операндів <strong>не рівні</strong> або мають
+          <strong>різні типи даних.</strong> В іншому випадку, повертає
+          <code>false</code>
+        </li>
+      </ul>
+
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Добре, приведення типів не виконується</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> === <span class="hljs-number">5</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> === <span class="hljs-string">"5"</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> !== <span class="hljs-string">"5"</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> !== <span class="hljs-number">5</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> === <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">1</span> !== <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        На відміну від несуворих операторів, вирази <code>5 === "5"</code> і
+        <code>1 === true</code> повернуть <code>false</code>, тому що операнди
+        мають різні типи.
+      </p>
+      <p>
+        На наступній ілюстрації показано таблицю порівняння значень із
+        використанням операторів суворої рівності. Усі операнди дорівнюють лише
+        самі собі. Перед порівнянням нічого не перетворюється на інший тип.
+      </p>
+      <img
+        src="../js/images/0c2a88d4-6d32-4c51-ae9e-f91eaa7c2621m01-b04-s02(2).jpg"
+        alt=""
+      />
+
+      <strong class="ql-size-large">Перетворення типів: числа</strong>
+      <p>
+        У деяких операціях виконується явне або неявне перетворення значень
+        операндів до числа.
+      </p>
+      <p>
+        Для явного перетворення будь-якого значення в число можна
+        використовувати вбудовану функцію <code>Number()</code>, яка повертає
+        результат у вигляді числа.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-string">"5"</span>)); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-literal">true</span>)); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-literal">false</span>)); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-literal">null</span>)); <span class="hljs-comment">// 0</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>При перетворенні до числа:</p>
+      <ul class="ul">
+        <li><code>true</code> завжди приводиться до <code>1</code>;</li>
+        <li>
+          <code>false</code> , <code>null</code> і <code>""</code> завжди
+          приводяться до <code>0</code>.
+        </li>
+      </ul>
+      <p>
+        Якщо неможливо привести значення до числа, результатом перетворення буде
+        спеціальне значення <code>NaN</code> (Not a Number). Ось кілька
+        прикладів, коли результатом перетворення буде <code>NaN</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-literal">undefined</span>)); <span class="hljs-comment">// NaN</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-string">"Jacob"</span>)); <span class="hljs-comment">// NaN</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>(<span class="hljs-string">"25px"</span>)); <span class="hljs-comment">// NaN</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Арифметичні операції (<code>+</code>, <code>-</code>,
+        <code><strong>*</strong></code
+        >, <code>/</code>) виконують неявне перетворення типів.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> * <span class="hljs-number">2</span>); <span class="hljs-comment">// 10</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"10"</span> - <span class="hljs-number">5</span>); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> + <span class="hljs-literal">true</span>); <span class="hljs-comment">// 6</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> - <span class="hljs-literal">true</span>); <span class="hljs-comment">// 4</span></pre>
+        <button class="copy"></button>
+      </div>
+      <ul class="ul">
+        <li>
+          Якщо у виразі присутній хоча б один із операндів з типом рядка, то
+          обидва операнди приводяться до чисел. Це відбувається у всіх
+          арифметичних операціях, окрім додавання. Пам’ятай, що + біля рядкових
+          операндів викликає їх з'єднання (конкатинацію).
+        </li>
+      </ul>
+      <ul class="ul">
+        <li>
+          Для всіх інших типів операндів та операцій виконується перетворення
+          операндів до числа.
+        </li>
+      </ul>
+      <p>
+        У разі використання операторів порівняння (<code
+          ><strong>&lt;</strong></code
+        >, <code><strong>&gt;</strong></code
+        >, <code><strong>&lt;=</strong></code
+        >, <code><strong>&gt;=</strong></code
+        >) також виконується неявне перетворення типів. Якщо операнди різних
+        типів, то перед порівнянням вони приводяться до числа.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"10"</span> &gt; <span class="hljs-number">5</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">10</span> &gt; <span class="hljs-string">"5"</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> &gt; <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> &lt; <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> &lt; <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Перетворення рядків у числа</strong>
+      <p>
+        <strong>Метод </strong><code><strong>Number.parseInt()</strong></code>
+      </p>
+      <p>Метод <code>Number.parseInt()</code> приймає 2 аргументи:</p>
+      <ol class="ol">
+        <li>
+          Рядок. Якщо аргумент не є рядком, то він буде спочатку перетворений у
+          рядок
+        </li>
+        <li>
+          Система числення, до якої відноситься рядок (не обов’язковий аргумент,
+          за замовчуванням десяткова система). Наприклад, для десяткової системи
+          буде 10, для шістнадцяткової - 16 тощо..
+        </li>
+      </ol>
+      <p>
+        Метод аналізує рядок зліва направо, видаляючи пробіли на початку і
+        перетворюючи допустимі символи у число до тих пір, поки не зіткнеться з
+        першим недопустимим символом. Після цього аналіз припиняється, і вже
+        перетворене ціле число повертається.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-coffeescript"
+          spellcheck="false"
+          data-highlighted="yes"
+        >console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"5"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-number">5</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"5.5"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-number">5</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"5cm"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-number">5</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"12qwe74"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-number">12</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"12.46qwe79"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-number">12</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"cm5"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-literal">NaN</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">""</span>)); <span class="hljs-regexp">//</span> <span class="hljs-literal">NaN</span> 
+console.log(<span class="hljs-built_in">Number</span>.<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">"qweqwe"</span>)); <span class="hljs-regexp">//</span> <span class="hljs-literal">NaN</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо перші символи рядка не можуть бути перетворені на число, або рядок
+        порожній чи відсутній, результатом буде значення <code>NaN</code> (Not a
+        Number).
+      </p>
+
+      <p>
+        <strong>Метод </strong><code><strong>Number.parseFloat()</strong></code>
+      </p>
+      <p>
+        Метод <code>Number.parseFloat()</code> аналогічний
+        <code>Number.parseInt()</code> з однієї відмінністю: перетворює рядок на
+        число з плаваючою крапкою.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"5"</span>)); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"5.5"</span>)); <span class="hljs-comment">// 5.5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"3.14"</span>)); <span class="hljs-comment">// 3.14</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"5cm"</span>)); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"5.5cm"</span>)); <span class="hljs-comment">// 5.5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"12qwe74"</span>)); <span class="hljs-comment">// 12</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"12.46qwe79"</span>)); <span class="hljs-comment">// 12.46</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"cm5"</span>)); <span class="hljs-comment">// NaN</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">""</span>)); <span class="hljs-comment">// NaN</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>.parseFloat(<span class="hljs-string">"qweqwe"</span>)); <span class="hljs-comment">// NaN</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо перші символи рядка не можуть бути перетворені на число, або рядок
+        порожній чи відсутній, результатом буде значення
+        <code style="background-color: rgba(135, 131, 120, 0.15)">NaN</code>
+        (Not a Number).
+      </p>
+
+      <strong class="ql-size-large">Арифметичні функції</strong>
+      <p>
+        Клас <code>Math</code> є вбудованим класом JavaScript. Цей клас надає
+        набір методів для виконання математичних операцій та роботи з числами.
+        Ось кілька найбільш корисних методів, які надає клас <code>Math</code>:
+      </p>
+      <p>
+        <code>Math.floor(num)</code>: повертає найближче ціле число, яке є
+        меншим або дорівнює вказаному числу <code>num</code>. Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">floor</span>(<span class="hljs-number">1.3</span>)); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">floor</span>(<span class="hljs-number">1.7</span>)); <span class="hljs-comment">// 1</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        <code>Math.ceil(num)</code>: повертає найближче ціле число, яке є
+        більшим, або дорівнює зазначеному числу <code>num</code>. Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">ceil</span>(<span class="hljs-number">1.3</span>)); <span class="hljs-comment">// 2</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">ceil</span>(<span class="hljs-number">1.7</span>)); <span class="hljs-comment">// 2</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        <code>Math.round(num)</code>: повертає
+        <strong>значення числа після округлення</strong> до найближчого цілого.
+        Округлення відбувається за математичними правилами, якщо десяткова
+        частина числа менша 0.5, то округлення буде в меншу сторону, якщо 0.5 і
+        більше — то в більшу.
+      </p>
+      <p>Наприклад:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">round</span>(<span class="hljs-number">1.3</span>)); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(Math.<span class="hljs-built_in">round</span>(<span class="hljs-number">1.7</span>)); <span class="hljs-comment">// 2</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        <code>Math.max(num1, num2, ...)</code>: повертає
+        <strong>найбільше</strong> число з набору переданих чисел. Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log(Math.max(<span class="hljs-number">20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">40</span>)); // <span class="hljs-number">50</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        <code>Math.min(num1, num2, ...)</code>: повертає
+        <strong>найменше</strong> число з набору переданих чисел. Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log(Math.min(<span class="hljs-number">20</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">40</span>)); // <span class="hljs-number">10</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        <code>Math.random()</code>: повертає <strong>випадкове</strong> число в
+        діапазоні від 0 (включно) до 1 (за винятком). Наприклад:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log(Math.random()); // випадкове число між <span class="hljs-number">0</span> і <span class="hljs-number">1</span>, наприклад <span class="hljs-number">0</span>.<span class="hljs-number">2</span> ... <span class="hljs-number">0</span>.<span class="hljs-number">9166353649342294</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>
+        Це лише деякі методи класу <code>Math</code>. Він також надає методи для
+        тригонометричних функцій, логарифмів та інших математичних операцій. Ви
+        можете звернутися до документації JavaScript для отримання повного
+        списку методів класу <code>Math</code> і більш детального опису кожного
+        з них.
+      </p>
+
+      <strong class="ql-size-large">Дробове число</strong>
+      <p>
+        При виконанні операцій з дробовими числами можуть виникати неточності
+        через внутрішнє представлення чисел у пам'яті комп'ютера.
+      </p>
+      <p>
+        Наприклад, результат <code>0.1 + 0.2</code> не дорівнює
+        <code>0.3</code>. Число <code>0.1</code> у двійковій системі числення,
+        яку використовує комп'ютер — це нескінченний дріб. Двійкове значення
+        нескінченних дробів зберігається лише до певного знака, тому виникає
+        неточність. При додаванні <code>0.1</code> і <code>0.2</code> дві
+        неточності складаються, виходить незначна, але все ж таки помилка в
+        обчисленнях.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log(<span class="hljs-number">0</span>.<span class="hljs-number">1</span> + <span class="hljs-number">0</span>.<span class="hljs-number">2</span> === <span class="hljs-number">0</span>.<span class="hljs-number">3</span>); // false
+<span class="hljs-attribute">console</span>.log(<span class="hljs-number">0</span>.<span class="hljs-number">1</span> + <span class="hljs-number">0</span>.<span class="hljs-number">2</span>); // <span class="hljs-number">0</span>.<span class="hljs-number">30000000000000004</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Як виправити цю проблему?</p>
+      <p>
+        Залежно від необхідної точності, можна використовувати різні підходи.
+      </p>
+
+      <p><strong>Підхід 1.</strong></p>
+      <ul class="ul">
+        <li>Помножити числа на досить велике число (наприклад, 10 або 100).</li>
+        <li>Виконати додавання.</li>
+        <li>
+          Розділити результат на те саме число, щоб повернути його до
+          початкового масштабу.
+        </li>
+      </ul>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log(<span class="hljs-number">0</span>.<span class="hljs-number">1</span> * <span class="hljs-number">10</span> + <span class="hljs-number">0</span>.<span class="hljs-number">2</span> * <span class="hljs-number">10</span>); // <span class="hljs-number">3</span>
+<span class="hljs-attribute">console</span>.log((<span class="hljs-number">0</span>.<span class="hljs-number">1</span> * <span class="hljs-number">10</span> + <span class="hljs-number">0</span>.<span class="hljs-number">2</span> * <span class="hljs-number">10</span>) / <span class="hljs-number">10</span>); // <span class="hljs-number">0</span>.<span class="hljs-number">3</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p><strong>Підхід 2.</strong></p>
+      <p>
+        Використовувати метод числа <code>toFixed()</code> для округлення
+        результату до певної кількості знаків після крапки.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">console</span>.log((<span class="hljs-number">0</span>.<span class="hljs-number">1</span> + <span class="hljs-number">0</span>.<span class="hljs-number">2</span>).toFixed(<span class="hljs-number">1</span>)); // <span class="hljs-string">"0.3"</span>
+<span class="hljs-attribute">console</span>.log((<span class="hljs-number">5</span>).toFixed(<span class="hljs-number">2</span>));  //  ”<span class="hljs-number">5</span>.<span class="hljs-number">00</span>”
+<span class="hljs-attribute">console</span>.log((<span class="hljs-number">8</span>.<span class="hljs-number">762195</span>).toFixed(<span class="hljs-number">4</span>));  //  “<span class="hljs-number">8</span>.<span class="hljs-number">7622</span>”</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Метод <code>toFixed()</code> повертає рядок, що представляє число із
+        зазначеною кількістю знаків після крапки. Таким чином, ми можемо
+        отримати заокруглений результат з необхідною точністю.
+      </p>
+    </section>
+    <!--Основи функцій-->
+    <section>
+      <h2 id="functions">Основи функцій</h2>
+      <strong class="ql-size-large">Оголошення та виклик функції</strong>
+      <p>
+        Функція — це незалежний блок коду, який виконує певну задачу з різними
+        початковими значеннями.
+      </p>
+      <p>
+        Функцію можна представити, як чорну скриньку, яка приймає дані на вході
+        та повертає результат на виході після виконання коду всередині функції.
+      </p>
+      <img
+        src="../js/images/9668a71a-4bed-4619-b793-d8ec93efbe69m01-b05-s01.jpg"
+        alt=""
+      />
+
+      <strong>Оголошення функції</strong>
+      <p>Оголошення функції має таку структуру:</p>
+      <ol class="ol">
+        <li>Ключове слово <code>function</code></li>
+        <li>
+          Ім'я функції — це дієслово, що відповідає на питання "Що зробити?"
+        </li>
+        <li>Пара круглих дужок <code>()</code></li>
+        <li>Тіло функції у фігурних дужках <code>{}</code></li>
+      </ol>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">doStuff</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-comment">// Тіло функції</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Log inside multiply function'</span>);
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Тіло функції міститься у фігурних дужках <code>{}</code>. Воно містить
+        інструкції, які потрібно виконати під час виклику функції. Ці інструкції
+        можуть включати оператори, умовні конструкції, цикли та інші функції.
+      </p>
+
+      <p><strong>Виклик функції</strong></p>
+      <p>
+        Коли функцію потрібно виконати, вона викликається за допомогою її імені
+        та пари круглих дужок.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-scss"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Оголошення функції multiply</span>
+function <span class="hljs-built_in">doStuff</span>() {
+  <span class="hljs-comment">// Тіло функції</span>
+  console<span class="hljs-selector-class">.log</span>('Log inside multiply function');
+}
+        
+<span class="hljs-comment">// Виклики функції multiply</span>
+<span class="hljs-built_in">doStuff</span>(); <span class="hljs-comment">// 'Log inside multiply function'</span>
+<span class="hljs-built_in">doStuff</span>(); <span class="hljs-comment">// 'Log inside multiply function'</span>
+<span class="hljs-built_in">doStuff</span>(); <span class="hljs-comment">// 'Log inside multiply function'</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Параметри та аргументи</strong>
+      <p>
+        У круглих дужках після імені функції вказуються параметри. Параметри є
+        перерахуванням даних, які очікує функція під час виклику.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Оголошення параметрів x, y, z</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">x, y, z</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Result: <span class="hljs-subst">${x * y * z}</span>`</span>);
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        <strong>Параметри</strong> — це локальні змінні, доступні лише всередині
+        тіла функції.
+      </p>
+      <p>
+        Параметри розділяються комами. Функція може мати будь-яку кількість
+        параметрів або не мати їх взагалі, у такому випадку вказуються просто
+        порожні круглі дужки.
+      </p>
+      <p>
+        Під час виклику функції в круглих дужках можна передати
+        <strong>аргументи</strong>, які є значеннями для оголошених параметрів
+        функції.
+      </p>
+
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-scss"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Оголошення параметрів x, y, z</span>
+function <span class="hljs-built_in">multiply</span>(x, y, z) {
+  console<span class="hljs-selector-class">.log</span>(`Result: ${x * y * z}`);
+}
+        
+<span class="hljs-comment">// Передача аргументів</span>
+<span class="hljs-built_in">multiply</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// "Result: 30"</span>
+<span class="hljs-built_in">multiply</span>(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">12</span>); <span class="hljs-comment">// "Result: 384"</span>
+<span class="hljs-built_in">multiply</span>(<span class="hljs-number">17</span>, <span class="hljs-number">6</span>, <span class="hljs-number">25</span>); <span class="hljs-comment">// "Result: 2550"</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>Отже, у прикладі вище маємо параметри x, y, z.</p>
+      <p>
+        Під час кожного виклику функції параметр може отримувати нове значення з
+        аргументів. Наприклад, параметр <code>x</code> спочатку отримав значення
+        2, потім 4, потім 17.
+      </p>
+      <img
+        src="../js/images/13ecbe6a-d339-4d3b-a21e-240d30b221cbm01-b05-s02.jpg"
+        alt=""
+      />
+      <p>
+        При передачі аргументів під час виклику функції необхідно дотримуватись
+        порядку, що відповідає порядку оголошених параметрів: значення першого
+        аргументу буде присвоєно першому параметру, другого аргументу — другому
+        параметру і так далі.
+      </p>
+      <p>
+        Щоразу під час виклику функції параметри будуть оголошуватися заново, і
+        їх значення в окремих викликах функції не впливатимуть один на одний.
+      </p>
+
+      <strong class="ql-size-large">Повернення значення</strong>
+      <p>
+        Оператор <code>return</code> використовується для повернення значення з
+        тіла функції назад у код, у місце її виклику. Коли інтерпретатор
+        зустрічає оператор <code>return</code>, він негайно виходить із функції
+        (припиняє її виконання) і повертає вказане після return значення в місце
+        виклику функції.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-gml"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> multiply(<span class="hljs-variable language_">x</span>, <span class="hljs-variable language_">y</span>, z) {
+  const product = <span class="hljs-variable language_">x</span> * <span class="hljs-variable language_">y</span> * z;
+  <span class="hljs-comment">// Повертаємо результат виразу множення</span>
+  <span class="hljs-keyword">return</span> product;
+}
+      
+<span class="hljs-comment">// Результат роботи функції можна зберегти у змінну</span>
+const result = multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>);
+console.log(result); <span class="hljs-comment">// 30</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Щоб уникнути оголошення зайвої змінної в тілі функції, можна відразу ж
+        <strong>повертати результат виразу</strong>. Так, немає необхідності
+        створювати окрему змінну для зберігання результату виразу.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-gml"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> multiply(<span class="hljs-variable language_">x</span>, <span class="hljs-variable language_">y</span>, z) {
+  <span class="hljs-keyword">return</span> <span class="hljs-variable language_">x</span> * <span class="hljs-variable language_">y</span> * z;
+}
+      
+const result = multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>);
+console.log(result); <span class="hljs-comment">// 30</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо в тілі функції відсутній оператор <code>return</code> або він не
+        вказує на конкретне значення, функція поверне спеціальне значення
+        <code>undefined</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-gml"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> multiply(<span class="hljs-variable language_">x</span>, <span class="hljs-variable language_">y</span>, z) {
+  const product = <span class="hljs-variable language_">x</span> * <span class="hljs-variable language_">y</span> * z;
+}
+      
+const result = multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>);
+console.log(result); <span class="hljs-comment">// undefined</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        При використанні оператора <code>return</code> всі інструкції, які йдуть
+        на рядках після нього, в тілі функції не виконуються, оскільки виконання
+        функції припиняється відразу після зустрічі оператора
+        <code>return</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">x, y, z</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'The code before return is executed as usual'</span>);
+      
+  <span class="hljs-keyword">return</span> x * y * z;
+      
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'This code is never executed because it is after return'</span>);
+}
+      
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>)); <span class="hljs-comment">// 30</span></pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Порядок виконання коду</strong>
+      <p>
+        Коли інтерпретатор зустрічає виклик функції, він зупиняє виконання
+        поточного коду й починає виконувати код з тіла функції.
+      </p>
+      <p>
+        Після того, як весь код у функції буде виконано, інтерпретатор повертає
+        управління в те місце, звідки був здійснений виклик функції, і продовжує
+        виконання коду програми, що залишився.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">x, y, z</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Result: <span class="hljs-subst">${x * y * z}</span>`</span>);
+}
+      
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log before multiply execution"</span>);
+multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// "Result: 30"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log after multiply execution"</span>);</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Послідовність логів у консолі буде такою:</p>
+      <ol class="ol">
+        <li>"Log before multiply execution"</li>
+        <li>"Result: 30"</li>
+        <li>"Log after multiply execution"</li>
+      </ol>
+
+      <strong class="ql-size-large">Область видимості функції</strong>
+      <p>
+        Область видимості визначає, де і які змінні та функції можуть бути
+        доступні у твоєму коді. Коли ти оголошуєш змінну або функцію, вона стає
+        "видимою" тільки в певній частині коду. Це впливає на те, де і як ти
+        можеш використовувати їх у своєму коді.
+      </p>
+      <p>
+        Змінні або функції, оголошені поза будь-якими блоками коду — тобто в
+        глобальній області видимості, будуть доступні в будь-якій частині коду.
+        Вони є <strong>глобальними змінними</strong>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Глобальна змінна</span>
+const value = <span class="hljs-string">"I'm a global variable"</span>;
+        
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params"></span>) {
+<span class="hljs-comment">// Можна звернутися до глобальної змінної</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// "I'm a global variable"</span>
+}
+        
+foo();
+<span class="hljs-comment">// Можна звернутися до глобальної змінної</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); 
+<span class="hljs-comment">// "I'm a global variable"</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Змінна <code>value</code> оголошена в глобальній області видимості,
+        тобто поза будь-яким блоком коду, у нашому випадку — поза тілом функції,
+        і доступна в будь-якому місці після оголошення.
+      </p>
+      <p>
+        Будь-яка конструкція, що використовує фігурні дужки
+        <code>{}</code> (умови, цикли, функції тощо) створює нову
+        <strong>локальну область видимості</strong>. Змінні, оголошені в
+        локальній області видимості, можуть бути використані тільки всередині
+        цього блоку коду.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// Локальна змінна</span>
+    const value = <span class="hljs-string">"I'm a local variable"</span>;
+    <span class="hljs-comment">// Можна звернутися до локальної змінної</span>
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// "I'm a local variable"</span>
+}
+      
+foo();
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// ReferenceError: value is not defined</span>
+                      <span class="hljs-comment">// Помилка: локальну змінну не видно за межами  </span> функції</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Змінна <code>value</code> оголошена в тілі функції
+        <code>foo</code>, тобто в локальній області видимості функції, обмеженої
+        тілом функції. Ця змінна буде доступна лише всередині функції, і спроба
+        звернення до неї поза межами тіла функції видає помилку.
       </p>
     </section>
   </div>
