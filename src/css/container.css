@@ -14,6 +14,7 @@
 
 /*Left menu*/
 .left-aside {
+  position:fixed;
   width: 240px;
   justify-content: left;
   padding: 16px 8px;
@@ -31,6 +32,7 @@
   border: 1px solid black;
   border-radius: 4px;
   font-weight: bold;
+  /* margin-bottom: 8px; */
 }
 
 .nav-link {
@@ -43,6 +45,7 @@
 /*Content*/
 .course-container {
   width: 1200px;
+  margin-left: 240px;
   padding: 0 16px;
 }
 

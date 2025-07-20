@@ -8,8 +8,13 @@
       <a class="nav-link" href="#operators">Оператори порівняння</a>
       <a class="nav-link" href="#functions">Основи функцій</a>
     </details>
+    <details open>
+      <summary class="nav-item">Розгалуження і цикли</summary>
+      <a class="nav-link" href="#branching">Розгалуження</a>
+    </details>
   </nav>
   <div class="course-container">
+    <!--1. Модуль 1. Змінні та типи. Основи функцій-->
     <!--Мова JavaScript-->
     <section>
       <h1 id="js" class="hero-title">Мова JavaScript</h1>
@@ -2310,11 +2315,277 @@ foo();
         <button class="copy"></button>
       </div>
       <p>
-        Змінна <code>value</code> оголошена в тілі функції
-        <code>foo</code>, тобто в локальній області видимості функції, обмеженої
-        тілом функції. Ця змінна буде доступна лише всередині функції, і спроба
-        звернення до неї поза межами тіла функції видає помилку.
+        Змінна <code>value</code> оголошена в тілі функції <code>foo</code>,
+        тобто в локальній області видимості функції, обмеженої тілом функції. Ця
+        змінна буде доступна лише всередині функції, і спроба звернення до неї
+        поза межами тіла функції видає помилку.
       </p>
+    </section>
+    <!--2. Модуль 2. Розгалуження і цикли-->
+    <!--Розгалуження-->
+    <section>
+      <h2 id="branching">Розгалуження</h2>
+      <p>
+        Розгалуження — це конструкції, які дозволяють виконувати різні блоки
+        коду залежно від певних умов. Це дозволяє програмі приймати рішення та
+        виконувати різні дії в залежності від значень змінних або результатів
+        обчислень.
+      </p>
+      <p>
+        У JavaScript є кілька розгалужень, які дозволяють виконувати різні дії
+        залежно від певних умов. Найпоширеніші з них:
+      </p>
+      <ul class="ul">
+        <li><code>if</code>: виконує блок коду, якщо умова істинна.</li>
+        <li><code>else</code>: виконує блок коду, якщо умова не істинна.</li>
+        <li>
+          <code>else if</code>: дозволяє перевірити додаткові умови, якщо
+          попередня умова не істинна.
+        </li>
+        <li>
+          <code>switch</code>: дозволяє виконувати різні блоки коду залежно від
+          значення виразу.
+        </li>
+        <li>
+          <code>ternary operator</code>: коротка форма для умовного
+          розгалуження, яка дозволяє виконати одну з двох дій залежно від
+          істинності умови.
+        </li>
+      </ul>
+      <p>
+        Розглянемо кожен з цих розгалужень детальніше, починаючи з
+        <code>if</code>.
+      </p>
+      <strong class="ql-size-large">if</strong>
+      <p>
+        Конструкція <code>if</code> дозволяє виконати блок коду, якщо умова
+        істинна. Синтаксис виглядає так:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><code class="hljs-keyword">if</code> (<span class="hljs-params">умова</span>) {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо умова істинна</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова в дужках істинна, то виконується блок коду всередині фігурних
+        дужок. Якщо умова хибна, то блок коду пропускається.
+      </p>
+      <p>
+        Наприклад, якщо ми хочемо перевірити, чи число більше 10, і вивести
+        повідомлення в консоль, якщо це так:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">if</span> (number > <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is greater than 10'</span>);  
+  <span class="hljs-comment">// "Number is greater than 10"</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
+        "Number is greater than 10". Якщо ж число менше або дорівнює 10, то блок
+        коду не виконується, і повідомлення не виводиться.
+      </p>
+      <p>
+        Якщо потрібно виконати блок коду, коли умова хибна, можна
+        використовувати конструкцію <code>else</code>.
+      </p>
+      <strong class="ql-size-large">else</strong>
+      <p>
+        Конструкція <code>else</code> дозволяє виконати блок коду, якщо умова
+        хибна. Синтаксис виглядає так:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">if</span> (<span class="hljs-params">умова</span>) {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо умова істинна</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо умова хибна</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова в дужках істинна, то виконується блок коду всередині перших
+        фігурних дужок. Якщо ж умова хибна, то виконується блок коду всередині
+        другого блоку фігурних дужок.
+      </p>
+      <p>
+        Наприклад, якщо ми хочемо перевірити, чи число більше 10, і вивести
+        повідомлення в консоль, якщо це так, а якщо ні — вивести інше
+        повідомлення:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">if</span> (number > <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is greater than 10'</span>);
+} <span class="hljs-keyword">else</span> { 
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is less than or equal to 10'</span>);
+  <span class="hljs-comment">// "Number is less than or equal to 10"</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
+        "Number is greater than 10". Якщо ж число менше або дорівнює 10, то
+        виконується блок коду після <code>else</code>, і виводиться повідомлення
+        "Number is less than or equal to 10".
+      </p>
+      <p>
+        Якщо потрібно перевірити кілька умов, можна використовувати конструкцію
+        <code>else if</code>.
+      </p>
+      <strong class="ql-size-large">else if</strong>
+      <p>
+        Конструкція <code>else if</code> дозволяє перевірити додаткові умови,
+        якщо попередня умова не істинна. Синтаксис виглядає так:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">if</span> (<span class="hljs-params">умова1</span>) {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо умова1 істинна</span>
+} <span class="hljs-keyword">else if</span> (<span class="hljs-params">умова2</span>) {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо умова2 істинна</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Блок коду, який виконується, якщо жодна з умов не істинна</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо перша умова в дужках істинна, то виконується блок коду всередині
+        перших фігурних дужок. Якщо ж вона хибна, то перевіряється друга умова,
+        і якщо вона істинна, то виконується блок коду всередині другого блоку
+        фігурних дужок. Якщо жодна з умов не істинна, то виконується блок коду
+        після <code>else</code>.
+      </p>
+      <p>
+        Наприклад, якщо ми хочемо перевірити, чи число більше 10, менше 5 або
+        знаходиться в діапазоні від 5 до 10, і вивести відповідне повідомлення:
+      </p>
+      <div class="ql-syntax-block">
+  <pre class="ql-syntax hljs language-arcade" spellcheck="false" data-highlighted="yes">
+<span class="hljs-keyword">const</span> number = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">if</span> (number &gt; <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is greater than 10');
+} <span class="hljs-keyword">else if</span> (number &lt; <span class="hljs-number">5</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is less than 5');
+} <span class="hljs-keyword">else if</span> (number &gt;= <span class="hljs-number">5</span> &amp;&amp; number &lt;= <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is between 5 and 10');
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is something else');
+}
+  </pre>
+  <button class="copy"></button>
+</div>
+
+      <p>
+        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
+        "Number is greater than 10". Якщо ж число менше 5, то виводиться
+        повідомлення "Number is less than 5". Якщо число знаходиться в діапазоні
+        від 5 до 10, то виводиться повідомлення "Number is between 5 and 10".
+        Якщо жодна з умов не істинна, то виконується блок коду після
+        <code>else</code>, і виводиться повідомлення "Number is something else".
+      </p>
+      <p>
+        Якщо потрібно перевірити більше умов, можна використовувати кілька
+        конструкцій <code>else if</code>.
+      </p>
+      <p>
+        Наприклад, якщо ми хочемо перевірити, чи число є парним або непарним, і
+        вивести відповідне повідомлення:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">8</span>;
+<span class="hljs-keyword">if</span> (number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is even'</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is odd'</span>);
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова <code>number % 2 === 0</code> істинна, то виводиться
+        повідомлення "Number is even". Якщо ж умова хибна, то виконується блок
+        коду після <code>else</code>, і виводиться повідомлення "Number is odd".
+      </p>
+      <p>
+        Якщо потрібно перевірити більше умов, можна використовувати кілька
+        конструкцій <code>else if</code>.
+      </p>
+      <p>
+        Конструкція <code>switch</code> дозволяє виконувати різні блоки коду
+        залежно від значення виразу. Синтаксис виглядає так:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">switch</span> (<span class="hljs-params">вираз</span>) {
+  <span class="hljs-keyword">case</span> <span class="hljs-params">значення1</span>:
+    <span class="hljs-comment">// Блок коду, який виконується, якщо вираз дорівнює значення1</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-params">значення2</span>:
+    <span class="hljs-comment">// Блок коду, який виконується, якщо вираз дорівнює значення2</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-comment">// Блок коду, який виконується, якщо жодне з значень не збігається</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо вираз у дужках дорівнює значенню в першому <code>case</code>, то
+        виконується блок коду всередині цього <code>case</code>. Після виконання
+        блоку коду виконується оператор <code>break</code>, який припиняє
+        виконання конструкції <code>switch</code>. Якщо вираз не збігається з
+        жодним з <code>case</code>, то виконується блок коду після
+        <code>default</code>.
+      </p>
+      <p>
+        Наприклад, якщо ми хочемо перевірити, чи день тижня є понеділком,
+        вівторком або іншим днем, і вивести відповідне повідомлення:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> day = <span class="hljs-string">'Monday'</span>;
+<span class="hljs-keyword">switch</span> (day) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'Monday'</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is Monday'</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'Tuesday'</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is Tuesday'</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is another day'</span>);
+}</pre>
+        <button class="copy"></button>
+      </div>
     </section>
   </div>
 </section>
