@@ -66,6 +66,12 @@
     <details open>
       <summary class="nav-item">Розгалуження і цикли</summary>
       <a class="nav-link" href="#branching">Розгалуження</a>
+      <a class="nav-link" href="#logical-operators">Логічні оператори</a>
+      <a class="nav-link" href="#string-methods">Методи рядків</a>
+      <a class="nav-link" href="#loops">Цикли</a>
+      <ul>
+        <li><a href="#while">Цикл <code>while</code></a></li>
+      </ul>
     </details>
   </nav>
   <div class="course-container">
@@ -2376,6 +2382,7 @@ foo();
         поза межами тіла функції видає помилку.
       </p>
     </section>
+
     <!--2. Модуль 2. Розгалуження і цикли-->
     <!--Розгалуження-->
     <section>
@@ -2408,239 +2415,2639 @@ foo();
         </li>
       </ul>
       <p>
-        Розглянемо кожен з цих розгалужень детальніше, починаючи з
-        <code>if</code>.
+        <strong class="ql-size-large">Інструкція </strong
+        ><code class="ql-size-large"><strong>if</strong></code>
       </p>
-      <strong class="ql-size-large">if</strong>
       <p>
-        Конструкція <code>if</code> дозволяє виконати блок коду, якщо умова
-        істинна. Синтаксис виглядає так:
+        Інструкція <code>if</code> дозволяє виконати певний блок коду
+        <strong>тільки</strong> в тому випадку, <strong>якщо</strong> задана
+        <strong>умова істинна</strong> (тобто приймає значення
+        <code><strong>true</strong></code
+        >).
+      </p>
+      <p>
+        Загальний синтаксис інструкції <code><strong>if</strong></code> виглядає
+        так:
       </p>
       <div class="ql-syntax-block">
         <pre
-          class="ql-syntax hljs language-arcade"
+          class="ql-syntax ql-block-style-code hljs language-mel"
           spellcheck="false"
           data-highlighted="yes"
-        ><code class="hljs-keyword">if</code> (<span class="hljs-params">умова</span>) {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо умова істинна</span>
+        ><span class="hljs-keyword">if</span> (<span class="hljs-keyword">condition</span>) {
+  <span class="hljs-comment">// код, який виконується, якщо умова (condition) істинна</span>
 }</pre>
         <button class="copy"></button>
       </div>
       <p>
-        Якщо умова в дужках істинна, то виконується блок коду всередині фігурних
-        дужок. Якщо умова хибна, то блок коду пропускається.
+        Коли інтерпретатор зустрічає інструкцію <code>if</code>, він
+        <strong>обчислює вказану умову в круглих дужках</strong>
+        <strong>(condition</strong>), перетворюючи її до логічного типу
+        (boolean).
       </p>
       <p>
-        Наприклад, якщо ми хочемо перевірити, чи число більше 10, і вивести
-        повідомлення в консоль, якщо це так:
+        Якщо умова (condition) перетворюється до <code>true</code>,
+        <strong>виконується блок коду, написаний у фігурних дужках </strong
+        ><code><strong>{}</strong></code
+        ><strong> — (statement)</strong>.
+      </p>
+      <p>
+        Якщо умова (condition) перетворюється до <code>false</code>, блок коду
+        не виконається і продовжиться виконання програми, що іде після
+        інструкції <code>if</code>.
+      </p>
+      <img
+        src="../js/images/39722949-7466-43b5-b90e-6b6723588545Frame 48583 (1).jpg"
+        alt=""
+      />
+      <p>
+        У наведених нижче прикладах код перевіряє значення змінної
+        <code>subscription</code> і залежно від нього встановлює значення
+        змінної <code>price</code>.
+      </p>
+      <p>
+        Якщо умова перетворюється до <code>true</code>, тобто
+        <code>subscription</code> — це <code>"pro"</code>,
+        <code>price</code> встановлюється <code>100</code>.
       </p>
       <div class="ql-syntax-block">
         <pre
-          class="ql-syntax hljs language-arcade"
+          class="ql-syntax ql-block-style-code hljs language-abnf"
           spellcheck="false"
           data-highlighted="yes"
-        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">15</span>;
-<span class="hljs-keyword">if</span> (number > <span class="hljs-number">10</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is greater than 10'</span>);  
-  <span class="hljs-comment">// "Number is greater than 10"</span>
-}</pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
-        "Number is greater than 10". Якщо ж число менше або дорівнює 10, то блок
-        коду не виконується, і повідомлення не виводиться.
-      </p>
-      <p>
-        Якщо потрібно виконати блок коду, коли умова хибна, можна
-        використовувати конструкцію <code>else</code>.
-      </p>
-      <strong class="ql-size-large">else</strong>
-      <p>
-        Конструкція <code>else</code> дозволяє виконати блок коду, якщо умова
-        хибна. Синтаксис виглядає так:
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">if</span> (<span class="hljs-params">умова</span>) {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо умова істинна</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо умова хибна</span>
-}</pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Якщо умова в дужках істинна, то виконується блок коду всередині перших
-        фігурних дужок. Якщо ж умова хибна, то виконується блок коду всередині
-        другого блоку фігурних дужок.
-      </p>
-      <p>
-        Наприклад, якщо ми хочемо перевірити, чи число більше 10, і вивести
-        повідомлення в консоль, якщо це так, а якщо ні — вивести інше
-        повідомлення:
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">5</span>;
-<span class="hljs-keyword">if</span> (number > <span class="hljs-number">10</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is greater than 10'</span>);
-} <span class="hljs-keyword">else</span> { 
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is less than or equal to 10'</span>);
-  <span class="hljs-comment">// "Number is less than or equal to 10"</span>
-}</pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
-        "Number is greater than 10". Якщо ж число менше або дорівнює 10, то
-        виконується блок коду після <code>else</code>, і виводиться повідомлення
-        "Number is less than or equal to 10".
-      </p>
-      <p>
-        Якщо потрібно перевірити кілька умов, можна використовувати конструкцію
-        <code>else if</code>.
-      </p>
-      <strong class="ql-size-large">else if</strong>
-      <p>
-        Конструкція <code>else if</code> дозволяє перевірити додаткові умови,
-        якщо попередня умова не істинна. Синтаксис виглядає так:
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">if</span> (<span class="hljs-params">умова1</span>) {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо умова1 істинна</span>
-} <span class="hljs-keyword">else if</span> (<span class="hljs-params">умова2</span>) {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо умова2 істинна</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// Блок коду, який виконується, якщо жодна з умов не істинна</span>
-}</pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Якщо перша умова в дужках істинна, то виконується блок коду всередині
-        перших фігурних дужок. Якщо ж вона хибна, то перевіряється друга умова,
-        і якщо вона істинна, то виконується блок коду всередині другого блоку
-        фігурних дужок. Якщо жодна з умов не істинна, то виконується блок коду
-        після <code>else</code>.
-      </p>
-      <p>
-        Наприклад, якщо ми хочемо перевірити, чи число більше 10, менше 5 або
-        знаходиться в діапазоні від 5 до 10, і вивести відповідне повідомлення:
-      </p>
-      <div class="ql-syntax-block">
-  <pre class="ql-syntax hljs language-arcade" spellcheck="false" data-highlighted="yes">
-<span class="hljs-keyword">const</span> number = <span class="hljs-number">7</span>;
-<span class="hljs-keyword">if</span> (number &gt; <span class="hljs-number">10</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is greater than 10');
-} <span class="hljs-keyword">else if</span> (number &lt; <span class="hljs-number">5</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is less than 5');
-} <span class="hljs-keyword">else if</span> (number &gt;= <span class="hljs-number">5</span> &amp;&amp; number &lt;= <span class="hljs-number">10</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is between 5 and 10');
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>('Number is something else');
+        >let price <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+const subscription <span class="hljs-operator">=</span> <span class="hljs-string">"pro"</span><span class="hljs-comment">;</span>
+
+if (subscription <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-string">"pro"</span>) {
+  price <span class="hljs-operator">=</span> <span class="hljs-number">100</span><span class="hljs-comment">;</span>
 }
-  </pre>
-  <button class="copy"></button>
-</div>
+
+console.log(price)<span class="hljs-comment">; // 100</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова перетворюється до <code>false</code>, код у фігурних дужках
+        не буде виконуватися і <code>price</code> залишиться рівним
+        <code>0</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let price <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+const subscription <span class="hljs-operator">=</span> <span class="hljs-string">"free"</span><span class="hljs-comment">;</span>
+
+if (subscription <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-string">"pro"</span>) {
+  price <span class="hljs-operator">=</span> <span class="hljs-number">100</span><span class="hljs-comment">;</span>
+}
+
+console.log(price)<span class="hljs-comment">; // 0</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Напишемо функцію яка отримує обраний тарифний план у параметрі
+        <code>subscription</code> та повертає його вартість.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >function getPrice(subscription) {
+  let price <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+	
+  if (subscription <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-string">"pro"</span>) {
+	price <span class="hljs-operator">=</span> <span class="hljs-number">100</span><span class="hljs-comment">;</span>
+  }
+	
+  return price<span class="hljs-comment">;</span>
+}
+
+console.log(getPrice(<span class="hljs-string">"free"</span>))<span class="hljs-comment">; // 0	</span>
+console.log(getPrice(<span class="hljs-string">"pro"</span>))<span class="hljs-comment">; // 100	</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Функція <code>getPrice</code> працює так:</p>
+      <p>
+        <strong>1) Приймає параметр</strong> <code>subscription</code> – рядок,
+        який вказує тип підписки (наприклад, <code>"pro"</code> або
+        <code>"free"</code>).
+      </p>
+      <p>
+        <strong>2) Оголошує змінну</strong> <code>price</code> і встановлює її
+        значення в <code>0</code> за замовчуванням.
+      </p>
+      <p><strong>3) Перевіряє умову</strong>:</p>
+      <ul class="ul">
+        <li>
+          Якщо <code>subscription === "pro"</code>, то змінній
+          <code>price</code> присвоюється значення <code>100</code>.
+        </li>
+        <li>
+          Якщо <code>subscription</code> не <code>"pro"</code>, нічого не
+          змінюється, і <code>price</code> залишається <code>0</code>.
+        </li>
+      </ul>
+      <p>
+        <strong>4) Повертає значення </strong
+        ><code><strong>price</strong></code> після перевірки.
+      </p>
+      <p><strong>Покрокове виконання:</strong></p>
+      <p>Виклик <code>getSubscriptionPrice("free")</code>:</p>
+      <ul class="ul">
+        <li><code>subscription = "free"</code></li>
+        <li><code>price = 0</code> (початкове значення)</li>
+        <li>
+          <code>if (subscription === "pro")</code> → <strong>false</strong>,
+          тому код всередині <code>if</code> не виконується.
+        </li>
+        <li><code>return price</code> → повертається <code>0</code>.</li>
+      </ul>
+      <p>Виклик <code>getSubscriptionPrice("pro")</code>:</p>
+      <ul class="ul">
+        <li><code>subscription = "pro"</code></li>
+        <li><code>price = 0</code> (початкове значення)</li>
+        <li>
+          <code>if (subscription === "pro")</code> → <strong>true</strong>, тому
+          <code>price = 100</code>.
+        </li>
+        <li><code>return price</code> → повертається <code>100</code>.</li>
+      </ul>
 
       <p>
-        Якщо умова <code>number > 10</code> істинна, то виводиться повідомлення
-        "Number is greater than 10". Якщо ж число менше 5, то виводиться
-        повідомлення "Number is less than 5". Якщо число знаходиться в діапазоні
-        від 5 до 10, то виводиться повідомлення "Number is between 5 and 10".
-        Якщо жодна з умов не істинна, то виконується блок коду після
-        <code>else</code>, і виводиться повідомлення "Number is something else".
+        <strong class="ql-size-large">Інструкція </strong
+        ><code class="ql-size-large"><strong>if...else</strong></code>
       </p>
       <p>
-        Якщо потрібно перевірити більше умов, можна використовувати кілька
-        конструкцій <code>else if</code>.
-      </p>
-      <p>
-        Наприклад, якщо ми хочемо перевірити, чи число є парним або непарним, і
-        вивести відповідне повідомлення:
+        Синтаксис інструкції <code>if</code> можна доповнити блоком
+        <code>else</code> для визначення альтернативних варіантів виконання
+        коду.
       </p>
       <div class="ql-syntax-block">
         <pre
-          class="ql-syntax hljs language-arcade"
+          class="ql-syntax ql-block-style-code hljs language-mel"
           spellcheck="false"
           data-highlighted="yes"
-        ><span class="hljs-keyword">const</span> number = <span class="hljs-number">8</span>;
-<span class="hljs-keyword">if</span> (number % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is even'</span>);
+        ><span class="hljs-keyword">if</span> (<span class="hljs-keyword">condition</span>) {
+  <span class="hljs-comment">// код, який виконується, якщо умова істинна</span>
 } <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Number is odd'</span>);
+  <span class="hljs-comment">// код, який виконується, якщо умова хибна</span>
 }</pre>
         <button class="copy"></button>
       </div>
       <p>
-        Якщо умова <code>number % 2 === 0</code> істинна, то виводиться
-        повідомлення "Number is even". Якщо ж умова хибна, то виконується блок
-        коду після <code>else</code>, і виводиться повідомлення "Number is odd".
+        Якщо умова (condition) перетворюється до <code>true</code>, то
+        виконається код блоку <code>if</code> (if block statements).
       </p>
       <p>
-        Якщо потрібно перевірити більше умов, можна використовувати кілька
-        конструкцій <code>else if</code>.
+        Якщо умова (condition) перетворюється до <code>false</code>, то
+        виконається код блоку <code>else</code> (else block statements).
+      </p>
+      <img
+        src="../js/images/3b1ab92c-b3b9-45f4-9c0e-bc371015eaccFrame 48584.jpg"
+        alt=""
+      />
+      <p>
+        У наступному прикладі умова перетворюється до <code>true</code>, тому
+        виконується код у тілі (фігурних дужках) блоку <code>if</code>, а тіло
+        блоку <code>else</code> ігнорується.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const grade <span class="hljs-operator">=</span> <span class="hljs-number">85</span><span class="hljs-comment">;</span>
+
+if (grade &gt;<span class="hljs-operator">=</span> <span class="hljs-number">70</span>) {
+  console.log(<span class="hljs-string">"Satisfactory"</span>)<span class="hljs-comment">;</span>
+} else {
+  console.log(<span class="hljs-string">"Unsatisfactory"</span>)<span class="hljs-comment">;</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо умова перетворюється до <code>false</code>, код із тіла блоку
+        <code>if</code> буде пропущений, і виконається код із тіла блоку
+        <code>else</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const grade <span class="hljs-operator">=</span> <span class="hljs-number">40</span><span class="hljs-comment">;</span>
+
+if (grade &gt;<span class="hljs-operator">=</span> <span class="hljs-number">70</span>) {
+  console.log(<span class="hljs-string">"Satisfactory"</span>)<span class="hljs-comment">;</span>
+} else {
+  console.log(<span class="hljs-string">"Unsatisfactory"</span>)<span class="hljs-comment">;</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Створимо функцію яка отримує бал студента, та повертає рішення про
+        результат.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">checkGrade</span>(<span class="hljs-params">grade</span>) {
+  <span class="hljs-keyword">if</span> (grade &gt;= <span class="hljs-number">70</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Satisfactory"</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Unsatisfactory"</span>;
+  }
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(checkGrade(<span class="hljs-number">40</span>)); <span class="hljs-comment">// Unsatisfactory</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(checkGrade(<span class="hljs-number">75</span>)); <span class="hljs-comment">// Satisfactory</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Функція <code>checkGrade</code> працює так:</p>
+      <p>
+        1) Вона приймає один параметр – <code>grade</code>, який містить числове
+        значення (оцінку студента).
       </p>
       <p>
-        Конструкція <code>switch</code> дозволяє виконувати різні блоки коду
-        залежно від значення виразу. Синтаксис виглядає так:
+        2) Використовує <code>if...else</code>, щоб перевірити, чи
+        <code>grade</code> <strong>більше або дорівнює 70</strong>:
+      </p>
+      <ul class="ul">
+        <li>
+          Якщо <strong>true</strong>, повертає <code>"Satisfactory"</code>.
+        </li>
+        <li>
+          Якщо <strong>false</strong>, повертає <code>"Unsatisfactory"</code>.
+        </li>
+      </ul>
+      <p>3) Виклик <code>console.log(checkGrade(40))</code>:</p>
+      <ul class="ul">
+        <li>
+          Оскільки <code>40 &lt; 70</code>, виконується <code>else</code>, тому
+          повертається <code>"Unsatisfactory"</code>.
+        </li>
+      </ul>
+      <p>4) Виклик <code>console.log(checkGrade(75))</code>:</p>
+      <ul class="ul">
+        <li>
+          Оскільки <code>75 &gt;= 70</code>, виконується <code>if</code>, тому
+          повертається <code>"Satisfactory"</code>.
+        </li>
+      </ul>
+      <p><strong>Приклад покрокового виконання:</strong></p>
+      <p>Для виклику <code>checkGrade(40)</code> :</p>
+      <ul class="ul">
+        <li><code>grade = 40</code></li>
+        <li><code>40 &gt;= 70</code> → <strong>false</strong></li>
+        <li>Виконується <code>else</code></li>
+        <li>Повертає <code>"Unsatisfactory"</code></li>
+      </ul>
+      <p>Для виклику <code>checkGrade(75)</code> :</p>
+      <ul class="ul">
+        <li><code>grade = 75</code></li>
+        <li><code>75 &gt;= 70</code> → <strong>true</strong></li>
+        <li>Виконується <code>if</code></li>
+        <li>Повертає <code>"Satisfactory"</code></li>
+      </ul>
+
+      <strong class="ql-size-large">Блок&nbsp;else...if</strong>
+      <p>
+        Конструкція <code>else...if</code> розширює конструкцію
+        <code>if...else</code> і дозволяє перевірити та зреагувати на виконання
+        або невиконання кількох умов. Це корисно, коли ми маємо більше однієї
+        умови.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-aspectj"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">if</span> (condition_1) {
+  <span class="hljs-comment">// код, який виконується, якщо умова (condition_1) істинна</span>
+} <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(condition_2)</span> </span>{
+  <span class="hljs-comment">// код, який виконується, якщо умова (condition_2) істинна</span>
+} <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span> <span class="hljs-params">(condition_3)</span> </span>{
+  <span class="hljs-comment">// код, який виконується, якщо умова (condition_3) істинна</span>
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-comment">// код, який виконується, якщо всі умови хибні</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Кожна умова послідовно перевіряється зверху вниз.</p>
+      <p>
+        Якщо умова <code>condition_1</code> <strong>істинна</strong>,
+        виконується відповідний блок коду, і перевірка завершується.
+      </p>
+      <p>
+        Якщо умова <code>condition_1</code> <strong>хибна</strong>, то
+        перевіряється умова_2 і далі.
+      </p>
+      <p>
+        Код у блоці <code>else</code> буде виконаний тільки у випадку, якщо
+        <strong>жодна з умов</strong> у блоках <code>if</code> та
+        <code>else</code> <code>if</code> не є істинною.
+      </p>
+      <p>
+        Перевірка зупиняється, щойно програма знаходить першу умову, яка
+        задовільняється. При цьому виконується тільки тіло відповідного блоку
+        <code>if</code> або <code>else if</code>. Тому ланцюжок умов слід читати
+        як: «Шукаю першу умову, що виконується, та ігнорую все інше».
+      </p>
+      <p>Візуально це можна представити на схемі нижче:</p>
+      <img
+        src="../js/images/9f84cdd9-ab89-4ac2-b1f8-d9965b7e03abFrame 48585 (1).jpg"
+        alt=""
+      />
+      <p>
+        У цьому прикладі спочатку перевіряється умова
+        <code>grade &gt;= 90</code>.
       </p>
       <div class="ql-syntax-block">
         <pre
           class="ql-syntax hljs language-arcade"
           spellcheck="false"
           data-highlighted="yes"
-        ><span class="hljs-keyword">switch</span> (<span class="hljs-params">вираз</span>) {
-  <span class="hljs-keyword">case</span> <span class="hljs-params">значення1</span>:
-    <span class="hljs-comment">// Блок коду, який виконується, якщо вираз дорівнює значення1</span>
-    <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-params">значення2</span>:
-    <span class="hljs-comment">// Блок коду, який виконується, якщо вираз дорівнює значення2</span>
-    <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">default</span>:
-    <span class="hljs-comment">// Блок коду, який виконується, якщо жодне з значень не збігається</span>
+        >const grade = <span class="hljs-number">85</span>;
+
+<span class="hljs-keyword">if</span> (grade &gt;= <span class="hljs-number">90</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Perfectly"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (grade &gt;= <span class="hljs-number">80</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Good"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (grade &gt;= <span class="hljs-number">70</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Satisfactorily"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Unsatisfactorily"</span>);
 }</pre>
         <button class="copy"></button>
       </div>
       <p>
-        Якщо вираз у дужках дорівнює значенню в першому <code>case</code>, то
-        виконується блок коду всередині цього <code>case</code>. Після виконання
-        блоку коду виконується оператор <code>break</code>, який припиняє
-        виконання конструкції <code>switch</code>. Якщо вираз не збігається з
-        жодним з <code>case</code>, то виконується блок коду після
-        <code>default</code>.
+        Оскільки перша умова (<code>grade &gt;=</code> <code>90</code>)
+        помилкова, то тіло <code>if</code> не виконується і перевіряється
+        наступна умова (<code>grade &gt;= 80</code>). Ця умова є істинною, тому
+        виконується тіло <code>else if</code>, тобто
+        <code>console.log("Good")</code>. Подальші умови вже перевірятись не
+        будуть.
+      </p>
+
+      <strong class="ql-size-large">Тернарний оператор</strong>
+      <p>
+        Тернарний оператор — це коротша синтаксична заміна інструкції
+        <code>if...else</code>. Тернарний оператор дозволяє виконувати певну
+        частину коду залежно від умови.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-ada"
+          spellcheck="false"
+          data-highlighted="yes"
+        >&lt;condition&gt; ? &lt;expression <span class="hljs-keyword">if</span> condition <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>&gt; : &lt;<span class="hljs-type">expression</span> <span class="hljs-keyword">if</span> condition <span class="hljs-keyword">is</span> <span class="hljs-literal">false</span>&gt;</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Він працює таким чином:</p>
+      <ul class="ul">
+        <li>обчислюється умова <code>condition</code>;</li>
+        <li>
+          якщо умова істинна (перетворюється до <code>true</code>), обчислюється
+          вираз після <code>?</code>;
+        </li>
+        <li>
+          якщо умова хибна (перетворюється до <code>false</code>), обчислюється
+          вираз після <code>:</code>;
+        </li>
+        <li>
+          значення обчисленого виразу повертається як результат роботи
+          тернарного оператора.
+        </li>
+      </ul>
+      <p>
+        Завдяки тому, що тернарний оператор повертає значення обчисленого виразу
+        , його можна застосовувати для задавання різних значень для однієї
+        змінної залежно від умови. Ось приклад, як би це виглядало з
+        використанням інструкції <code>if...else</code>
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-typescript"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">let</span> <span class="hljs-keyword">type</span>;
+<span class="hljs-keyword">const</span> age = <span class="hljs-number">20</span>;
+
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+  <span class="hljs-keyword">type</span> = <span class="hljs-string">'adult'</span>;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">type</span> = <span class="hljs-string">'child'</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">type</span>); <span class="hljs-comment">// 'adult'</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Той самий код можна переписати з використанням тернарного оператора:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-typescript"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> age = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">type</span> = age &gt;= <span class="hljs-number">18</span> ? <span class="hljs-string">'adult'</span> : <span class="hljs-string">'child'</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">type</span>); <span class="hljs-comment">// 'adult'</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Другий приклад: знаходження більшого числа із двох з використанням
+        інструкції <code>if...else</code>:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const a <span class="hljs-operator">=</span> <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+const b <span class="hljs-operator">=</span> <span class="hljs-number">10</span><span class="hljs-comment">;</span>
+let biggerNumber<span class="hljs-comment">;</span>
+
+if (a &gt; b) {
+  biggerNumber <span class="hljs-operator">=</span> a<span class="hljs-comment">;</span>
+} else {
+  biggerNumber <span class="hljs-operator">=</span> b<span class="hljs-comment">;</span>
+}
+
+console.log(biggerNumber)<span class="hljs-comment">; // 10</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Використовуючи тернарний оператор, код вище можна спростити:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-cpp"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-type">const</span> a = <span class="hljs-number">5</span>;
+<span class="hljs-type">const</span> b = <span class="hljs-number">10</span>;
+<span class="hljs-type">const</span> biggerNumber = a &gt; b ? a : b;
+
+console.<span class="hljs-built_in">log</span>(biggerNumber); <span class="hljs-comment">// 10</span></pre>
+        <button class="copy"></button>
+      </div>
+      <pre
+        class="ql-blockquote"
+        spellcheck="false"
+      >Тернарний оператор рекомендується<strong> використовувати у найпростіших випадках операції присвоєння чи повернення</strong>. 
+Однак <strong>не рекомендується</strong> використовувати його <strong>для складних розгалужень</strong>, оскільки це може ускладнити читання та розуміння коду.
+</pre>
+      <p>Ось приклад з фукнцією яка порівнює два числа.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">getBiggerNumber</span>(<span class="hljs-params">a, b</span>) {
+  <span class="hljs-keyword">return</span> a &gt; b ? a : b;
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getBiggerNumber(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>)); <span class="hljs-comment">// 10</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getBiggerNumber(<span class="hljs-number">20</span>, <span class="hljs-number">15</span>)); <span class="hljs-comment">// 20</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getBiggerNumber(<span class="hljs-number">7</span>, <span class="hljs-number">7</span>)); <span class="hljs-comment">// 7</span></pre>
+        <button class="copy"></button>
+      </div>
+      <p>Як працює ця функція:</p>
+      <p>
+        <strong>1) Приймає два параметри</strong> – <code>a</code> і
+        <code>b</code>.
       </p>
       <p>
-        Наприклад, якщо ми хочемо перевірити, чи день тижня є понеділком,
-        вівторком або іншим днем, і вивести відповідне повідомлення:
+        <strong>2) Використовує тернарний оператор (</strong
+        ><code><strong>? :</strong></code
+        ><strong>)</strong>, який працює так:
+      </p>
+      <ul class="ul">
+        <li><strong>Умова:</strong> <code>a &gt; b</code></li>
+        <li>Якщо <strong>true</strong> → повертає <code>a</code></li>
+        <li>Якщо <strong>false</strong> → повертає <code>b</code></li>
+      </ul>
+      <p><strong>3) Повертає більший із двох чисел</strong>.</p>
+      <p>Покрокове виконання:</p>
+      <ul class="ul">
+        <li>
+          Виклик <code>getBiggerNumber(5, 10)</code>: <code>5 &gt; 10</code> →
+          <strong>false</strong>, повертається <code>b = 10</code>.
+        </li>
+        <li>
+          Виклик <code>getBiggerNumber(20, 15)</code>: <code>20 &gt; 15</code> →
+          <strong>true</strong>, повертається <code>a = 20</code>.
+        </li>
+        <li>
+          Виклик <code>getBiggerNumber(7, 7)</code>: <code>7 &gt; 7</code> →
+          <strong>false</strong>, повертається <code>b = 7</code> (немає
+          різниці, що повертати, бо числа рівні).
+        </li>
+      </ul>
+      <p>
+        <strong class="ql-size-large">Оператор </strong
+        ><code class="ql-size-large"><strong>switch</strong></code>
+      </p>
+      <p>
+        Оператор <code>switch</code> дозволяє виконувати різні дії залежно від
+        значення виразу. Використання <code>switch</code> є більш компактним і
+        зручним способом для порівняння виразів з кількома варіантами, ніж
+        інструкції <code>if...else</code> та <code>else...if</code>.
+      </p>
+      <p>Ось загальний синтаксис оператора <code>switch</code>:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-mel"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">switch</span> (<span class="hljs-keyword">expression</span>) {
+  <span class="hljs-keyword">case</span> value1:
+    <span class="hljs-comment">// код, що виконується, якщо вираз (expression) дорівнює value1</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> value2:
+    <span class="hljs-comment">// код, що виконується, якщо вираз (expression) дорівнює value2</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-comment">// код, що виконується, якщо вираз (expression) не відповідає жодному значенню</span>
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Як це працює:</p>
+      <ol class="ol">
+        <li>
+          Вираз (expression) в операторі <code>switch</code> обчислюється.
+        </li>
+        <li>
+          Значення виразу порівнюється з кожним блоком <code>case</code> зверху
+          вниз.
+        </li>
+        <li>
+          Якщо значення виразу відповідає значенню в блоці <code>case</code>,
+          виконується код цього блоку.
+        </li>
+        <li>
+          Коли виконання коду блоку <code>case</code> завершено, необхідно
+          використовувати оператор <code>break</code>, щоб вийти зі
+          <code>switch</code>. Це запобігає виконанню коду в наступних блоках
+          <code>case</code>.
+        </li>
+        <li>
+          Якщо жодне значення не відповідає виразу, виконається код у блоці
+          <code>default</code> (якщо він є).
+        </li>
+      </ol>
+      <pre class="ql-blockquote" spellcheck="false">
+За наявності блоку default його слід розташовувати останнім у блоці коду з оператором switch.</pre
+      >
+      <img
+        src="../js/images/8b769e23-832a-429a-ad7c-4d27659206e2Frame 48586.jpg"
+        alt=""
+      />
+      <p>Приклад використання оператора <code>switch</code>:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const fruit = <span class="hljs-string">'apple'</span>;
+
+<span class="hljs-keyword">switch</span> (fruit) {
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'apple'</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Apple selected'</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'banana'</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Banana selected'</span>);
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'orange'</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Orange selected'</span>);
+    <span class="hljs-keyword">break</span>;
+  default:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'The fruit is unknown'</span>);
+}</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У цьому прикладі виразом є значення змінної <code>fruit</code>, яке
+        порівнюється з різними значеннями блоків <code>case</code>. Якщо
+        значення <code>fruit</code> відповідає одному з них, буде виведено
+        відповідне повідомлення. Якщо жоден блок <code>case</code> не підійде,
+        буде виконано код у блоці <code>default</code>.
+      </p>
+      <ul class="ul">
+        <li>
+          Із прикладу видно, що застосування&nbsp;<code>switch</code> обмежене
+          завданнями з одним загальним питанням (що порівнювати) та безліччю
+          варіантів відповідей (з чим порівнювати).
+        </li>
+        <li>
+          Вираз у блоці&nbsp;<code>switch</code> — вираз будь-якого типу (змінна
+          чи складні обчислення), результат якого послідовно зверху вниз, суворо
+          порівнюється (<code>===</code>) з усіма значеннями в
+          блоках&nbsp;<code>case</code>. Тобто не можна порівняти на більше чи
+          менше, лише на сувору рівність.
+        </li>
+        <li>
+          Оператор <code>break</code> додається наприкінці кожного блоку
+          <code>case</code>. Функція оператора <code>break</code> — перервати
+          подальші перевірки й відразу перейти до коду, що йде після
+          <code>switch</code>, щойно виконався якийсь із блоків
+          <code>case</code>.
+        </li>
+        <li>
+          Якщо жодного збігу значень не відбулося, необхідно виконати код за
+          замовчуванням. Для цього в кінці після всіх блоків
+          <code>case</code> додається блок <code>default</code>.
+        </li>
+        <li>
+          Оператор <code>break</code> після блоку <code>default</code> не
+          потрібен, тому що це і так останнє, що буде виконано у
+          <code>switch</code> і управління буде передано коду за ним.
+        </li>
+      </ul>
+      <p>
+        <strong class="ql-size-large">Оператор </strong
+        ><code class="ql-size-large"><strong>break</strong></code>
+      </p>
+      <p>
+        Після виконання коду в одному з випадків потрібно використовувати
+        оператор <code>break</code>, щоб вийти з оператора <code>switch</code>.
+      </p>
+      <p>
+        Якщо <code>break</code> не вказано, виконання коду продовжиться в
+        наступному <code>case</code> і далі. Така поведінка називається
+        "провалюванням" (fall-through). Якщо потрібно, щоб кілька блоків
+        <code>case</code> виконували той самий код, можна опустити оператор
+        <code>break</code> між ними.
       </p>
       <div class="ql-syntax-block">
         <pre
           class="ql-syntax hljs language-arcade"
           spellcheck="false"
           data-highlighted="yes"
-        ><span class="hljs-keyword">const</span> day = <span class="hljs-string">'Monday'</span>;
-<span class="hljs-keyword">switch</span> (day) {
-  <span class="hljs-keyword">case</span> <span class="hljs-string">'Monday'</span>:
-    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is Monday'</span>);
+        >const <span class="hljs-built_in">day</span> = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">switch</span> (<span class="hljs-built_in">day</span>) {
+  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'This is a working day'</span>);
     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-string">'Tuesday'</span>:
-    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is Tuesday'</span>);
+  <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+  <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'It is a day off'</span>);
     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">default</span>:
-    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Today is another day'</span>);
+  default:
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Invalid'</span>);
 }</pre>
         <button class="copy"></button>
       </div>
+      <p>
+        У цьому прикладі кілька блоків (<code>case 1</code>,
+        <code>case 2</code>, <code>case 3</code>, <code>case 4</code>,
+        <code>case 5</code>) провалюються і у випадку їх рівності виразу
+        виконається один і той самий код, тому що між ними немає операторів
+        <code>break</code>.
+      </p>
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large"
+            >Пам’ятка під час використання розгалужень</strong
+          >
+        </p>
+        <p>
+          Наразі тобі знайомі кілька способів, як зробити розгалуження. Під час
+          вибору слід пам’ятати:
+        </p>
+        <ul class="ul">
+          <li>
+            <strong>Інструкція</strong> <code>if</code> є універсальною.
+            Інструкції <code>if…else</code> і
+            <code>else…if</code> використовуються, коли потрібно прописати
+            декілька умов. Отже, ці інструкції зазвичай довші, ніж інші способи
+            розгалужень.
+          </li>
+          <li>
+            <strong>Тернарний оператор</strong> краще використовувати для
+            присвоєння або повернення значення з тіла функції. В умові
+            тернарного оператора може бути все що завгодно: перевірка рівності /
+            нерівності, на більше / менше, просто перевірка на будь чого.
+          </li>
+        </ul>
+        <pre class="ql-blockquote" spellcheck="false">
+Пам’ятай про обмеження: у нього має бути рівно 2 сценарії, не більше.</pre
+        >
+        <ul>
+          <li>
+            <strong>Оператор</strong> <code>switch</code> перевіряє тільки на
+            сувору рівність.
+          </li>
+        </ul>
+        <pre class="ql-blockquote" spellcheck="false">
+Використовуючи оператор <code>switch</code>, завжди: 
+— пам’ятай про оператор break;
+— використовуй тільки 1 default, він завжди має бути останнім.</pre
+        >
+      </div>
+
+      <strong class="ql-size-large">Блокова область видимості</strong>
+      <p>
+        У JavaScript блокова область видимості визначає, де змінні можуть бути
+        доступні. Змінні, оголошені в блоці (наприклад, у фігурних дужках
+        <code>{}</code>), доступні лише всередині цього блоку.
+      </p>
+      <p>
+        Область видимості визначає, чи будуть змінні та функції доступними в
+        певних областях коду. Під час оголошення змінної або функції, вона стає
+        "видимою" тільки в певній частині коду. Це впливає на те, де і як можна
+        використовувати ці змінні та функції в коді.
+      </p>
+      <p>
+        Змінні або функції, які оголошені поза будь-якими блоками коду — тобто в
+        глобальній області видимості — будуть доступні в будь-якій частині коду.
+        Вони є <strong>глобальними змінними</strong>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-comment">// Глобальна змінна</span>
+const value = <span class="hljs-string">"I'm a global variable"</span>;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+	<span class="hljs-comment">// Можна звернутися до глобальної змінної</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// "I'm a global variable"</span>
+}
+
+<span class="hljs-comment">// Можна звернутися до глобальної змінної</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// "I'm a global variable"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Змінна <code>value</code> оголошена в глобальній області видимості,
+        тобто поза будь-яким блоком коду, у нашому випадку поза тілом інструкції
+        <code>if</code>. Вона буде доступна в будь-якому місці після оголошення.
+      </p>
+      <p>
+        Будь-яка конструкція, що використовує фігурні дужки
+        <code>{}</code> (умови, функції, цикли тощо) створює нову локальну
+        блочну область видимості. Змінні, оголошені в цій області видимості,
+        можуть бути використані тільки всередині цього блоку коду. Це
+        <strong>локальні змінні</strong>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  <span class="hljs-comment">// Локальна змінна</span>
+	const value = <span class="hljs-string">"I'm a local variable"</span>;
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// "I'm a local variable"</span>
+}
+
+<span class="hljs-comment">// Помилка: локальну змінну не видно за межами блоку</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(value); <span class="hljs-comment">// ReferenceError: value is not defined</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Змінна&nbsp;<code>value</code>&nbsp;оголошена в тілі інструкції
+        <code>if</code>, тобто в локальній області видимості, обмеженій тілом
+        блоку <code>if</code>. Ця змінна буде доступна лише всередині блоку
+        <code>if</code>, і спроба звернення до неї поза блоком
+        <code>if</code> викликає помилку.
+      </p>
+      <p>Розберемо приклад вкладених областей видимості на ілюстрації.</p>
+      <p>
+        Є глобальна область видимості, називатимемо її <code>Global</code>.
+        Також існують три блокові області видимості <code>A</code>,
+        <code>B</code> і <code>C</code>, що утворені, наприклад, інструкціями
+        <code>if</code>.
+      </p>
+      <img
+        src="../js/images/1a13655a-f84e-4561-b73b-19e0fde08a7dFrame 48587 (1).jpg"
+        alt=""
+      />
+      <p>
+        Змінні, оголошені в глобальній області видимості, доступні в усіх
+        вкладених областях видимості. Тобто змінна <code>Global</code> буде
+        доступна в областях <code>A</code>, <code>B</code> і <code>C</code>.
+      </p>
+      <p>
+        Глибина вкладеності областей видимості не обмежена, і всі вони працюють
+        за певним принципом.
+      </p>
+      <p>
+        Область видимості <strong>має доступ</strong> до змінних, що оголошені:
+      </p>
+      <ol class="ol">
+        <li>у цій області видимості;</li>
+        <li>у вищій за ієрархією області видимості.</li>
+      </ol>
+      <p>
+        Область видимості <strong>не має доступу</strong> до змінних, що
+        оголошені у вкладених областях видимості.
+      </p>
+      <ul class="ul">
+        <li>
+          Код у блоці <code>A</code> має доступ до змінних, оголошених у
+          <code>Global</code>, але не має доступу до змінних, оголошених у
+          блоках <code>B</code> і <code>C</code>.
+        </li>
+        <li>
+          Код у блоці <code>B</code> має доступ до змінних, оголошених у
+          <code>Global</code> і в блоці <code>A</code>, але не має доступу до
+          змінних, оголошених у блоці <code><strong>C</strong></code
+          >.
+        </li>
+        <li>
+          Код у блоці <code>C</code> має доступ до змінних, оголошених у
+          <code>Global</code>, але не має доступу до змінних, оголошених у
+          блоках <code>A</code> і <code>B</code>.
+        </li>
+      </ul>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const globalVar = <span class="hljs-string">"Global"</span>;
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVar); <span class="hljs-comment">// Доступ до globalVar з глобальної області видимості</span>
+<span class="hljs-comment">// Немає доступу до aVar, bVar і cVar</span>
+
+<span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>) {
+	const aVar = <span class="hljs-string">"A"</span>;
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVar); <span class="hljs-comment">// Доступ до globalVariable з блоку A</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(aVar); <span class="hljs-comment">// Доступ до aVar з блоку A</span>
+	<span class="hljs-comment">// Немає доступу до bVar і cVar</span>
+
+	<span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>) {
+		const bVar = <span class="hljs-string">"B"</span>;
+		<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVar); <span class="hljs-comment">// Доступ до globalVariable з блоку B</span>
+	  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(aVar); <span class="hljs-comment">// Доступ до aVar з блоку B</span>
+	  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(bVar); <span class="hljs-comment">// Доступ до bVar з блоку B</span>
+		<span class="hljs-comment">// Немає доступу до cVar</span>
+	}
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVar); <span class="hljs-comment">// Доступ до globalVar із глобальної області видимості</span>
+<span class="hljs-comment">// Немає доступу до aVar, bVar і cVar</span>
+
+<span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>) {
+	const cVar = <span class="hljs-string">"C"</span>;
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVariable); <span class="hljs-comment">// Доступ до globalVar з блоку C</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cVar); <span class="hljs-comment">// Доступ до cVar з блоку C</span>
+	<span class="hljs-comment">// Немає доступу до aVar і bVar</span>
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(globalVar); <span class="hljs-comment">// Доступ до globalVar із глобальної області видимості</span>
+<span class="hljs-comment">// Немає доступу до aVar, bVar і cVar</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+    </section>
+    <!--LЛогічні оператори-->
+    <section>
+      <h2 id="logical-operators">Логічні оператори</h2>
+      <strong class="ql-size-large">Перетворення типів: логічне</strong>
+      <p>
+        Логічне перетворення типів означає приведення значення будь-якого типу
+        даних у логічне (булеве) значення <code>true</code> або
+        <code>false</code>. Існує кілька правил, які визначають, які значення
+        перетворюються на <code>true</code>, а які на <code>false</code>.
+      </p>
+      <p>Ці правила працюють:</p>
+      <ul class="ul">
+        <li>
+          як для <strong>явного </strong>перетворення типів за допомогою функції
+          <code>Boolean()</code>,
+        </li>
+        <li>
+          так і для <strong>неявного</strong> в умовних операціях, наприклад, у
+          конструкціях <code>if</code> чи логічних операторах.
+        </li>
+      </ul>
+      <p><strong>Логічні значення</strong></p>
+      <p>
+        Логічні значення <code>true</code> та <code>false</code> залишаються
+        незмінними.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">true</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">false</span>)); <span class="hljs-comment">// false</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p><strong>Числа</strong></p>
+      <p>
+        Число <code>0</code>, значення <code>NaN</code>, <code>null</code> і
+        <code>undefined</code> завжди перетворюються на <code>false</code>. Усі
+        інші числа перетворюються на <code>true</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">NaN</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">null</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">undefined</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-number">0</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-number">3.14</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-number">-10</span>)); <span class="hljs-comment">// true</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Розгляньмо ці приклади.</p>
+      <p>Який блок коду буде виконуватися?</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(null)</span></span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block if"</span>)
+} <span class="hljs-keyword">else</span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block else"</span>)
+}
+
+<span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block if"</span>)
+} <span class="hljs-keyword">else</span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block else"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Значення в умові інструкцій <code>if</code> приводиться до
+        <code>false</code> .
+      </p>
+      <p>Отже, виконується код із блоку <code>else</code>.</p>
+      <p>А в цьому прикладі який код виконується?</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span></span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block if"</span>)
+} <span class="hljs-keyword">else</span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block else"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Значення в умові інструкції <code>if</code> приводиться до
+        <code>true</code> .
+      </p>
+      <p>Отже, виконується код із блоку <code>if</code>.</p>
+
+      <p><strong>Рядки</strong></p>
+      <p>
+        Порожній рядок (<code>""</code>) приводиться до <code>false</code>.
+        Будь-які інші не пусті рядки приводяться до <code>true</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-string">""</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-string">"hello"</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(<span class="hljs-string">"false"</span>)); <span class="hljs-comment">// true</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Прочитай приклад нижче.</p>
+      <p>Код із якого блоку буде виконано?</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(<span class="hljs-string">""</span>)</span></span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block if"</span>)
+} <span class="hljs-keyword">else</span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block else"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У прикладі в умові інструкції <code>if</code> вказаний порожній рядок.
+      </p>
+      <p>
+        Порожній рядок приводиться до <code>false</code>. Отже, виконується код
+        із блоку <code>else</code>.
+      </p>
+      <p>А в цьому прикладі?</p>
+      <p>Який саме блок коду буде виконано?</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-function"><span class="hljs-title">if</span><span class="hljs-params">(<span class="hljs-string">"batman"</span>)</span></span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block if"</span>)
+} <span class="hljs-keyword">else</span> {
+	console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Block else"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>В умові інструкції — рядок <code>"batman"</code>.</p>
+      <p>
+        Отже, <code>if</code> наводиться до <code>true</code>. Виконується код
+        із блоку <code>if</code>.
+      </p>
+      <pre
+        class="ql-blockquote"
+        spellcheck="false"
+      >Запам’ятай <strong>6 випадків</strong>, які <strong>приводяться до false</strong>:
+    1. 0
+    2. ""
+    3. Nan
+    4. null
+    5. undefined
+    6. false
+</pre>
+
+      <strong class="ql-size-large">Логічне «І»</strong>
+      <p>
+        Логічні оператори використовуються для перевірки умов з кількома
+        виразами, наприклад, в інструкції <code>if</code>.
+      </p>
+      <p>
+        Оператор "І" (<code>&amp;&amp;</code>) наводить усі операнди до
+        логічного типу (<code>true</code> або <code>false</code>) і повертає
+        значення одного з них. Дозволяє перевірити, чи виконані
+        <strong>всі умови</strong> у виразі.
+      </p>
+      <img
+        src="../js/images/765fba89-6cda-41e6-921b-55d6f48aeb7eFrame 771431.jpg"
+        alt=""
+      />
+      <p>Обчислення оператора відбувається зліва направо.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-1c"
+          spellcheck="false"
+          data-highlighted="yes"
+        >expression1 <span class="hljs-meta">&amp;&amp; expression2</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Оператор “І” зліва направо перевіряє почергово обидва операнди на
+        істинність та повертає або значення останнього істинного (тільки
+        правого) операнда, або першого хибного (лівого чи правого), на якому він
+        запнувся.
+      </p>
+      <p>
+        Давай розглянемо це на простому прикладі. Уяви: якщо людина п’є каву з
+        цукром і молоком, то її не влаштує кава хоча б без одного з цих
+        компонентів. Усі компоненти є обов’язковими, інакше людина її пити не
+        буде.
+      </p>
+      <p>
+        У наступних прикладах обидва операнди перетворюються на
+        <code>true</code>. Обчислення відбуваються зліва направо, тому
+        результатом буде значення правого операнда.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"hello"</span> &amp;&amp; <span class="hljs-number">5</span>); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> &amp;&amp; <span class="hljs-string">"hello"</span>); <span class="hljs-comment">// "hello"</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"mango"</span> &amp;&amp; <span class="hljs-string">"poly"</span>); <span class="hljs-comment">// "poly"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"poly"</span> &amp;&amp; <span class="hljs-string">"mango"</span>); <span class="hljs-comment">// "mango"</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">3</span> &amp;&amp; <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-number">3</span>); <span class="hljs-comment">// 3</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        А ось у цьому прикладі один із операндів буде приведений до
+        <code>false</code>, отже, результатом буде хибний операнд.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"hello"</span> &amp;&amp; <span class="hljs-number">0</span>); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">"hello"</span>); <span class="hljs-comment">// 0</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">3</span> &amp;&amp; <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-number">3</span>); <span class="hljs-comment">// false</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">""</span>); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">""</span> &amp;&amp; <span class="hljs-number">0</span>); <span class="hljs-comment">// ""</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <ul class="ul">
+        <li>
+          У прикладі <code>“hello” &amp;&amp; 0</code> лівий операнд приводиться
+          до <code>true</code>, а правий до <code>false</code>, тому результатом
+          виразу буде значення правого операнда, який першим був приведений до
+          false, тобто <code>0</code>.
+        </li>
+        <li>
+          У приклад <code>0 &amp;&amp; “hello”</code> лівий операнд приводиться
+          до <code>false</code>, тому правий операнд не буде обчислюватися.
+          Результатом виразу буде значення лівого операнда, який першим був
+          приведений до false, тобто <code>0</code>.
+        </li>
+      </ul>
+      <p>
+        На практиці логічні операції застосовуються для перевірки множинних
+        умов.
+      </p>
+      <p>
+        Варто зазначити, що якщо операндами є вирази, то спочатку вони
+        обчислюються, а потім їх результати будуть порівнюватися оператором
+        <code>&amp;&amp;</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-xl"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const a = <span class="hljs-number">20</span>;
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(a &gt; 10 &amp;&amp; a &lt; 30); // <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span> -&gt;</span> <span class="hljs-literal">true</span>
+
+const b = <span class="hljs-number">50</span>;
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(b &gt; 10 &amp;&amp; b &lt; 30); // <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span> -&gt;</span> <span class="hljs-literal">false</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(b &gt; 80 &amp;&amp; b &lt; 120); // <span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-literal">true</span> -&gt;</span> <span class="hljs-literal">false</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У прикладі вище змінна <code>a</code> має одночасно задовольняти дві
+        умови: бути 1) більшою за 10, але 2) меншою за 30. Перевірку одночасного
+        виконання двох умов ми робимо за допомогою оператора
+        <code>&amp;&amp;</code>. Спочатку обчислюємо вирази в операндах.
+      </p>
+      <img
+        src="../js/images/f1afc8a3-7227-44b1-ad39-fd0f52cf9f95Frame 48588.png"
+        alt=""
+      />
+      <p>
+        Оператор <code>&amp;&amp;</code> може бути не тільки самостійною умовою,
+        а й частиною більш складних умов, наприклад, в умові інструкції
+        <code>if</code>
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const screenWidth = <span class="hljs-number">700</span>;
+const sm = <span class="hljs-number">320</span>;
+const md = <span class="hljs-number">768</span>;
+const lg = <span class="hljs-number">1200</span>;
+
+<span class="hljs-keyword">if</span>(screenWidth &lt;= sm) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Mobile screen"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(screenWidth &gt; sm &amp;&amp; screenWidth &lt;= md) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Tablet screen"</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(screenWidth &gt; md &amp;&amp; screenWidth &lt;= lg) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Desktop screen"</span>);
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Godzilla screen"</span>);
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+
+      <p>1) Перевіряється перша умова:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-apache"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-attribute">if</span> (<span class="hljs-number">700</span> &lt; <span class="hljs-number">320</span>)
+</pre>
+        <button class="copy"></button>
+      </div>
+      <ul class="ul">
+        <li>
+          Число <code>700</code> не менше <code>320</code>, тому вираз
+          <code>false</code>.
+        </li>
+        <li>Блок <code>if</code> пропускається.</li>
+      </ul>
+      <p>2) Переходимо до <code>else if</code>:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-dos"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (screenWidth &gt; sm &amp;&amp; screenWidth ≤ <span class="hljs-built_in">md</span>)
+</pre>
+        <button class="copy"></button>
+      </div>
+      <ul class="ul">
+        <li>Перевіряється перша частина: <code>700 &gt; 320 // true</code></li>
+        <li>Потім друга частина: <code>700 &lt;= 768 // true</code></li>
+        <li>
+          Вираз має оператор <code>&amp;&amp;</code> (логічне "і"), який
+          повертає <code>true</code>,
+          <strong>тільки якщо обидві частини </strong
+          ><code><strong>true</strong></code
+          >.У нашому випадку обидві <code>true</code>, тому
+          <code>true &amp;&amp; true</code> дає <code>true</code>.
+        </li>
+      </ul>
+      <p>
+        3) Оскільки умова <code>else if</code> спрацювала (<code>true</code>),
+        виконується її код:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Tablet screen"</span>);
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо б ми створювали функцію для перевірки типу екрану, то вона
+        виглядала би наступним чином:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">getScreenType</span>(<span class="hljs-params">screenWidth</span>) {
+  const sm = <span class="hljs-number">320</span>;
+  const md = <span class="hljs-number">768</span>;
+  const lg = <span class="hljs-number">1200</span>;
+
+  <span class="hljs-keyword">if</span> (screenWidth &lt;= sm) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Mobile screen"</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (screenWidth &gt; sm &amp;&amp; screenWidth &lt;= md) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Tablet screen"</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (screenWidth &gt; md &amp;&amp; screenWidth &lt;= lg) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Desktop screen"</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Godzilla screen"</span>;
+  }
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getScreenType(<span class="hljs-number">700</span>));  <span class="hljs-comment">// "Tablet screen"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getScreenType(<span class="hljs-number">1200</span>)); <span class="hljs-comment">// "Desktop screen"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getScreenType(<span class="hljs-number">1500</span>)); <span class="hljs-comment">// "Godzilla screen"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(getScreenType(<span class="hljs-number">320</span>));  <span class="hljs-comment">// "Mobile screen"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Як працює функція:</p>
+      <p>
+        <strong>1) Приймає </strong><code><strong>screenWidth</strong></code> –
+        ширину екрану як аргумент.
+      </p>
+      <p><strong>2) Перевіряє умови по черзі:</strong></p>
+      <ul class="ul">
+        <li>
+          <strong>﻿</strong>Якщо <code>screenWidth &lt;= 320</code>, повертає
+          <code>"Mobile screen"</code>.
+        </li>
+        <li>
+          Якщо <code>screenWidth</code> більше <code>320</code>, але не більше
+          <code>768</code>, повертає <code>"Tablet screen"</code>.
+        </li>
+        <li>
+          Якщо <code>screenWidth</code> більше <code>768</code>, але не більше
+          <code>1200</code>, повертає <code>"Desktop screen"</code>.
+        </li>
+        <li>
+          Якщо ширина більша за <code>1200</code>, повертає
+          <code>"Godzilla screen"</code>.
+        </li>
+      </ul>
+      <p>
+        <strong>3) Використовує </strong><code><strong>return</strong></code
+        >, щоб функція могла повертати значення, а не просто виводити в консоль.
+      </p>
+
+      <strong class="ql-size-large">Логічне «АБО»</strong>
+      <p>
+        Оператор "АБО" (<code>||</code>) перетворює всі операнди до логічного
+        типу (<code>true</code> або <code>false</code>) і повертає значення
+        одного з них.
+      </p>
+      <p>Дозволяє перевіряти, чи є хоча б один із операндів "істинним”.</p>
+      <p>Обчислення оператора відбувається зліва направо.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-1c"
+          spellcheck="false"
+          data-highlighted="yes"
+        >expression1 <span class="hljs-string">|| expression2</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо <strong>хоча б один із операндів</strong> можна перетворити на
+        <code>true</code>, результатом логічного «АБО» буде цей операнд.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">true</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">false</span> || <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">false</span> || <span class="hljs-number">5</span>); <span class="hljs-comment">// 5</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"hello"</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// "hello"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">0</span> || <span class="hljs-string">"hello"</span>); <span class="hljs-comment">// "hello"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Як тільки логічний оператор “АБО” знайшов операнд, який перетворюється
+        на <code>true</code>, він зупиняється та повертає його значення. Якщо до
+        істини було перетворено <strong>перший операнд</strong>, то другий
+        навіть не буде оцінюватися. Це може мати практичне застосування,
+        особливо коли другий операнд є виразом, який має високу вартість
+        обчислення.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> || <span class="hljs-number">3</span>); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">3</span> || <span class="hljs-number">5</span>); <span class="hljs-comment">// 3</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"mango"</span> || <span class="hljs-string">"poly"</span>); <span class="hljs-comment">// "mango"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"poly"</span> || <span class="hljs-string">"mango"</span>); <span class="hljs-comment">// "poly"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Якщо <strong>всі операнди</strong> перетворюються на <code>false</code>,
+        результатом буде значення <strong>крайнього правого</strong> операнда.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">0</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">false</span> || <span class="hljs-number">0</span>); <span class="hljs-comment">// 0</span>
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-literal">null</span> || <span class="hljs-string">""</span>); <span class="hljs-comment">// ""</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">""</span> || <span class="hljs-literal">null</span>); <span class="hljs-comment">// null</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <pre class="ql-blockquote" spellcheck="false">
+Оператор "АБО" замикається на вірному операнді і повертає значення операнда, на якому запнувся, або значення крайнього правого операнда. Якщо лівий операнд був перетворений на true, правий операнд не обчислюється.
+</pre
+      >
+      <p>
+        На практиці оператор «АБО» також використовується для перевірки
+        множинних умов.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-xl"
+          spellcheck="false"
+          data-highlighted="yes"
+        >const a = <span class="hljs-number">5</span>;
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(a &lt; 10 || a &gt; 30); // <span class="hljs-literal">true</span> || <span class="hljs-literal">false</span> -&gt;</span> <span class="hljs-literal">true</span>
+
+const b = <span class="hljs-number">50</span>;
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(b &lt; 10 || b &gt; 30); // <span class="hljs-literal">false</span> || <span class="hljs-literal">true</span> -&gt;</span> <span class="hljs-literal">true</span>
+
+const c = <span class="hljs-number">20</span>;
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(c - 20 || c * 2); // 0 || 40 -&gt;</span> <span class="hljs-number">40</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <img
+        src="../js/images/75216123-2664-4826-9671-f9c1cc220f3e1.jpg"
+        alt=""
+      />
+      <p>Зокрема в умові інструкції <code>if</code>.</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arduino"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-type">const</span> screenWidth = <span class="hljs-number">700</span>;
+<span class="hljs-type">const</span> sm = <span class="hljs-number">320</span>;
+<span class="hljs-type">const</span> md = <span class="hljs-number">768</span>;
+<span class="hljs-type">const</span> lg = <span class="hljs-number">1200</span>;
+
+<span class="hljs-comment">// У консолі буде пусто, якщо жодна з умов не перетворилась на true</span>
+<span class="hljs-keyword">if</span>(screenWidth &lt;= sm || screenWidth &gt; md) {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Mobile or Desktop screen"</span>);
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+
+      <strong class="ql-size-large">Логічне «НІ»</strong>
+      <p>
+        Усі оператори, які ми розглядали раніше, були&nbsp;бінарними. Бінарні
+        оператори містять два операнди: лівий і правий.
+      </p>
+      <p>
+        Логічне «НІ» (<code>!</code>) —
+        це&nbsp;<strong>унарний</strong>&nbsp;оператор — він виконує операцію
+        над одним операндом праворуч.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-diff"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-addition">!expression</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Логічне «НІ» приводить операнд до логічного значення (<code>true</code>
+        або <code>false</code>) і потім заперечує (інвертує) його, тобто заміняє
+        на протилежне: <code>true</code> —&gt; <code>false</code>, а
+        <code>false</code> —&gt; <code>true</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-xl"
+          spellcheck="false"
+          data-highlighted="yes"
+        >console.<span class="hljs-built_in">log</span>(!<span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+console.<span class="hljs-built_in">log</span>(!<span class="hljs-literal">false</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(!3); // !3 -&gt;</span> !<span class="hljs-function"><span class="hljs-title">true</span> -&gt;</span> <span class="hljs-literal">false</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(!"Mango"); // !"Mango" -&gt;</span> !<span class="hljs-function"><span class="hljs-title">true</span> -&gt;</span> <span class="hljs-literal">false</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(!0); // !0 -&gt;</span> !<span class="hljs-function"><span class="hljs-title">false</span> -&gt;</span> <span class="hljs-literal">true</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(!""); // !"" -&gt;</span> !<span class="hljs-function"><span class="hljs-title">false</span> -&gt;</span> <span class="hljs-literal">true</span>
+<span class="hljs-function"><span class="hljs-title">console</span>.<span class="hljs-built_in">log</span>(!null); // !null -&gt;</span> !<span class="hljs-function"><span class="hljs-title">false</span> -&gt;</span> <span class="hljs-literal">true</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        На практиці логічне заперечення використовується для перевірки від
+        зворотного. Наприклад, можна дозволити написати повідомлення в чаті,
+        лише якщо користувач <strong>не</strong> заблокований.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-monkey"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> isBlocked = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">const</span> canChat = !isBlocked; // !<span class="hljs-literal">false</span> -&gt; <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">if</span>(canChat) {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Can type in chat!"</span>)
+} <span class="hljs-keyword">else</span> {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Blocked from typing in chat!"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У прикладі вище бачимо, що значення змінної <code>isBlocked</code> —
+        <code>false</code> . Користувач не заблокований. Результатом
+        <code>canChat</code> буде <code>true</code> .
+      </p>
+      <p>
+        Якщо значення змінної <code>isBlocked</code> — <code>true</code>,
+        користувач заблокований. У такому разі результат обчислення
+        <code>canChat</code> буде <code>false</code>. Отже, умова
+        <code>if</code> заборонить користувачеві писати в чаті.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-monkey"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> isBlocked = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">const</span> canChat = !isBlocked; // !<span class="hljs-literal">true</span> -&gt; <span class="hljs-literal">false</span>
+
+<span class="hljs-keyword">if</span>(canChat) {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Can type in chat!"</span>)
+} <span class="hljs-keyword">else</span> {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Blocked from typing in chat!"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Логічне заперечення можна поєднувати з іншими логічними операторами.
+        Наприклад, якщо умова можливості писати в чаті залежить від статусу
+        онлайн і блокування.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-autoit"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">const</span> isOnline = <span class="hljs-literal">true</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">const</span> isBlocked = <span class="hljs-literal">false</span><span class="hljs-comment">;</span>
+<span class="hljs-keyword">const</span> canChat = isOnline &amp;&amp; !isBlocked<span class="hljs-comment">; </span>
+// <span class="hljs-literal">true</span> &amp;&amp; !<span class="hljs-literal">false</span> -&gt; <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span> -&gt; <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">if</span>(canChat) {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Can type in chat!"</span>)
+} <span class="hljs-keyword">else</span> {
+	console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Blocked from typing in chat!"</span>)
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Тепер створимо функцію:</p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">canUserChat</span>(<span class="hljs-params">isOnline, isBlocked</span>) {
+  const canChat = isOnline &amp;&amp; !isBlocked;
+
+  <span class="hljs-keyword">if</span> (canChat) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Can type in chat!"</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Blocked from typing in chat!"</span>;
+  }
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(canUserChat(<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>));  <span class="hljs-comment">// "Can type in chat!"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(canUserChat(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>));   <span class="hljs-comment">// "Blocked from typing in chat!"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(canUserChat(<span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>)); <span class="hljs-comment">// "Blocked from typing in chat!"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(canUserChat(<span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>));  <span class="hljs-comment">// "Blocked from typing in chat!"</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>Як працює функція:</p>
+      <p><strong>1) Приймає два параметри:</strong></p>
+      <ul class="ul">
+        <li>
+          <code
+            ><strong><span class="ql-cursor">﻿</span></strong
+            >isOnline</code
+          >
+          – чи користувач онлайн (<code>true</code> або <code>false</code>).
+        </li>
+        <li>
+          <code>isBlocked</code> – чи користувач заблокований (<code>true</code>
+          або <code>false</code>).
+        </li>
+      </ul>
+      <p>
+        <strong>2) Обчислює змінну</strong>
+        <code>const canChat = isOnline &amp;&amp; !isBlocked;</code>
+      </p>
+      <ul class="ul">
+        <li>
+          <code>isOnline</code> має бути <code>true</code>, інакше чат
+          недоступний.
+        </li>
+        <li>
+          <code>isBlocked</code> має бути <code>false</code>, тому
+          використовується <code>!isBlocked</code> (заперечення).
+        </li>
+      </ul>
+      <p>
+        <strong>3) Перевіряє значення </strong
+        ><code><strong>canChat</strong></code
+        ><strong>:</strong>
+      </p>
+      <ul class="ul">
+        <li>
+          Якщо <code>true</code>, повертає <code>"Can type in chat!"</code>.
+        </li>
+        <li>
+          Якщо <code>false</code>, повертає
+          <code>"Blocked from typing in chat!"</code>.
+        </li>
+      </ul>
+    </section>
+    <!--Методи рядків-->
+    <section>
+      <h2 id="string-methods">Методи рядків</h2>
+      <div class="ql-editor">
+        <p>
+          Уяви автомат із продажу кави. Клієнт може обрати каву з цукром або
+          без, з молоком, шоколадом або апельсиновим соком — усе
+          це&nbsp;<strong>властивості</strong>&nbsp;кави.
+        </p>
+        <p>
+          Залежно від необхідної властивості, кава буде готуватися різними
+          методами — певні рецепти вимагатимуть операції “додати цукор” або
+          “додати молоко”, інші — ні. Це різні&nbsp;<strong>методи</strong>.
+        </p>
+        <p>Так само у програмуванні.</p>
+        <p>
+          Дані мають набір властивостей і методів, до яких можна звертатися в
+          коді. Цей набір називається інтерфейсом. Використання властивостей і
+          методів дозволяє нам отримувати інформацію про сутності та виконувати
+          операції з ними.
+        </p>
+        <p><strong class="ql-size-large">Властивості</strong></p>
+        <p>У попередніх розділах ми вже познайомилися з властивостями.</p>
+        <p>
+          Щоб добре розрізняти властивості та методи, варто згадати, що
+          властивості — це описові характеристики сутності. У прикладі з кавою —
+          це колір, кількість цукру, температура. Наприклад, у програмуванні
+          рядок має властивість <code>length</code>, яка повертає кількість
+          символів у рядку. Для доступу до властивості використовується
+          синтаксис із крапкою:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-angelscript"
+            spellcheck="false"
+            data-highlighted="yes"
+          >objectName.<span class="hljs-keyword">property</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Щоб отримати довжину рядка, використовується властивість
+          <code>length</code>:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const message = <span class="hljs-string">"JavaScript is awesome"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(message.<span class="hljs-built_in">length</span>); <span class="hljs-comment">// 21</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p><strong class="ql-size-large">Методи</strong></p>
+        <p>
+          Методи — це дії, які можна виконати із сутністю, такі як додати цукор
+          чи підігріти. У програмуванні дані також заздалегідь мають певні
+          методи, які дозволяють виконувати різні операції, наприклад,
+          перетворення рядка в різний регістр.
+        </p>
+        <p>
+          Виклик методу дуже схожий на доступ до властивості, але наприкінці
+          додаються круглі дужки, як при виклику функції:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-gml"
+            spellcheck="false"
+            data-highlighted="yes"
+          >objectName.<span class="hljs-built_in">method</span>()
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Ось приклад використання (виклику) методу
+          <code>toUpperCase()</code> для перетворення рядка у верхній регістр:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-pf"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> message = <span class="hljs-string">"JavaScript is awesome"</span>;
+console.<span class="hljs-keyword">log</span>(message.<span class="hljs-keyword">to</span>UpperCase()); // <span class="hljs-string">"JAVASCRIPT IS AWESOME"</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Методи та властивості не можуть існувати самостійно без сутності,
+          частиною якої вони є. Не можна викликати метод рядка
+          <code>trim()</code> без рядка, не можна отримати значення властивості
+          <code>length</code> без рядка або масиву.
+        </p>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>slice()</strong></code>
+        </p>
+        <p>
+          Метод <code>slice()</code> використовується для створення копії
+          частини або всього рядка без зміни оригінального рядка. Він дозволяє
+          витягувати підрядок з вихідного рядка, вказуючи початковий та кінцевий
+          індекси.
+        </p>
+        <p>Синтаксис методу <code>slice()</code> виглядає так:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-python"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">str</span>.<span class="hljs-built_in">slice</span>(startIndex, endIndex)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>де:</p>
+        <ul class="ul">
+          <li>
+            <code>str</code> — вихідний рядок, з якого робитиметься копія.
+          </li>
+          <li>
+            <code>startIndex</code> — індекс, з якого починається копіювання
+            елементів рядка.
+          </li>
+          <li>
+            <code>endIndex</code> — індекс, до якого (не включаючи) йде
+            копіювання елементів рядка.
+          </li>
+        </ul>
+        <p>
+          Метод <code>slice()</code> копіює підрядок із вихідного рядка,
+          починаючи з індексу <code>startIndex</code> і до (не включаючи)
+          індексу <code>endIndex</code>, і повертає цю копію як новий рядок.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const fullName = <span class="hljs-string">"Jacob Mercer"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// 'Jaco'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">3</span>, <span class="hljs-number">9</span>)); <span class="hljs-comment">// 'ob Mer'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">0</span>, fullName.<span class="hljs-built_in">length</span>)); <span class="hljs-comment">// 'Jacob Mercer'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>Параметр <code>endIndex</code> є необов'язковим.</p>
+        <p>
+          Якщо <code>endIndex</code> не вказаний, витягуються всі елементи до
+          кінця рядка.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const fullName = <span class="hljs-string">"Jacob Mercer"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 'acob Mercer'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">3</span>)); <span class="hljs-comment">// 'ob Mercer'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Якщо викликати метод <code>slice()</code> без аргументів, він створює
+          точну копію рядка і повертає її.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const fullName = <span class="hljs-string">"Jacob Mercer"</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName.<span class="hljs-built_in">slice</span>()); <span class="hljs-comment">// 'Jacob Mercer'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Результат виклику методу <code>slice()</code> можна зберігати в
+          змінній для подальшого використання.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const fullName = <span class="hljs-string">"Jacob Mercer"</span>;
+const firstName = fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+const lastName = fullName.<span class="hljs-built_in">slice</span>(<span class="hljs-number">6</span>);
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(fullName); <span class="hljs-comment">// "Jacob Mercer"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(firstName); <span class="hljs-comment">// "Jacob"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(lastName); <span class="hljs-comment">// "Mercer"</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Метод <code>slice()</code> корисний, коли потрібно отримати певну
+          частину рядка або створити копію для подальшого використання, не
+          змінюючи вихідний рядок.
+        </p>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Методи </strong
+          ><code class="ql-size-large"><strong>toLowerCase()</strong></code
+          ><strong class="ql-size-large"> і </strong
+          ><code class="ql-size-large"><strong>toUpperCase()</strong></code>
+        </p>
+        <p>
+          Методи рядків <code>toLowerCase()</code> та
+          <code>toUpperCase()</code> використовуються для зміни регістру
+          символів у рядку. Обидва методи не змінюють вихідний рядок, а
+          повертають новий рядок у відповідному регістрі.
+        </p>
+        <p>
+          Метод <code>toLowerCase()</code> повертає новий рядок, у якому всі
+          символи вихідного рядка перетворені в нижній регістр.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-sas"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const <span class="hljs-keyword">message</span> = <span class="hljs-string">"Welcome to Bahamas!"</span>;
+console.<span class="hljs-meta">log</span>(<span class="hljs-keyword">message</span>.toLowerCase()); // <span class="hljs-string">"welcome to bahamas!"</span>
+console.<span class="hljs-meta">log</span>(<span class="hljs-keyword">message</span>); // <span class="hljs-string">"Welcome to Bahamas!"</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Метод <code>toUpperCase()</code> повертає новий рядок, у якому всі
+          символи вихідного рядка перетворені у верхній регістр.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-sas"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const <span class="hljs-keyword">message</span> = <span class="hljs-string">"Welcome to Bahamas!"</span>;
+console.<span class="hljs-meta">log</span>(<span class="hljs-keyword">message</span>.toUpperCase()); // <span class="hljs-string">"WELCOME TO BAHAMAS!"</span>
+console.<span class="hljs-meta">log</span>(<span class="hljs-keyword">message</span>); // <span class="hljs-string">"Welcome to Bahamas!"</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>Розгляньмо ситуацію:</p>
+        <p>
+          При пошуку за ключовим словом, користувач вводить рядок
+          <code>'saMsUng'</code>, а його треба порівняти з рядком
+          <code>'samsung'</code> або <code>'SAMSUNG'</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'saMsUng'</span> === <span class="hljs-string">'samsung'</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'saMsUng'</span> === <span class="hljs-string">'SAMSUNG'</span>); <span class="hljs-comment">// false</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Щоб не вимагати абсолютно точного введення, можна зробити
+          «нормалізацію» введеного користувачем рядка, тобто перетворити всі
+          його символи у верхній або нижній регістр.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const brandName = <span class="hljs-string">'samsung'</span>;
+const userInput = <span class="hljs-string">'saMsUng'</span>;
+const lowercaseInput = userInput.toLowerCase();
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(brandName); <span class="hljs-comment">// 'samsung'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(userInput); <span class="hljs-comment">// 'saMsUng'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(userInput === brandName); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(lowercaseInput); <span class="hljs-comment">// 'samsung'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(lowercaseInput === brandName); <span class="hljs-comment">// true</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>includes()</strong></code>
+        </p>
+        <p>
+          Метод рядків <code>includes()</code> використовується для перевірки
+          наявності підрядка у рядку. Він повертає логічне значення
+          <code>true</code>, якщо підрядок знайдено, і <code>false</code>, якщо
+          підрядок відсутній.
+        </p>
+        <p>Синтаксис методу <code>includes()</code> виглядає так:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >str.<span class="hljs-built_in">includes</span>(substring)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>де:</p>
+        <ul class="ul">
+          <li>
+            <code>str</code> — вихідний рядок, у якому ми шукаємо підрядок;
+          </li>
+          <li>
+            <code>substring</code> — підрядок, який ми хочемо знайти у вихідному
+            рядку.
+          </li>
+        </ul>
+        <p>Приклад використання методу <code>includes()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const username = <span class="hljs-string">'Jacob Mercer'</span>;
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'Jacob'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'John'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'Mercer'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'Doe'</span>)); <span class="hljs-comment">// false</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Регістр символів у рядку й підрядку <strong>має значення</strong>.
+          Літера <code>a</code>, наприклад, не дорівнює літері <code>A</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const username = <span class="hljs-string">'Jacob Mercer'</span>;
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'Jacob'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'jacob'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'Mercer'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(username.<span class="hljs-built_in">includes</span>(<span class="hljs-string">'mercer'</span>)); <span class="hljs-comment">// false</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Метод <code>includes()</code> корисний, коли нам необхідно виконати
+          зазначені дії за умови, коли рядок містить певний підрядок.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const message <span class="hljs-operator">=</span> <span class="hljs-string">"Please buy our stuff!"</span><span class="hljs-comment">;</span>
+const hasSpam <span class="hljs-operator">=</span> message.includes(<span class="hljs-string">"buy"</span>)<span class="hljs-comment">;</span>
+
+if (hasSpam) {
+  console.log(<span class="hljs-string">"Warning: This message contains forbidden words."</span>)<span class="hljs-comment">;</span>
+} else {
+  console.log(<span class="hljs-string">"You can safely open this message."</span>)<span class="hljs-comment">;</span>
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі ми перевіряємо, чи містить змінна
+          <code>message</code> підрядок <code>"buy"</code>.
+        </p>
+        <p>
+          Якщо це так, виводиться повідомлення з попередженням про вміст
+          заборонених слів. В іншому разі відображається повідомлення про те, що
+          повідомлення можна відкривати безпечно.
+        </p>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Методи </strong
+          ><code class="ql-size-large"><strong>startsWith()</strong></code
+          ><strong class="ql-size-large"> і </strong
+          ><code class="ql-size-large"><strong>endsWith()</strong></code>
+        </p>
+        <p>
+          Методи <code>startsWith()</code> і <code>endsWith()</code> призначені
+          для перевірки початку й закінчення рядка відповідно. Вони повертають
+          булеве значення <code>true</code> або <code>false</code>, залежно від
+          того, чи відповідає початок або кінець рядка заданому значенню.
+        </p>
+        <p>
+          <strong>Метод </strong><code><strong>startsWith()</strong></code>
+        </p>
+        <p>
+          Метод <code>startsWith()</code> перевіряє, чи починається рядок із
+          зазначеного підрядка.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-axapta"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">str</span>.startsWith(substr)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          <code>substr</code> — це рядок, з якого має починатися вихідний рядок.
+        </p>
+        <p>Приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-openscad"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const <span class="hljs-built_in">str</span> = <span class="hljs-string">"Hello, world!"</span>;
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.startsWith(<span class="hljs-string">"Hello"</span>)); <span class="hljs-comment">// true</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.startsWith(<span class="hljs-string">"hello"</span>)); <span class="hljs-comment">// false (метод чутливий до регістру)</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          <strong>Метод </strong><code><strong>endsWith()</strong></code>
+        </p>
+        <p>
+          Метод <code>endsWith()</code> перевіряє, чи закінчується рядок
+          вказаним підрядком.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-axapta"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">str</span>.endsWith(substr)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Він також приймає аргументом підрядок, присутність якого потрібно
+          перевірити.
+        </p>
+        <p>Приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-openscad"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const <span class="hljs-built_in">str</span> = <span class="hljs-string">"Hello, world!"</span>;
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.endsWith(<span class="hljs-string">"world!"</span>)); <span class="hljs-comment">// true</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.endsWith(<span class="hljs-string">"World!"</span>)); <span class="hljs-comment">// false (метод чутливий до регістру)</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        ><strong>Зверни увагу! </strong>
+Обидва методи чутливі до регістру символів. Це означає, що під час порівняння підрядка з вихідним рядком регістр символів має збігатися. Якщо в ці методи не передати аргумент, то він повертає false.
+</pre>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>indexOf()</strong></code>
+        </p>
+        <p>
+          Метод <code>indexOf()</code> використовується для пошуку першого
+          входження підрядка в рядок. Він повертає:
+        </p>
+        <ul class="ul">
+          <li>
+            індекс першого входження (індекс першого символу) підрядка, якщо він
+            знайдений або
+          </li>
+          <li><code>-1</code>, якщо підрядок не виявлено</li>
+        </ul>
+        <p>Синтаксис:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >str.<span class="hljs-built_in">indexOf</span>(substr)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul class="ul">
+          <li>
+            <code>str</code> — вихідний рядок, у якому потрібно виконати пошук;
+          </li>
+          <li>
+            <code>substr</code> — рядок, який потрібно знайти у вихідному рядку.
+          </li>
+        </ul>
+        <p>Приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const message <span class="hljs-operator">=</span> <span class="hljs-string">"Welcome to Bahamas!"</span><span class="hljs-comment">;</span>
+const index <span class="hljs-operator">=</span> message.indexOf(<span class="hljs-string">"to"</span>)<span class="hljs-comment">;</span>
+console.log(index)<span class="hljs-comment">; // 8</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі у нас є рядок <code>message</code>. Ми хочемо знайти
+          перше входження підрядка <code>"to"</code>. Метод
+          <code>indexOf()</code> виконує пошук у рядку і повертає
+          <code>8</code> — індекс першого входження <code>"to"</code>.
+        </p>
+        <p>
+          Якщо підрядок не знайдено, метод <code>indexOf()</code> поверне
+          <code>-1</code>:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const message <span class="hljs-operator">=</span> <span class="hljs-string">"Welcome to Bahamas!"</span><span class="hljs-comment">;</span>
+const index <span class="hljs-operator">=</span> message.indexOf(<span class="hljs-string">"hello"</span>)<span class="hljs-comment">;</span>
+console.log(index)<span class="hljs-comment">; // -1</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Метод <code>indexOf()</code> корисний, коли тобі потрібно перевірити,
+          чи містить рядок певний підрядок і отримати його індекс, якщо його
+          знайдено. Цей метод в аргументи може приймати рядок або число. Якщо в
+          аргументах буде число, то воно автоматично перетвориться у рядок. А
+          якщо нічого не передати, то поверне число -1.
+        </p>
+      </div>
+
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>trim()</strong></code>
+        </p>
+        <p>
+          Метод <code>trim()</code> використовується для видалення початкових і
+          кінцевих пробілів із рядка.
+        </p>
+        <p>
+          Це дозволяє "очистити" рядок від зайвих пробілів, наприклад під час
+          обробки введення тексту користувачем в елементи форми, видаливши зайві
+          пробіли, які могли бути додані випадково.
+        </p>
+        <p>Синтаксис:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >str.<span class="hljs-built_in">trim</span>()
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>Приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stata"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> <span class="hljs-keyword">input</span> = <span class="hljs-string">" JavaScript is awesome!    "</span>;
+<span class="hljs-keyword">const</span> trimmedInput = <span class="hljs-keyword">input</span>.<span class="hljs-built_in">trim</span>();
+console.<span class="hljs-built_in">log</span>(trimmedInput); <span class="hljs-comment">// "JavaScript is awesome!"</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">input</span>); <span class="hljs-comment">// " JavaScript is awesome!    "</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі метод <code>trim()</code> видаляє пробіли на початку
+          та наприкінці рядка, залишаючи тільки текст <code>"</code
+          ><code style="color: rgb(0, 0, 0)">JavaScript is awesome!</code
+          ><code>"</code>.
+        </p>
+        <pre
+          class="ql-blockquote"
+          spellcheck="false"
+        ><strong>Зверни увагу! </strong>
+Метод trim() не змінює вихідний рядок, а повертає новий рядок без початкових і кінцевих пробілів.
+</pre>
+      </div>
+    </section>
+
+    <!--Цикли-->
+    <section>
+      <h2 id="loops">Цикли</h2>
+      <div class="ql-editor">
+        <p>
+          Типове завдання у програмуванні — виконання однотипної дії багато
+          разів, наприклад вивести клієнтів зі списку один за одним або
+          перебрати суми зарплат і для кожної виконати однаковий код. Саме для
+          багаторазового повторення однієї частини коду використовуються цикли.
+        </p>
+        <ul class="ul">
+          <li>
+            <strong>Цикл</strong> — керуюча конструкція, призначена для
+            організації багаторазового виконання набору інструкцій.
+          </li>
+          <li>
+            <strong>Тіло циклу</strong> — послідовність інструкцій, призначена
+            для багаторазового виконання.
+          </li>
+          <li><strong>Ітерація</strong> — одиничне виконання тіла циклу.</li>
+          <li>
+            <strong>Умова виходу</strong> — вираз, що визначає, чи буде в
+            черговий раз виконуватися ітерація, або цикл завершиться.
+          </li>
+        </ul>
+        <p id="while">
+          <strong class="ql-size-large">Цикл </strong
+          ><code class="ql-size-large"><strong>while</strong></code>
+        </p>
+        <p>
+          Конструкція <code>while</code> створює цикл, який виконує блок коду в
+          тілі циклу, поки умова для виходу оцінюється як <code>true</code>.
+        </p>
+        <img src="../js/images/7b79b55e-6f23-4909-afdb-539c1d42839cFrame 48590.jpg">
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-mel"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">while</span> (<span class="hljs-keyword">condition</span>) {
+  statement <span class="hljs-comment">// код, тіло циклу</span>
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul class="ul">
+          <li>Умова обчислюється перед кожною ітерацією циклу.</li>
+          <li>
+            Якщо умова оцінюється як <code>true</code>, виконується код у тілі
+            циклу (одна ітерація)
+          </li>
+          <li>
+            Якщо умова оцінюється як <code>false</code>, виконання циклу
+            переривається і скрипт продовжує виконувати інструкції після циклу
+          </li>
+        </ul>
+        <p>
+          <strong>Цикл </strong><code><strong>while</strong></code> — це цикл з
+          передумовою, тобто він виконується доки істинна певна умова, зазначена
+          перед його початком. Цю умову перевіряють до виконання тіла циклу,
+          тому тіло може бути не виконано жодного разу, якщо умова від самого
+          початку хибна.
+        </p>
+        <p>Розгляньмо приклад з лічильником:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (<span class="hljs-built_in">count</span> &lt; <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Count: <span class="hljs-subst">${<span class="hljs-built_in">count</span>}</span>`</span>);
+  <span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>;
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі у нас є змінна <code><strong>count</strong></code
+          >, яка збільшується з кожною ітерацією.
+        </p>
+        <p>
+          Цикл <code><strong>while</strong></code> виконуватиметься доки
+          <code><strong>count</strong></code> менше 10. Щойно
+          <code><strong>count</strong></code> стане рівним або більшим за 10,
+          умова стане хибною, і цикл завершиться.
+        </p>
+        <p><strong>Задача: Реєстрація у готелі</strong></p>
+        <p>
+          Змінна <code>clientCounter</code> зберігає кількість зайнятих номерів
+          на поточний момент.
+        </p>
+        <p>
+          Змінна <code>maxClients</code> зберігає загальну кількість номерів у
+          готелі.
+        </p>
+        <p>
+          Завдяки циклу <code>while</code> місця в готелі будуть заповнюватися
+          доти, доки поточна кількість клієнтів не дорівнюватиме максимально
+          допустимій.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-javascript"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">let</span> clientCounter = <span class="hljs-number">18</span>;
+<span class="hljs-keyword">const</span> maxClients = <span class="hljs-number">25</span>;
+
+<span class="hljs-keyword">while</span> (clientCounter &lt; maxClients) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(clientCounter);
+  clientCounter += <span class="hljs-number">1</span>;
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Цикл <code>while</code> часто використовується, коли точна кількість
+          ітерацій заздалегідь не відома. Отже, цикл має виконуватися до
+          виконання певної умови.
+        </p>
+        <pre class="ql-blockquote" spellcheck="false">
+Важливо дбати про те, щоб умова циклу while зрештою стала хибною, щоб уникнути нескінченного виконання.
+</pre
+        >
+        <p>Якби нам потрібно було написати функцію:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">function</span> <span class="hljs-title function_">countClients</span>(<span class="hljs-params">clientCounter, maxClients</span>) {
+  let counter = clientCounter; <span class="hljs-comment">// створюємо локальну змінну</span>
+
+  <span class="hljs-keyword">while</span> (counter &lt; maxClients) {
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(counter);
+    counter += <span class="hljs-number">1</span>;
+  }
+}
+
+countClients(<span class="hljs-number">18</span>, <span class="hljs-number">25</span>);
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p><strong>Покрокове виконання:</strong></p>
+        <p>Виклик <code>countClients(18, 25)</code>:</p>
+        <p><strong>1) Перша ітерація:</strong></p>
+        <ul>
+          <li><code>counter = 18</code></li>
+          <li>
+            <code>18 &lt; 25</code> → <strong>true</strong>, друкується
+            <code>18</code>, <code>counter</code> стає <code>19</code>.
+          </li>
+        </ul>
+        <p><strong>2) Друга ітерація:</strong></p>
+        <ul>
+          <li><code>counter = 19</code></li>
+          <li>
+            <code>19 &lt; 25</code> → <strong>true</strong>, друкується
+            <code>19</code>, <code>counter</code> стає <code>20</code>.
+          </li>
+        </ul>
+        <p>
+          <strong>3) Цикл триває</strong>, поки <code>counter = 25</code>, тоді
+          <code>25 &lt; 25</code> → <strong>false</strong>, і він завершується.
+        </p>
+      </div>
+    </section>
+
+    <!--JavaScript Шпаргалка-->
+    <section class="js-cheatsheet">
+      <h2>JavaScript Шпаргалка</h2>
+
+      <h3>Рядки (String)</h3>
+      <ul>
+        <li>
+          <strong>toUpperCase()</strong> – Перетворює рядок на верхній
+          регістр<br />
+          <code>'hello'.toUpperCase() // 'HELLO'</code>
+        </li>
+        <li>
+          <strong>toLowerCase()</strong> – Перетворює рядок на нижній регістр<br />
+          <code>'HELLO'.toLowerCase() // 'hello'</code>
+        </li>
+        <li>
+          <strong>includes()</strong> – Перевіряє, чи містить рядок підрядок<br />
+          <code>'JavaScript'.includes('Script') // true</code>
+        </li>
+        <li>
+          <strong>indexOf()</strong> – Повертає індекс першого входження або
+          -1<br />
+          <code>'hello'.indexOf('e') // 1</code>
+        </li>
+        <li>
+          <strong>slice(start, end)</strong> – Повертає підрядок<br />
+          <code>'JavaScript'.slice(0, 4) // 'Java'</code>
+        </li>
+        <li>
+          <strong>substring(start, end)</strong> – Повертає підрядок<br />
+          <code>'JavaScript'.substring(0, 4) // 'Java'</code>
+        </li>
+        <li>
+          <strong>trim()</strong> – Видаляє пробіли з початку і кінця<br />
+          <code>' hello '.trim() // 'hello'</code>
+        </li>
+        <li>
+          <strong>replace(old, new)</strong> – Замінює частину рядка<br />
+          <code>'foo bar'.replace('foo', 'baz') // 'baz bar'</code>
+        </li>
+        <li>
+          <strong>split(separator)</strong> – Розбиває рядок у масив<br />
+          <code>'a,b,c'.split(',') // ['a', 'b', 'c']</code>
+        </li>
+        <li>
+          <strong>charAt(index)</strong> – Повертає символ за індексом<br />
+          <code>'hello'.charAt(1) // 'e'</code>
+        </li>
+      </ul>
+
+      <h3>Масиви (Array)</h3>
+      <ul>
+        <li>
+          <strong>push()</strong> – Додає елемент в кінець<br />
+          <code>[1,2].push(3) // [1,2,3]</code>
+        </li>
+        <li>
+          <strong>pop()</strong> – Видаляє останній елемент<br />
+          <code>[1,2,3].pop() // 3</code>
+        </li>
+        <li>
+          <strong>shift()</strong> – Видаляє перший елемент<br />
+          <code>[1,2,3].shift() // 1</code>
+        </li>
+        <li>
+          <strong>unshift()</strong> – Додає елемент на початок<br />
+          <code>[2,3].unshift(1) // [1,2,3]</code>
+        </li>
+        <li>
+          <strong>slice()</strong> – Повертає частину масиву<br />
+          <code>[1,2,3,4].slice(1,3) // [2,3]</code>
+        </li>
+        <li>
+          <strong>splice()</strong> – Додає/видаляє елементи<br />
+          <code>[1,2,3].splice(1,1,99) // [1,99,3]</code>
+        </li>
+        <li>
+          <strong>forEach()</strong> – Виконує функцію для кожного елемента<br />
+          <code>[1,2,3].forEach(x => console.log(x))</code>
+        </li>
+        <li>
+          <strong>map()</strong> – Створює новий масив, застосовуючи функцію<br />
+          <code>[1,2,3].map(x => x*2) // [2,4,6]</code>
+        </li>
+        <li>
+          <strong>filter()</strong> – Повертає новий масив, що містить елементи,
+          які пройшли перевірку<br />
+          <code>[1,2,3].filter(x => x>1) // [2,3]</code>
+        </li>
+        <li>
+          <strong>find()</strong> – Повертає перший елемент, що задовольняє
+          умову<br />
+          <code>[1,2,3].find(x => x>1) // 2</code>
+        </li>
+        <li>
+          <strong>reduce()</strong> – Агрегує масив в одне значення<br />
+          <code>[1,2,3].reduce((acc,x)=>acc+x,0) // 6</code>
+        </li>
+        <li>
+          <strong>includes()</strong> – Перевіряє наявність елемента<br />
+          <code>[1,2,3].includes(2) // true</code>
+        </li>
+        <li>
+          <strong>join(separator)</strong> – Перетворює масив в рядок<br />
+          <code>[1,2,3].join('-') // '1-2-3'</code>
+        </li>
+        <li>
+          <strong>sort()</strong> – Сортує масив<br />
+          <code>[3,1,2].sort() // [1,2,3]</code>
+        </li>
+      </ul>
+
+      <h3>Числа (Number)</h3>
+      <ul>
+        <li>
+          <strong>toFixed(n)</strong> – Форматує число з n знаками після
+          крапки<br />
+          <code>3.14159.toFixed(2) // '3.14'</code>
+        </li>
+        <li>
+          <strong>parseInt(str)</strong> – Перетворює рядок на ціле число<br />
+          <code>parseInt('10') // 10</code>
+        </li>
+        <li>
+          <strong>parseFloat(str)</strong> – Перетворює рядок на десяткове
+          число<br />
+          <code>parseFloat('10.5') // 10.5</code>
+        </li>
+        <li>
+          <strong>isNaN(value)</strong> – Перевіряє, чи є значення NaN<br />
+          <code>isNaN('abc') // true</code>
+        </li>
+      </ul>
+
+      <h3>Об'єкти (Object)</h3>
+      <ul>
+        <li>
+          <strong>Object.keys(obj)</strong> – Масив ключів<br />
+          <code>Object.keys({a:1, b:2}) // ['a', 'b']</code>
+        </li>
+        <li>
+          <strong>Object.values(obj)</strong> – Масив значень<br />
+          <code>Object.values({a:1, b:2}) // [1,2]</code>
+        </li>
+        <li>
+          <strong>Object.entries(obj)</strong> – Масив пар [ключ, значення]<br />
+          <code>Object.entries({a:1}) // [['a',1]]</code>
+        </li>
+        <li>
+          <strong>Object.assign(target, source)</strong> – Копіює властивості<br />
+          <code>Object.assign({}, {a:1}) // {a:1}</code>
+        </li>
+        <li>
+          <strong>hasOwnProperty(key)</strong> – Перевіряє наявність ключа<br />
+          <code>{a:1}.hasOwnProperty('a') // true</code>
+        </li>
+      </ul>
+
+      <h3>Дати (Date)</h3>
+      <ul>
+        <li>
+          <strong>new Date()</strong> – Створює нову дату<br />
+          <code>new Date()</code>
+        </li>
+        <li>
+          <strong>getFullYear()</strong> – Отримати рік<br />
+          <code>new Date().getFullYear()</code>
+        </li>
+        <li>
+          <strong>getMonth()</strong> – Отримати місяць (0-11)<br />
+          <code>new Date().getMonth()</code>
+        </li>
+        <li>
+          <strong>getDate()</strong> – Отримати число місяця<br />
+          <code>new Date().getDate()</code>
+        </li>
+        <li>
+          <strong>toLocaleDateString()</strong> – Форматує дату<br />
+          <code>new Date().toLocaleDateString()</code>
+        </li>
+      </ul>
+
+      <h3>Консоль та Взаємодія</h3>
+      <ul>
+        <li>
+          <strong>console.log()</strong> – Виводить в консоль<br />
+          <code>console.log('Hello')</code>
+        </li>
+        <li>
+          <strong>alert()</strong> – Вікно повідомлення<br />
+          <code>alert('Hi!')</code>
+        </li>
+        <li>
+          <strong>prompt()</strong> – Отримати вхідні дані<br />
+          <code>prompt('Your name?')</code>
+        </li>
+        <li>
+          <strong>confirm()</strong> – Діалог підтвердження<br />
+          <code>confirm('Are you sure?')</code>
+        </li>
+      </ul>
+
+      <h3>Інше</h3>
+      <ul>
+        <li>
+          <strong>typeof</strong> – Визначає тип<br />
+          <code>typeof 42 // 'number'</code>
+        </li>
+        <li>
+          <strong>Array.isArray()</strong> – Перевіряє, чи масив<br />
+          <code>Array.isArray([1,2,3]) // true</code>
+        </li>
+      </ul>
+
+      <h3>Логічні оператори</h3>
+      <ul>
+        <li>
+          <strong>&&</strong> – Логічне І<br />
+          <code>true && false // false</code>
+        </li>
+        <li>
+          <strong>||</strong> – Логічне АБО<br />
+          <code>true || false // true</code>
+        </li>
+        <li>
+          <strong>!</strong> – Логічне НЕ<br />
+          <code>!true // false</code>
+        </li>
+      </ul>
     </section>
   </div>
 </section>

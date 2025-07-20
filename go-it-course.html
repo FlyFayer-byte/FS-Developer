@@ -63,9 +63,37 @@
   <div class="course-container">
     <section>
       <h1 id="html" class="hero-title">Що таке GO IT?</h1>
+      <pre>
+Функція calculateTotal(number) приймає ціле число (параметр number). 
+Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. 
+Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
+
+Оголошена функція calculateTotal(number)
+Виклик функції calculateTotal(1) повертає 1
+Виклик функції calculateTotal(3) повертає 6
+Виклик функції calculateTotal(0) повертає 0
+Виклик функції calculateTotal(18) повертає 171
+Виклик функції calculateTotal(24) повертає 300
+Виклик функції calculateTotal() з випадковим числом повертає правильне значення
+      </pre>
     </section>
   </div>
 </section>
+
+<script>
+  console.log("Створюємо функцію calculateTotal(number).");
+  
+  function calculateTotal(number) {
+    while (number > 0) {
+      console.log("Параметр number не може бути від'ємним.");
+      return 0;
+    }
+  }
+  
+  console.log("Викликаємо функцію calculateTotal(3).");
+  
+  calculateTotal(3);
+</script>
 
     </main>
     <footer class="footer-section">
