@@ -70,7 +70,21 @@
       <a class="nav-link" href="#string-methods">Методи рядків</a>
       <a class="nav-link" href="#loops">Цикли</a>
       <ul>
-        <li><a href="#while">Цикл <code>while</code></a></li>
+        <li>
+          <a href="#while">Цикл <code>while</code></a>
+        </li>
+        <li>
+          <a href="#do...while">Цикл <code>do...while</code></a>
+        </li>
+        <li>
+          <a href="#for">Цикл <code>for</code></a>
+        </li>
+        <li>
+          <a href="#increment-decrement">Інкремент і декремент</a>
+        </li>
+        <li>
+          <a href="#break">Оператор <code>break</code></a>
+        </li>
       </ul>
     </details>
   </nav>
@@ -4682,7 +4696,9 @@ console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">input<
           Конструкція <code>while</code> створює цикл, який виконує блок коду в
           тілі циклу, поки умова для виходу оцінюється як <code>true</code>.
         </p>
-        <img src="../js/images/7b79b55e-6f23-4909-afdb-539c1d42839cFrame 48590.jpg">
+        <img
+          src="../js/images/7b79b55e-6f23-4909-afdb-539c1d42839cFrame 48590.jpg"
+        />
         <div class="ql-syntax-block">
           <pre
             class="ql-syntax ql-block-style-code hljs language-mel"
@@ -4817,7 +4833,491 @@ countClients(<span class="hljs-number">18</span>, <span class="hljs-number">25</
           <code>25 &lt; 25</code> → <strong>false</strong>, і він завершується.
         </p>
       </div>
+
+      <div class="ql-editor">
+        <p id="do...while">
+          <strong class="ql-size-large">Цикл </strong
+          ><code class="ql-size-large"><strong>do…while</strong></code>
+        </p>
+        <p>
+          У JavaScript існує ще один тип циклу <code>while</code> — це
+          <code>do...while</code>.
+        </p>
+        <p>
+          Цикли <code>while</code> і <code>do...while</code> працюють схожим
+          чином, але мають одну ключову відмінність. Під час використання циклу
+          <code>do...while</code> код у тілі циклу виконується
+          <strong>принаймні один раз</strong>, навіть якщо умова не виконується
+          з самого початку.
+        </p>
+        <p>Синтаксис:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-mel"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">do</span> {
+   statement <span class="hljs-comment">// код, який буде виконуватися</span>
+} <span class="hljs-keyword">while</span> (<span class="hljs-keyword">condition</span>);
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Блок коду всередині <code>do</code> виконується в перший раз незалежно
+          від виконання умови.
+        </p>
+        <p>
+          Потім, після кожної ітерації, перевіряється умова. Якщо умова
+          оцінюється як <code>true</code>, цикл продовжує виконуватися; якщо —
+          як <code>false</code>, цикл завершується.
+        </p>
+        <p>Розгляньмо приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">do</span> {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Count: <span class="hljs-subst">${<span class="hljs-built_in">count</span>}</span>`</span>);
+	<span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>;
+} <span class="hljs-keyword">while</span> (<span class="hljs-built_in">count</span> &lt; <span class="hljs-number">5</span>);
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У прикладі код усередині циклу <code>do</code> виконається один раз,
+          навіть якщо <code>count</code> більше або дорівнює 5.
+        </p>
+        <p>
+          Після цього умову буде перевірено, і якщо <code>count</code> менше 5,
+          цикл продовжить виконуватися.
+        </p>
+        <p>
+          Цикл <code>do...while</code> корисний, коли потрібно, щоб код у блоці
+          виконався хоча б один раз, незалежно від умови.
+        </p>
+      </div>
+
+      <!--Цикл for-->
+      <div class="ql-editor">
+        <p>
+          <strong id="for" class="ql-size-large">Цикл </strong
+          ><code class="ql-size-large"><strong>for</strong></code>
+        </p>
+        <p>
+          Цикл <code>for</code> також дозволяє виконувати код, що повторюється,
+          багато разів. На відміну від циклів <code>while</code> і
+          <code>do…while</code>, цикл <code>for</code> має змінну-лічильник.
+          Змінна-лічильник оголошується за допомогою ключового слова
+          <code>let</code> (оголошення через <code>const</code> видасть
+          помилку). На кожній ітерації після виконання коду з тіла циклу вона
+          змінює своє значення від заданого початкового до кінцевого з певним
+          кроком.
+        </p>
+        <p>Синтаксис циклу <code>for</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-scss"
+            spellcheck="false"
+            data-highlighted="yes"
+          >for (Ініціалізація; Умова; Пост-вираз) {
+  <span class="hljs-comment">// Тіло циклу</span>
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul>
+          <li>
+            <strong>Ініціалізація</strong> — виконується
+            <strong>один раз перед початком циклу</strong>. Тут оголошується
+            змінна-лічильник і вказується її початкове значення.
+          </li>
+          <li>
+            <strong>Умова</strong> — це вираз, який
+            <strong>оцінюється перед кожною ітерацією</strong> (повторенням)
+            циклу. Якщо умова перетворюється на**<code>true</code>**, то
+            виконується тіло циклу. Якщо умова перетворюється на
+            <code><strong>false</strong></code
+            >, то цикл завершується.
+          </li>
+          <li>
+            <strong>Пост-вираз</strong> — це вираз, який
+            <strong>виконується в кінці кожної ітерації циклу</strong>, перед
+            перевіркою умови. Використовується для оновлення значення
+            змінної-лічильника.
+          </li>
+          <li>
+            <strong>Тіло циклу</strong> — це блок коду, який буде виконуватися
+            <strong>на кожній ітерації циклу</strong>, якщо умова перетворюється
+            на <code><strong>true</strong></code
+            >.
+          </li>
+        </ul>
+        <img
+          src="../js/images/3d3b7c4b-570c-443d-9fcf-23ab912ef8c9Frame 48591.jpg"
+          alt=""
+        />
+        <p>Розглянемо приклад:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >for (let i <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">; i &lt;= 20; i += 5) {</span>
+  console.log(i)<span class="hljs-comment">;</span>
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У наведеному прикладі циклу <code>for</code> змінна
+          <code>i</code> ініціалізується значенням <code>0</code>. Цикл
+          виконується доти, доки <code>i</code> менша або дорівнює
+          <code>20</code>. Після кожної ітерації значення
+          <code>i</code> збільшується на <code>5</code>. У результаті в консоль
+          будуть виведені числа <code>0</code>, <code>5</code>, <code>10</code>,
+          <code>15</code> і <code>20</code>.
+        </p>
+        <p>
+          Також можна зробити зворотний відлік, змінивши умову і зменшуючи
+          лічильник на якесь значення після кожної ітерації.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >for (let i <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-comment">; i &gt;= 0; i -= 5) {</span>
+  console.log(i)<span class="hljs-comment">;</span>
+}
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У наведеному прикладі циклу <code>for</code> змінна
+          <code>i</code> ініціалізується значенням <code>20</code>. Цикл
+          виконується доти, доки <code>i</code> більше або дорівнює
+          <code>0</code>. Після кожної ітерації значення
+          <code>i</code> зменшується на <code>5</code>. У результаті в консоль
+          будуть виведені числа <code>20</code>, <code>15</code>,
+          <code>10</code>, <code>5</code> і <code>0</code>.
+        </p>
+        <p>
+          Напишемо фукнцію яка підсумовує всі числа від <code>0</code> до
+          заданого числа і повертає результат:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">function</span> <span class="hljs-title function_">sumUpTo</span>(<span class="hljs-params">number</span>) {
+  let <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-built_in">number</span>; i += <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">sum</span> += i;
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>;
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(sumUpTo(<span class="hljs-number">5</span>)); <span class="hljs-comment">// 15</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(sumUpTo(<span class="hljs-number">10</span>)); <span class="hljs-comment">// 55</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(sumUpTo(<span class="hljs-number">0</span>)); <span class="hljs-comment">// 0</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>Як працює функція:</p>
+        <p>
+          <strong>1) Приймає один параметр</strong> – <code>number</code>, який
+          визначає, до якого числа потрібно підсумовувати.
+        </p>
+        <p>
+          <strong>2) Оголошує змінну </strong
+          ><code><strong>sum</strong></code> і встановлює її в <code>0</code> –
+          у ній накопичуватиметься сума.
+        </p>
+        <p>
+          <strong>3) Запускає цикл </strong><code><strong>for</strong></code
+          >:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nginx"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-attribute">for</span> (let i = <span class="hljs-number">0</span>; <span class="hljs-attribute">i</span> &lt;= number; <span class="hljs-attribute">i</span> += <span class="hljs-number">1</span>) {
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul>
+          <li><code>i</code> починається з <code>0</code>.</li>
+          <li>Працює, поки <code>i &lt;= number</code>.</li>
+          <li>
+            Після кожної ітерації <code>i</code> збільшується на <code>1</code>.
+          </li>
+        </ul>
+        <p>
+          <strong>4) Додає поточне значення </strong
+          ><code><strong>i</strong></code
+          ><strong> до </strong><code><strong>sum</strong></code
+          >:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">sum</span> += i;
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          <strong
+            >5) Після завершення циклу повертає підсумоване значення </strong
+          ><code><strong>sum</strong></code
+          ><strong> у зовнішній код.</strong>
+        </p>
+      </div>
     </section>
+
+    <!--Інкремент і декремент-->
+    <div class="ql-editor">
+      <p>
+        <strong id="increment-decrement" class="ql-size-large"
+          >Інкремент і декремент</strong
+        >
+      </p>
+      <p>
+        Інкремент (<code>++</code>) і декремент (<code>--</code>) — це операції,
+        які відповідно збільшують або зменшують значення числової змінної
+        <strong>на одиницю</strong> і одразу ж зберігають оновлене значення у
+        цій змінній. Існують два види інкременту та декременту: префіксний і
+        постфіксний.
+      </p>
+      <p><strong class="ql-size-large">Інкремент</strong></p>
+      <p>
+        <strong>Префіксний інкремент</strong> (<code>++value</code>) спочатку
+        збільшує значення змінної, а потім використовує нове значення у виразі.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+const <span class="hljs-attribute">y</span> = ++x;
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 6</span>
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 6</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        <strong>Постфіксний інкремент</strong> (<code>value++</code>) спочатку
+        використовує поточне значення змінної у виразі, а потім виконує
+        збільшення значення.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+const <span class="hljs-attribute">y</span> = x++;
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 6</span>
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 5</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p><strong class="ql-size-large">Декремент</strong></p>
+      <p>
+        <strong>Префіксний декремент</strong> (<code>--value</code>) спочатку
+        зменшує значення змінної, а потім використовує нове значення у виразі.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+const <span class="hljs-attribute">y</span> = --x;
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 4</span>
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 4</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        <strong>Постфіксний декремент</strong> (<code>value--</code>) спочатку
+        використовує поточне значення змінної у виразі, а потім виконує
+        зменшення значення.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-stylus"
+          spellcheck="false"
+          data-highlighted="yes"
+        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+const <span class="hljs-attribute">y</span> = x--;
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 4</span>
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 5</span>
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Ці операції корисні, коли тобі потрібно змінювати значення змінних
+        одразу на одиницю, що може бути важливо, наприклад, при створенні
+        лічильників у циклах, замість комбінованих операторів <code>+=</code> і
+        <code>-=</code>.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-abnf"
+          spellcheck="false"
+          data-highlighted="yes"
+        >for (let i <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">; i &lt;= 5; i++) {</span>
+  console.log(i)<span class="hljs-comment">;</span>
+}
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У прикладі циклу <code>for</code> вище, змінна
+        <code>i</code> ініціалізується значенням <code>0</code>, і цикл
+        виконується доти, доки <code>i</code> менше або дорівнює <code>5</code>.
+        Після кожної ітерації значення <code>i</code> збільшується на
+        <code>1</code>. У результаті в консоль будуть виведені числа від
+        <code>0</code> до <code>5</code>.
+      </p>
+    </div>
+
+    <!--Оператор break-->
+    <div class="ql-editor">
+      <p>
+        <strong id="break" class="ql-size-large">Оператор </strong
+        ><code class="ql-size-large"><strong>break</strong></code>
+      </p>
+      <p>
+        Оператор <code>break</code> використовується в циклі для переривання
+        його виконання. Коли оператор <code>break</code> зустрічається всередині
+        циклу, виконання циклу негайно припиняється, і керування передається до
+        наступної інструкції після циклу.
+      </p>
+      <p>
+        Оператор <code>break</code> зазвичай використовується разом з умовними
+        операторами або операторами порівняння всередині циклу, щоб перевіряти
+        певну умову і, якщо вона виконується, переривати виконання циклу.
+      </p>
+      <p>
+        Ось приклад використання оператора <code>break</code> у циклі
+        <code>for</code>:
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i+=<span class="hljs-number">1</span>) {
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(i);
+
+  <span class="hljs-keyword">if</span> (i === <span class="hljs-number">5</span>) {
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Met the number 5, interrupt the execution of the cycle'</span>);
+    <span class="hljs-keyword">break</span>;
+  }
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Log after cycle'</span>);
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        У цьому прикладі цикл <code>for</code> мав би виконуватися, доки
+        значення змінної <code>i</code> менше <code>10</code>. Але в тілі циклу
+        є умова <code>if (i === 5)</code>, яка перевіряє, чи дорівнює значення
+        <code>i</code> числу <code>5</code>. Коли ця умова стає істинною, тіло
+        <code>if</code> виконується і застосовується оператор
+        <code>break</code>, і виконання циклу припиняється. Таким чином, у
+        консоль будуть виведені числа від 0 до 5 (включно), а цикл завершиться.
+      </p>
+    </div>
+
+
+    <!--Оператор break і функції-->
+    <div class="ql-editor">
+      <p>
+        <strong class="ql-size-large">Оператор </strong
+        ><code class="ql-size-large"><strong>break</strong></code
+        ><strong class="ql-size-large"> і функції</strong>
+      </p>
+      <p>
+        Коли оператор <code>break</code> зустрічається всередині циклу,
+        виконання циклу негайно припиняється, і керування передається на
+        наступну інструкцію за циклом, навіть якщо цикл знаходиться всередині
+        функції. Тобто оператор <code>break</code> не припиняє виконання
+        функції, а тільки перериває цикл.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in the body of the function before the cycle"</span>);
+
+  <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">5</span>; i &lt;= <span class="hljs-built_in">max</span>; i += <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Current counter value i:"</span>, i);
+
+    <span class="hljs-keyword">if</span> (i === target) {
+      <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Found the number $ {target}, interrupt the cycle`</span>);
+			<span class="hljs-keyword">break</span>;
+    }
+  }
+
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in body function after cycle"</span>);
+}
+
+findNumber(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>);
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log after exiting function"</span>);
+</pre>
+        <button class="copy"></button>
+      </div>
+      <p>
+        Для того щоб переривати виконання одразу циклу і функції і повернути
+        результат у зовнішній код, є оператор <code>return</code>.
+      </p>
+      <p>
+        У прикладі шукаємо число 6. Щойно виконається умова <code>if</code>,
+        робимо повернення, яке перерве виконання циклу і функції.
+      </p>
+      <div class="ql-syntax-block">
+        <pre
+          class="ql-syntax ql-block-style-code hljs language-arcade"
+          spellcheck="false"
+          data-highlighted="yes"
+        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in the body of the function before the cycle"</span>);
+
+	<span class="hljs-keyword">for</span> (let i = <span class="hljs-number">5</span>; i &lt;= <span class="hljs-built_in">max</span>; i += <span class="hljs-number">1</span>) {
+	    <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Current counter value i:"</span>, i);
+	
+	    <span class="hljs-keyword">if</span> (i === target) {
+	      <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Found the number $ {target}, we make a return, interrupting the loop and function`</span>);
+				<span class="hljs-keyword">return</span> i;
+	    }
+	  }
+
+  <span class="hljs-comment">// Цей console.log не виконується</span>
+  <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in body function after cycle"</span>);
+}
+
+const result = findNumber(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>);
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log after exiting function"</span>);
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Result of function execution <span class="hljs-subst">${result}</span>`</span>);
+</pre>
+        <button class="copy"></button>
+      </div>
+    </div>
 
     <!--JavaScript Шпаргалка-->
     <section class="js-cheatsheet">
