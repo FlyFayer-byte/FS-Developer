@@ -26,16 +26,21 @@
 </section>
 
 <script>
-  console.log("Створюємо функцію calculateTotal(number).");
+const start = 2;
+const end = 6;
+let divisor = 5;
+
+function findNumber (start, end, divisor) {
+ console.log(`Функція запущена з параметрами: start = ${start}, end = ${end}, divisor = ${divisor}`);
   
-  function calculateTotal(number) {
-    while (number > 0) {
-      console.log("Параметр number не може бути від'ємним.");
-      return 0;
+  for (let i = start; i <= end; i++) {
+    
+    if (i % divisor === 0) {
+      number = i;
+      return number;
     }
   }
-  
-  console.log("Викликаємо функцію calculateTotal(3).");
-  
-  calculateTotal(3);
+}
+  findNumber(start, end, divisor);
+  console.log(`Знайдене число: ${number}`);
 </script>
