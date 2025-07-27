@@ -1,6 +1,6 @@
 <section class="course-section">
   <nav class="left-aside">
-    <details open>
+    <details>
       <summary class="nav-item">Основи JavaScript</summary>
       <a class="nav-link" href="#js">Мова JavaScript</a>
       <a class="nav-link" href="#value">Змінні та типи даних</a>
@@ -8,7 +8,7 @@
       <a class="nav-link" href="#operators">Оператори порівняння</a>
       <a class="nav-link" href="#functions">Основи функцій</a>
     </details>
-    <details open>
+    <details>
       <summary class="nav-item">Розгалуження і цикли</summary>
       <a class="nav-link" href="#branching">Розгалуження</a>
       <a class="nav-link" href="#logical-operators">Логічні оператори</a>
@@ -29,6 +29,31 @@
         </li>
         <li>
           <a href="#break">Оператор <code>break</code></a>
+        </li>
+      </ul>
+    </details>
+    <details open>
+      <summary class="nav-item">Масиви і функції</summary>
+      <a class="nav-link" href="#arrays">Масиви</a>
+      <a class="nav-link" href="#array-methods">Методи масивів</a>
+      <ul>
+        <li>
+          <a href="#join()">Метод <code>join()</code></a>
+        </li>
+        <li>
+          <a href="#split()">Метод <code>split()</code></a>
+        </li>
+        <li>
+          <a href="#slice()">Метод <code>slice()</code></a>
+        </li>
+        <li>
+          <a href="#concat()">Метод <code>concat()</code></a>
+        </li>
+        <li>
+          <a href="#indexOf()">Метод <code>indexOf()</code></a>
+        </li>
+        <li>
+          <a href="#push()">Метод <code>push()</code></a>
         </li>
       </ul>
     </details>
@@ -3274,7 +3299,7 @@ const value = <span class="hljs-string">"I'm a global variable"</span>;
         <button class="copy"></button>
       </div>
     </section>
-    <!--LЛогічні оператори-->
+    <!--Логічні оператори-->
     <section>
       <h2 id="logical-operators">Логічні оператори</h2>
       <strong class="ql-size-large">Перетворення типів: логічне</strong>
@@ -4607,7 +4632,6 @@ console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">input<
 </pre>
       </div>
     </section>
-
     <!--Цикли-->
     <section>
       <h2 id="loops">Цикли</h2>
@@ -4633,6 +4657,7 @@ console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">input<
             черговий раз виконуватися ітерація, або цикл завершиться.
           </li>
         </ul>
+        <!--Цикл while-->
         <p id="while">
           <strong class="ql-size-large">Цикл </strong
           ><code class="ql-size-large"><strong>while</strong></code>
@@ -4778,7 +4803,7 @@ countClients(<span class="hljs-number">18</span>, <span class="hljs-number">25</
           <code>25 &lt; 25</code> → <strong>false</strong>, і він завершується.
         </p>
       </div>
-
+      <!--Цикл do...while-->
       <div class="ql-editor">
         <p id="do...while">
           <strong class="ql-size-large">Цикл </strong
@@ -5026,144 +5051,145 @@ countClients(<span class="hljs-number">18</span>, <span class="hljs-number">25</
           ><strong> у зовнішній код.</strong>
         </p>
       </div>
-    </section>
 
-    <!--Інкремент і декремент-->
-    <div class="ql-editor">
-      <p>
-        <strong id="increment-decrement" class="ql-size-large"
-          >Інкремент і декремент</strong
-        >
-      </p>
-      <p>
-        Інкремент (<code>++</code>) і декремент (<code>--</code>) — це операції,
-        які відповідно збільшують або зменшують значення числової змінної
-        <strong>на одиницю</strong> і одразу ж зберігають оновлене значення у
-        цій змінній. Існують два види інкременту та декременту: префіксний і
-        постфіксний.
-      </p>
-      <p><strong class="ql-size-large">Інкремент</strong></p>
-      <p>
-        <strong>Префіксний інкремент</strong> (<code>++value</code>) спочатку
-        збільшує значення змінної, а потім використовує нове значення у виразі.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-stylus"
-          spellcheck="false"
-          data-highlighted="yes"
-        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+      <!--Інкремент і декремент-->
+      <div class="ql-editor">
+        <p>
+          <strong id="increment-decrement" class="ql-size-large"
+            >Інкремент і декремент</strong
+          >
+        </p>
+        <p>
+          Інкремент (<code>++</code>) і декремент (<code>--</code>) — це
+          операції, які відповідно збільшують або зменшують значення числової
+          змінної
+          <strong>на одиницю</strong> і одразу ж зберігають оновлене значення у
+          цій змінній. Існують два види інкременту та декременту: префіксний і
+          постфіксний.
+        </p>
+        <p><strong class="ql-size-large">Інкремент</strong></p>
+        <p>
+          <strong>Префіксний інкремент</strong> (<code>++value</code>) спочатку
+          збільшує значення змінної, а потім використовує нове значення у
+          виразі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stylus"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
 const <span class="hljs-attribute">y</span> = ++x;
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 6</span>
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 6</span>
 </pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        <strong>Постфіксний інкремент</strong> (<code>value++</code>) спочатку
-        використовує поточне значення змінної у виразі, а потім виконує
-        збільшення значення.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-stylus"
-          spellcheck="false"
-          data-highlighted="yes"
-        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+          <button class="copy"></button>
+        </div>
+        <p>
+          <strong>Постфіксний інкремент</strong> (<code>value++</code>) спочатку
+          використовує поточне значення змінної у виразі, а потім виконує
+          збільшення значення.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stylus"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
 const <span class="hljs-attribute">y</span> = x++;
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 6</span>
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 5</span>
 </pre>
-        <button class="copy"></button>
-      </div>
-      <p><strong class="ql-size-large">Декремент</strong></p>
-      <p>
-        <strong>Префіксний декремент</strong> (<code>--value</code>) спочатку
-        зменшує значення змінної, а потім використовує нове значення у виразі.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-stylus"
-          spellcheck="false"
-          data-highlighted="yes"
-        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+          <button class="copy"></button>
+        </div>
+        <p><strong class="ql-size-large">Декремент</strong></p>
+        <p>
+          <strong>Префіксний декремент</strong> (<code>--value</code>) спочатку
+          зменшує значення змінної, а потім використовує нове значення у виразі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stylus"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
 const <span class="hljs-attribute">y</span> = --x;
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 4</span>
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 4</span>
 </pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        <strong>Постфіксний декремент</strong> (<code>value--</code>) спочатку
-        використовує поточне значення змінної у виразі, а потім виконує
-        зменшення значення.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-stylus"
-          spellcheck="false"
-          data-highlighted="yes"
-        >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
+          <button class="copy"></button>
+        </div>
+        <p>
+          <strong>Постфіксний декремент</strong> (<code>value--</code>) спочатку
+          використовує поточне значення змінної у виразі, а потім виконує
+          зменшення значення.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-stylus"
+            spellcheck="false"
+            data-highlighted="yes"
+          >let <span class="hljs-attribute">x</span> = <span class="hljs-number">5</span>;
 const <span class="hljs-attribute">y</span> = x--;
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">x</span>); <span class="hljs-comment">// 4</span>
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute">y</span>); <span class="hljs-comment">// 5</span>
 </pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Ці операції корисні, коли тобі потрібно змінювати значення змінних
-        одразу на одиницю, що може бути важливо, наприклад, при створенні
-        лічильників у циклах, замість комбінованих операторів <code>+=</code> і
-        <code>-=</code>.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-abnf"
-          spellcheck="false"
-          data-highlighted="yes"
-        >for (let i <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">; i &lt;= 5; i++) {</span>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Ці операції корисні, коли тобі потрібно змінювати значення змінних
+          одразу на одиницю, що може бути важливо, наприклад, при створенні
+          лічильників у циклах, замість комбінованих операторів
+          <code>+=</code> і <code>-=</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-abnf"
+            spellcheck="false"
+            data-highlighted="yes"
+          >for (let i <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">; i &lt;= 5; i++) {</span>
   console.log(i)<span class="hljs-comment">;</span>
 }
 </pre>
-        <button class="copy"></button>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У прикладі циклу <code>for</code> вище, змінна
+          <code>i</code> ініціалізується значенням <code>0</code>, і цикл
+          виконується доти, доки <code>i</code> менше або дорівнює
+          <code>5</code>. Після кожної ітерації значення
+          <code>i</code> збільшується на <code>1</code>. У результаті в консоль
+          будуть виведені числа від <code>0</code> до <code>5</code>.
+        </p>
       </div>
-      <p>
-        У прикладі циклу <code>for</code> вище, змінна
-        <code>i</code> ініціалізується значенням <code>0</code>, і цикл
-        виконується доти, доки <code>i</code> менше або дорівнює <code>5</code>.
-        Після кожної ітерації значення <code>i</code> збільшується на
-        <code>1</code>. У результаті в консоль будуть виведені числа від
-        <code>0</code> до <code>5</code>.
-      </p>
-    </div>
 
-    <!--Оператор break-->
-    <div class="ql-editor">
-      <p>
-        <strong id="break" class="ql-size-large">Оператор </strong
-        ><code class="ql-size-large"><strong>break</strong></code>
-      </p>
-      <p>
-        Оператор <code>break</code> використовується в циклі для переривання
-        його виконання. Коли оператор <code>break</code> зустрічається всередині
-        циклу, виконання циклу негайно припиняється, і керування передається до
-        наступної інструкції після циклу.
-      </p>
-      <p>
-        Оператор <code>break</code> зазвичай використовується разом з умовними
-        операторами або операторами порівняння всередині циклу, щоб перевіряти
-        певну умову і, якщо вона виконується, переривати виконання циклу.
-      </p>
-      <p>
-        Ось приклад використання оператора <code>break</code> у циклі
-        <code>for</code>:
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i+=<span class="hljs-number">1</span>) {
+      <!--Оператор break-->
+      <div class="ql-editor">
+        <p>
+          <strong id="break" class="ql-size-large">Оператор </strong
+          ><code class="ql-size-large"><strong>break</strong></code>
+        </p>
+        <p>
+          Оператор <code>break</code> використовується в циклі для переривання
+          його виконання. Коли оператор <code>break</code> зустрічається
+          всередині циклу, виконання циклу негайно припиняється, і керування
+          передається до наступної інструкції після циклу.
+        </p>
+        <p>
+          Оператор <code>break</code> зазвичай використовується разом з умовними
+          операторами або операторами порівняння всередині циклу, щоб перевіряти
+          певну умову і, якщо вона виконується, переривати виконання циклу.
+        </p>
+        <p>
+          Ось приклад використання оператора <code>break</code> у циклі
+          <code>for</code>:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i+=<span class="hljs-number">1</span>) {
   <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(i);
 
   <span class="hljs-keyword">if</span> (i === <span class="hljs-number">5</span>) {
@@ -5174,40 +5200,40 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute
 
 <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">'Log after cycle'</span>);
 </pre>
-        <button class="copy"></button>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі цикл <code>for</code> мав би виконуватися, доки
+          значення змінної <code>i</code> менше <code>10</code>. Але в тілі
+          циклу є умова <code>if (i === 5)</code>, яка перевіряє, чи дорівнює
+          значення <code>i</code> числу <code>5</code>. Коли ця умова стає
+          істинною, тіло <code>if</code> виконується і застосовується оператор
+          <code>break</code>, і виконання циклу припиняється. Таким чином, у
+          консоль будуть виведені числа від 0 до 5 (включно), а цикл
+          завершиться.
+        </p>
       </div>
-      <p>
-        У цьому прикладі цикл <code>for</code> мав би виконуватися, доки
-        значення змінної <code>i</code> менше <code>10</code>. Але в тілі циклу
-        є умова <code>if (i === 5)</code>, яка перевіряє, чи дорівнює значення
-        <code>i</code> числу <code>5</code>. Коли ця умова стає істинною, тіло
-        <code>if</code> виконується і застосовується оператор
-        <code>break</code>, і виконання циклу припиняється. Таким чином, у
-        консоль будуть виведені числа від 0 до 5 (включно), а цикл завершиться.
-      </p>
-    </div>
 
-
-    <!--Оператор break і функції-->
-    <div class="ql-editor">
-      <p>
-        <strong class="ql-size-large">Оператор </strong
-        ><code class="ql-size-large"><strong>break</strong></code
-        ><strong class="ql-size-large"> і функції</strong>
-      </p>
-      <p>
-        Коли оператор <code>break</code> зустрічається всередині циклу,
-        виконання циклу негайно припиняється, і керування передається на
-        наступну інструкцію за циклом, навіть якщо цикл знаходиться всередині
-        функції. Тобто оператор <code>break</code> не припиняє виконання
-        функції, а тільки перериває цикл.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax ql-block-style-code hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
+      <!--Оператор break і функції-->
+      <div class="ql-editor">
+        <p>
+          <strong class="ql-size-large">Оператор </strong
+          ><code class="ql-size-large"><strong>break</strong></code
+          ><strong class="ql-size-large"> і функції</strong>
+        </p>
+        <p>
+          Коли оператор <code>break</code> зустрічається всередині циклу,
+          виконання циклу негайно припиняється, і керування передається на
+          наступну інструкцію за циклом, навіть якщо цикл знаходиться всередині
+          функції. Тобто оператор <code>break</code> не припиняє виконання
+          функції, а тільки перериває цикл.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
 	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in the body of the function before the cycle"</span>);
 
   <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">5</span>; i &lt;= <span class="hljs-built_in">max</span>; i += <span class="hljs-number">1</span>) {
@@ -5225,22 +5251,22 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-attribute
 findNumber(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>);
 <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log after exiting function"</span>);
 </pre>
-        <button class="copy"></button>
-      </div>
-      <p>
-        Для того щоб переривати виконання одразу циклу і функції і повернути
-        результат у зовнішній код, є оператор <code>return</code>.
-      </p>
-      <p>
-        У прикладі шукаємо число 6. Щойно виконається умова <code>if</code>,
-        робимо повернення, яке перерве виконання циклу і функції.
-      </p>
-      <div class="ql-syntax-block">
-        <pre
-          class="ql-syntax ql-block-style-code hljs language-arcade"
-          spellcheck="false"
-          data-highlighted="yes"
-        ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
+          <button class="copy"></button>
+        </div>
+        <p>
+          Для того щоб переривати виконання одразу циклу і функції і повернути
+          результат у зовнішній код, є оператор <code>return</code>.
+        </p>
+        <p>
+          У прикладі шукаємо число 6. Щойно виконається умова <code>if</code>,
+          робимо повернення, яке перерве виконання циклу і функції.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax ql-block-style-code hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">function</span> <span class="hljs-title function_">findNumber</span>(<span class="hljs-params">max, target</span>) {
 	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log in the body of the function before the cycle"</span>);
 
 	<span class="hljs-keyword">for</span> (let i = <span class="hljs-number">5</span>; i &lt;= <span class="hljs-built_in">max</span>; i += <span class="hljs-number">1</span>) {
@@ -5260,239 +5286,1328 @@ const result = findNumber(<span class="hljs-number">10</span>, <span class="hljs
 <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Log after exiting function"</span>);
 <span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">`Result of function execution <span class="hljs-subst">${result}</span>`</span>);
 </pre>
-        <button class="copy"></button>
+          <button class="copy"></button>
+        </div>
       </div>
-    </div>
 
-    <!--JavaScript Шпаргалка-->
-    <section class="js-cheatsheet">
-      <h2>JavaScript Шпаргалка</h2>
+      <!--JavaScript Шпаргалка-->
+      <section class="js-cheatsheet">
+        <h2>JavaScript Шпаргалка</h2>
 
-      <h3>Рядки (String)</h3>
-      <ul>
-        <li>
-          <strong>toUpperCase()</strong> – Перетворює рядок на верхній
-          регістр<br />
-          <code>'hello'.toUpperCase() // 'HELLO'</code>
-        </li>
-        <li>
-          <strong>toLowerCase()</strong> – Перетворює рядок на нижній регістр<br />
-          <code>'HELLO'.toLowerCase() // 'hello'</code>
-        </li>
-        <li>
-          <strong>includes()</strong> – Перевіряє, чи містить рядок підрядок<br />
-          <code>'JavaScript'.includes('Script') // true</code>
-        </li>
-        <li>
-          <strong>indexOf()</strong> – Повертає індекс першого входження або
-          -1<br />
-          <code>'hello'.indexOf('e') // 1</code>
-        </li>
-        <li>
-          <strong>slice(start, end)</strong> – Повертає підрядок<br />
-          <code>'JavaScript'.slice(0, 4) // 'Java'</code>
-        </li>
-        <li>
-          <strong>substring(start, end)</strong> – Повертає підрядок<br />
-          <code>'JavaScript'.substring(0, 4) // 'Java'</code>
-        </li>
-        <li>
-          <strong>trim()</strong> – Видаляє пробіли з початку і кінця<br />
-          <code>' hello '.trim() // 'hello'</code>
-        </li>
-        <li>
-          <strong>replace(old, new)</strong> – Замінює частину рядка<br />
-          <code>'foo bar'.replace('foo', 'baz') // 'baz bar'</code>
-        </li>
-        <li>
-          <strong>split(separator)</strong> – Розбиває рядок у масив<br />
-          <code>'a,b,c'.split(',') // ['a', 'b', 'c']</code>
-        </li>
-        <li>
-          <strong>charAt(index)</strong> – Повертає символ за індексом<br />
-          <code>'hello'.charAt(1) // 'e'</code>
-        </li>
-      </ul>
+        <h3>Рядки (String)</h3>
+        <ul>
+          <li>
+            <strong>toUpperCase()</strong> – Перетворює рядок на верхній
+            регістр<br />
+            <code>'hello'.toUpperCase() // 'HELLO'</code>
+          </li>
+          <li>
+            <strong>toLowerCase()</strong> – Перетворює рядок на нижній
+            регістр<br />
+            <code>'HELLO'.toLowerCase() // 'hello'</code>
+          </li>
+          <li>
+            <strong>includes()</strong> – Перевіряє, чи містить рядок
+            підрядок<br />
+            <code>'JavaScript'.includes('Script') // true</code>
+          </li>
+          <li>
+            <strong>indexOf()</strong> – Повертає індекс першого входження або
+            -1<br />
+            <code>'hello'.indexOf('e') // 1</code>
+          </li>
+          <li>
+            <strong>slice(start, end)</strong> – Повертає підрядок<br />
+            <code>'JavaScript'.slice(0, 4) // 'Java'</code>
+          </li>
+          <li>
+            <strong>substring(start, end)</strong> – Повертає підрядок<br />
+            <code>'JavaScript'.substring(0, 4) // 'Java'</code>
+          </li>
+          <li>
+            <strong>trim()</strong> – Видаляє пробіли з початку і кінця<br />
+            <code>' hello '.trim() // 'hello'</code>
+          </li>
+          <li>
+            <strong>replace(old, new)</strong> – Замінює частину рядка<br />
+            <code>'foo bar'.replace('foo', 'baz') // 'baz bar'</code>
+          </li>
+          <li>
+            <strong>split(separator)</strong> – Розбиває рядок у масив<br />
+            <code>'a,b,c'.split(',') // ['a', 'b', 'c']</code>
+          </li>
+          <li>
+            <strong>charAt(index)</strong> – Повертає символ за індексом<br />
+            <code>'hello'.charAt(1) // 'e'</code>
+          </li>
+        </ul>
 
-      <h3>Масиви (Array)</h3>
-      <ul>
-        <li>
-          <strong>push()</strong> – Додає елемент в кінець<br />
-          <code>[1,2].push(3) // [1,2,3]</code>
-        </li>
-        <li>
-          <strong>pop()</strong> – Видаляє останній елемент<br />
-          <code>[1,2,3].pop() // 3</code>
-        </li>
-        <li>
-          <strong>shift()</strong> – Видаляє перший елемент<br />
-          <code>[1,2,3].shift() // 1</code>
-        </li>
-        <li>
-          <strong>unshift()</strong> – Додає елемент на початок<br />
-          <code>[2,3].unshift(1) // [1,2,3]</code>
-        </li>
-        <li>
-          <strong>slice()</strong> – Повертає частину масиву<br />
-          <code>[1,2,3,4].slice(1,3) // [2,3]</code>
-        </li>
-        <li>
-          <strong>splice()</strong> – Додає/видаляє елементи<br />
-          <code>[1,2,3].splice(1,1,99) // [1,99,3]</code>
-        </li>
-        <li>
-          <strong>forEach()</strong> – Виконує функцію для кожного елемента<br />
-          <code>[1,2,3].forEach(x => console.log(x))</code>
-        </li>
-        <li>
-          <strong>map()</strong> – Створює новий масив, застосовуючи функцію<br />
-          <code>[1,2,3].map(x => x*2) // [2,4,6]</code>
-        </li>
-        <li>
-          <strong>filter()</strong> – Повертає новий масив, що містить елементи,
-          які пройшли перевірку<br />
-          <code>[1,2,3].filter(x => x>1) // [2,3]</code>
-        </li>
-        <li>
-          <strong>find()</strong> – Повертає перший елемент, що задовольняє
-          умову<br />
-          <code>[1,2,3].find(x => x>1) // 2</code>
-        </li>
-        <li>
-          <strong>reduce()</strong> – Агрегує масив в одне значення<br />
-          <code>[1,2,3].reduce((acc,x)=>acc+x,0) // 6</code>
-        </li>
-        <li>
-          <strong>includes()</strong> – Перевіряє наявність елемента<br />
-          <code>[1,2,3].includes(2) // true</code>
-        </li>
-        <li>
-          <strong>join(separator)</strong> – Перетворює масив в рядок<br />
-          <code>[1,2,3].join('-') // '1-2-3'</code>
-        </li>
-        <li>
-          <strong>sort()</strong> – Сортує масив<br />
-          <code>[3,1,2].sort() // [1,2,3]</code>
-        </li>
-      </ul>
+        <h3>Масиви (Array)</h3>
+        <ul>
+          <li>
+            <strong>push()</strong> – Додає елемент в кінець<br />
+            <code>[1,2].push(3) // [1,2,3]</code>
+          </li>
+          <li>
+            <strong>pop()</strong> – Видаляє останній елемент<br />
+            <code>[1,2,3].pop() // 3</code>
+          </li>
+          <li>
+            <strong>shift()</strong> – Видаляє перший елемент<br />
+            <code>[1,2,3].shift() // 1</code>
+          </li>
+          <li>
+            <strong>unshift()</strong> – Додає елемент на початок<br />
+            <code>[2,3].unshift(1) // [1,2,3]</code>
+          </li>
+          <li>
+            <strong>slice()</strong> – Повертає частину масиву<br />
+            <code>[1,2,3,4].slice(1,3) // [2,3]</code>
+          </li>
+          <li>
+            <strong>splice()</strong> – Додає/видаляє елементи<br />
+            <code>[1,2,3].splice(1,1,99) // [1,99,3]</code>
+          </li>
+          <li>
+            <strong>forEach()</strong> – Виконує функцію для кожного елемента<br />
+            <code>[1,2,3].forEach(x => console.log(x))</code>
+          </li>
+          <li>
+            <strong>map()</strong> – Створює новий масив, застосовуючи
+            функцію<br />
+            <code>[1,2,3].map(x => x*2) // [2,4,6]</code>
+          </li>
+          <li>
+            <strong>filter()</strong> – Повертає новий масив, що містить
+            елементи, які пройшли перевірку<br />
+            <code>[1,2,3].filter(x => x>1) // [2,3]</code>
+          </li>
+          <li>
+            <strong>find()</strong> – Повертає перший елемент, що задовольняє
+            умову<br />
+            <code>[1,2,3].find(x => x>1) // 2</code>
+          </li>
+          <li>
+            <strong>reduce()</strong> – Агрегує масив в одне значення<br />
+            <code>[1,2,3].reduce((acc,x)=>acc+x,0) // 6</code>
+          </li>
+          <li>
+            <strong>includes()</strong> – Перевіряє наявність елемента<br />
+            <code>[1,2,3].includes(2) // true</code>
+          </li>
+          <li>
+            <strong>join(separator)</strong> – Перетворює масив в рядок<br />
+            <code>[1,2,3].join('-') // '1-2-3'</code>
+          </li>
+          <li>
+            <strong>sort()</strong> – Сортує масив<br />
+            <code>[3,1,2].sort() // [1,2,3]</code>
+          </li>
+        </ul>
 
-      <h3>Числа (Number)</h3>
-      <ul>
-        <li>
-          <strong>toFixed(n)</strong> – Форматує число з n знаками після
-          крапки<br />
-          <code>3.14159.toFixed(2) // '3.14'</code>
-        </li>
-        <li>
-          <strong>parseInt(str)</strong> – Перетворює рядок на ціле число<br />
-          <code>parseInt('10') // 10</code>
-        </li>
-        <li>
-          <strong>parseFloat(str)</strong> – Перетворює рядок на десяткове
-          число<br />
-          <code>parseFloat('10.5') // 10.5</code>
-        </li>
-        <li>
-          <strong>isNaN(value)</strong> – Перевіряє, чи є значення NaN<br />
-          <code>isNaN('abc') // true</code>
-        </li>
-      </ul>
+        <h3>Числа (Number)</h3>
+        <ul>
+          <li>
+            <strong>toFixed(n)</strong> – Форматує число з n знаками після
+            крапки<br />
+            <code>3.14159.toFixed(2) // '3.14'</code>
+          </li>
+          <li>
+            <strong>parseInt(str)</strong> – Перетворює рядок на ціле число<br />
+            <code>parseInt('10') // 10</code>
+          </li>
+          <li>
+            <strong>parseFloat(str)</strong> – Перетворює рядок на десяткове
+            число<br />
+            <code>parseFloat('10.5') // 10.5</code>
+          </li>
+          <li>
+            <strong>isNaN(value)</strong> – Перевіряє, чи є значення NaN<br />
+            <code>isNaN('abc') // true</code>
+          </li>
+        </ul>
 
-      <h3>Об'єкти (Object)</h3>
-      <ul>
-        <li>
-          <strong>Object.keys(obj)</strong> – Масив ключів<br />
-          <code>Object.keys({a:1, b:2}) // ['a', 'b']</code>
-        </li>
-        <li>
-          <strong>Object.values(obj)</strong> – Масив значень<br />
-          <code>Object.values({a:1, b:2}) // [1,2]</code>
-        </li>
-        <li>
-          <strong>Object.entries(obj)</strong> – Масив пар [ключ, значення]<br />
-          <code>Object.entries({a:1}) // [['a',1]]</code>
-        </li>
-        <li>
-          <strong>Object.assign(target, source)</strong> – Копіює властивості<br />
-          <code>Object.assign({}, {a:1}) // {a:1}</code>
-        </li>
-        <li>
-          <strong>hasOwnProperty(key)</strong> – Перевіряє наявність ключа<br />
-          <code>{a:1}.hasOwnProperty('a') // true</code>
-        </li>
-      </ul>
+        <h3>Об'єкти (Object)</h3>
+        <ul>
+          <li>
+            <strong>Object.keys(obj)</strong> – Масив ключів<br />
+            <code>Object.keys({a:1, b:2}) // ['a', 'b']</code>
+          </li>
+          <li>
+            <strong>Object.values(obj)</strong> – Масив значень<br />
+            <code>Object.values({a:1, b:2}) // [1,2]</code>
+          </li>
+          <li>
+            <strong>Object.entries(obj)</strong> – Масив пар [ключ, значення]<br />
+            <code>Object.entries({a:1}) // [['a',1]]</code>
+          </li>
+          <li>
+            <strong>Object.assign(target, source)</strong> – Копіює
+            властивості<br />
+            <code>Object.assign({}, {a:1}) // {a:1}</code>
+          </li>
+          <li>
+            <strong>hasOwnProperty(key)</strong> – Перевіряє наявність ключа<br />
+            <code>{a:1}.hasOwnProperty('a') // true</code>
+          </li>
+        </ul>
 
-      <h3>Дати (Date)</h3>
-      <ul>
-        <li>
-          <strong>new Date()</strong> – Створює нову дату<br />
-          <code>new Date()</code>
-        </li>
-        <li>
-          <strong>getFullYear()</strong> – Отримати рік<br />
-          <code>new Date().getFullYear()</code>
-        </li>
-        <li>
-          <strong>getMonth()</strong> – Отримати місяць (0-11)<br />
-          <code>new Date().getMonth()</code>
-        </li>
-        <li>
-          <strong>getDate()</strong> – Отримати число місяця<br />
-          <code>new Date().getDate()</code>
-        </li>
-        <li>
-          <strong>toLocaleDateString()</strong> – Форматує дату<br />
-          <code>new Date().toLocaleDateString()</code>
-        </li>
-      </ul>
+        <h3>Дати (Date)</h3>
+        <ul>
+          <li>
+            <strong>new Date()</strong> – Створює нову дату<br />
+            <code>new Date()</code>
+          </li>
+          <li>
+            <strong>getFullYear()</strong> – Отримати рік<br />
+            <code>new Date().getFullYear()</code>
+          </li>
+          <li>
+            <strong>getMonth()</strong> – Отримати місяць (0-11)<br />
+            <code>new Date().getMonth()</code>
+          </li>
+          <li>
+            <strong>getDate()</strong> – Отримати число місяця<br />
+            <code>new Date().getDate()</code>
+          </li>
+          <li>
+            <strong>toLocaleDateString()</strong> – Форматує дату<br />
+            <code>new Date().toLocaleDateString()</code>
+          </li>
+        </ul>
 
-      <h3>Консоль та Взаємодія</h3>
-      <ul>
-        <li>
-          <strong>console.log()</strong> – Виводить в консоль<br />
-          <code>console.log('Hello')</code>
-        </li>
-        <li>
-          <strong>alert()</strong> – Вікно повідомлення<br />
-          <code>alert('Hi!')</code>
-        </li>
-        <li>
-          <strong>prompt()</strong> – Отримати вхідні дані<br />
-          <code>prompt('Your name?')</code>
-        </li>
-        <li>
-          <strong>confirm()</strong> – Діалог підтвердження<br />
-          <code>confirm('Are you sure?')</code>
-        </li>
-      </ul>
+        <h3>Консоль та Взаємодія</h3>
+        <ul>
+          <li>
+            <strong>console.log()</strong> – Виводить в консоль<br />
+            <code>console.log('Hello')</code>
+          </li>
+          <li>
+            <strong>alert()</strong> – Вікно повідомлення<br />
+            <code>alert('Hi!')</code>
+          </li>
+          <li>
+            <strong>prompt()</strong> – Отримати вхідні дані<br />
+            <code>prompt('Your name?')</code>
+          </li>
+          <li>
+            <strong>confirm()</strong> – Діалог підтвердження<br />
+            <code>confirm('Are you sure?')</code>
+          </li>
+        </ul>
 
-      <h3>Інше</h3>
-      <ul>
-        <li>
-          <strong>typeof</strong> – Визначає тип<br />
-          <code>typeof 42 // 'number'</code>
-        </li>
-        <li>
-          <strong>Array.isArray()</strong> – Перевіряє, чи масив<br />
-          <code>Array.isArray([1,2,3]) // true</code>
-        </li>
-      </ul>
+        <h3>Інше</h3>
+        <ul>
+          <li>
+            <strong>typeof</strong> – Визначає тип<br />
+            <code>typeof 42 // 'number'</code>
+          </li>
+          <li>
+            <strong>Array.isArray()</strong> – Перевіряє, чи масив<br />
+            <code>Array.isArray([1,2,3]) // true</code>
+          </li>
+        </ul>
 
-      <h3>Логічні оператори</h3>
-      <ul>
-        <li>
-          <strong>&&</strong> – Логічне І<br />
-          <code>true && false // false</code>
-        </li>
-        <li>
-          <strong>||</strong> – Логічне АБО<br />
-          <code>true || false // true</code>
-        </li>
-        <li>
-          <strong>!</strong> – Логічне НЕ<br />
-          <code>!true // false</code>
-        </li>
-      </ul>
+        <h3>Логічні оператори</h3>
+        <ul>
+          <li>
+            <strong>&&</strong> – Логічне І<br />
+            <code>true && false // false</code>
+          </li>
+          <li>
+            <strong>||</strong> – Логічне АБО<br />
+            <code>true || false // true</code>
+          </li>
+          <li>
+            <strong>!</strong> – Логічне НЕ<br />
+            <code>!true // false</code>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!--3. Mодуль 3. Масиви і функції-->
+    <!--Масиви-->
+    <section>
+      <h2 id="arrays">Масиви</h2>
+      <div class="ql-editor">
+        <p>
+          <strong>Масив</strong> — це впорядкована структура даних, яка
+          використовується для зберігання колекції елементів. Масиви можуть
+          містити елементи різних типів даних, таких як числа, рядки, булеві
+          значення тощо.
+        </p>
+        <p>
+          Для створення масиву в JavaScript використовується літерал масиву:
+          квадратні дужки <code><strong>[]</strong></code
+          >. Усередині дужок перераховуються елементи масиву, розділені комами.
+          Ось приклад створення масиву:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-actionscript"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>]; <span class="hljs-comment">// масив рядків</span>
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]; <span class="hljs-comment">// масив чисел</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Хоча в масивах зазвичай зберігаються однотипні дані, це не сувора
+          вимога. Масиви також можуть містити елементи різних типів даних.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-actionscript"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> mixed = [<span class="hljs-string">'apple'</span>, <span class="hljs-number">10</span>, <span class="hljs-literal">true</span>]; <span class="hljs-comment">// масив з елементами різних типів</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Можна провести паралель з овочевим відділом у магазині, де різні види
+          овочів зберігаються в окремих ящиках. Наприклад, яблука можуть бути
+          поміщені в один ящик, груші — в інший, апельсини — у третій і так
+          далі.
+        </p>
+        <p>
+          Подібним чином у програмуванні використовуються масиви для групування
+          однотипних елементів разом. Усі елементи всередині масиву зазвичай
+          мають один і той самий тип даних або структуру.
+        </p>
+      </div>
+
+      <!--Доступ до елементів-->
+      <div class="ql-editor">
+        <p><strong class="ql-size-large">Доступ до елементів</strong></p>
+        <p>
+          Масив — це впорядкована колекція елементів, де кожен елемент має свій
+          порядковий номер, який називається індексом. Індексація елементів
+          масиву починається з нуля, тобто перший елемент має індекс 0, другий
+          елемент — індекс 1 і так далі.
+        </p>
+        <img
+          src="../js/images/6e495a54-4ea8-402d-88f7-5f74be5eb5bdM03B01S02.jpg"
+          alt=""
+        />
+
+        <p>
+          Щоб отримати доступ до значення елемента масиву, ми використовуємо
+          синтаксис квадратних дужок:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-angelscript"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">array</span>Name[index]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Між іменем змінної, яка зберігає масив, і квадратними дужками не
+          повинно бути пробілу. Вказуємо індекс елемента всередині квадратних
+          дужок.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 'Earth'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[<span class="hljs-number">1</span>]); <span class="hljs-comment">// 'Mars'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[<span class="hljs-number">2</span>]); <span class="hljs-comment">// 'Venus'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі ми створили масив рядків <code>planets</code>, що
+          містить назви планет. Потім ми звертаємося до елементів масиву,
+          вказуючи відповідний індекс у квадратних дужках.
+        </p>
+        <p>
+          Результат звернення до елемента масиву можна зберегти у змінну і
+          використовувати його надалі.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-javascript"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>];
+<span class="hljs-keyword">const</span> firstElement = planets[<span class="hljs-number">0</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstElement); <span class="hljs-comment">// 'Earth'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Тепер значення першого елемента масиву 'Earth' збережено у змінній
+          <code>firstElement</code>, і ми можемо використовувати це значення для
+          інших операцій або виразів у коді.
+        </p>
+        <p>
+          Спроба доступу до неіснуючого індексу поверне значення
+          <code>undefined</code>.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[<span class="hljs-number">3</span>]); <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[<span class="hljs-number">999</span>]); <span class="hljs-comment">// undefined</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+
+        <div class="ql-editor">
+          <p>
+            <strong class="ql-size-large"
+              >Перевизначення значення елемента</strong
+            >
+          </p>
+          <p>
+            Елементи масиву можна змінювати, звернувшись до них за індексом і
+            присвоївши нове значення. Цей процес називається "перевизначенням"
+            значення елемента.
+          </p>
+          <p>Ось приклад, як перевизначити елементи масиву:</p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-prolog"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Uranus'</span>];
+planets[<span class="hljs-number">0</span>] = <span class="hljs-string">'Jupiter'</span>;
+planets[<span class="hljs-number">2</span>] = <span class="hljs-string">'Neptune'</span>;
+console.log(planets); // [<span class="hljs-string">'Jupiter'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Neptune'</span>, <span class="hljs-string">'Uranus'</span>]
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            У цьому прикладі ми створили змінну
+            <code><strong>planets</strong></code> і помістили в неї масив, що
+            містить назви планет. Потім ми звернулися до елементів масиву за
+            індексом і надали їм нові значення.
+          </p>
+          <p>
+            Важливо розуміти, що ми не змінили саму змінну
+            <code><strong>planets</strong></code
+            >, вона, як і раніше, містить масив. Ми просто змінили значення
+            всередині цього масиву.
+          </p>
+          <p>
+            Перевизначення елементів масиву дозволяє нам оновлювати дані та
+            модифікувати масив під час виконання програми. Це корисно, коли в
+            нас є масив даних і ми хочемо змінити або оновити певне значення.
+          </p>
+        </div>
+
+        <div class="ql-editor">
+          <p><strong class="ql-size-large">Довжина масиву</strong></p>
+          <p>
+            Довжина масиву, тобто кількість його елементів, зберігається у
+            властивості <code>length</code>. Це динамічна величина, яка
+            автоматично змінюється під час додавання або видалення елементів.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets.<span class="hljs-built_in">length</span>); <span class="hljs-comment">// 3</span>
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            У цьому прикладі в нас є масив <code>planets</code> із трьома
+            елементами. Вираз <code>planets.length</code> поверне значення 3,
+            оскільки в масиві міститься три елементи.
+          </p>
+          <p>
+            Знання довжини масиву корисно, коли нам потрібно перевірити, скільки
+            елементів у масиві на даний момент.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const planets = [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>];
+
+<span class="hljs-keyword">if</span>(planets.<span class="hljs-built_in">length</span> &gt;= <span class="hljs-number">3</span>) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"3 or more elements"</span>);
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"3 or less elements"</span>);
+}
+</pre>
+            <button class="copy"></button>
+          </div>
+        </div>
+
+        <div class="ql-editor">
+          <p>
+            <strong class="ql-size-large">Індекс останнього елемента</strong>
+          </p>
+          <p>
+            Щоб знайти значення останнього елемента масиву, нам потрібно знати
+            його індекс. Індекс останнього елемента можна визначити за допомогою
+            формули <code>довжина_масиву -1</code>.
+          </p>
+          <p>
+            Оскільки індексація елементів масиву починається з <code>0</code>, а
+            довжина масиву зберігає загальну кількість елементів, віднімаючи
+            <code>1</code> від довжини масиву, ми отримуємо індекс останнього
+            елемента.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const planets = [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>];
+const lastElementIndex = planets.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets[lastElementIndex]); <span class="hljs-comment">// "Venus"</span>
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            У цьому прикладі маємо масив <code>planets</code> із трьома
+            елементами. Щоб отримати індекс останнього елемента масиву
+            оголошується змінна <code>lastElementIndex</code> зі значенням
+            <code>planets.length - 1</code>. Маючи індекс останнього елемента в
+            масиві, можемо отримати його значення за допомогою
+            <code>planets[lastElementIndex]</code>.
+          </p>
+          <p>
+            Такий підхід дозволяє отримати останній елемент масиву незалежно від
+            його довжини. Це особливо корисно, коли ми не знаємо заздалегідь,
+            скільки елементів міститиметься в масиві.
+          </p>
+        </div>
+        <!--Присвоєння за посиланням і за значенням-->
+        <div class="ql-editor">
+          <p>
+            <strong class="ql-size-large"
+              >Присвоєння за посиланням і за значенням</strong
+            >
+          </p>
+          <p>
+            Фундаментальною відмінністю складних типів від примітивів є те, як
+            вони зберігаються і копіюються.
+          </p>
+          <p>
+            Примітиви: <code>рядки</code>, <code>числа</code>,
+            <code>буль</code>, <code>null</code> і <code>undefined</code>, під
+            час присвоювання копіюються цілком,
+            <strong>за значенням (by value)</strong>.
+          </p>
+          <p>
+            Зі складними типами все не так. У змінній, якій, наприклад,
+            присвоєно масив, зберігаються не самі значення елементів масиву, а
+            адреса того місця в пам'яті, де цей масив розташовано. Іншими
+            словами — посилання (покажчик) на нього.
+          </p>
+          <p>
+            Отже, вони передаються
+            <strong>за посиланням (by reference)</strong>.
+          </p>
+          <p>
+            Уявімо змінну у вигляді аркуша паперу. Її значення ми представимо у
+            вигляді запису на цьому аркуші.
+          </p>
+          <img
+            src="../js/images/a2fac830-649f-4bf0-b58d-ba515eedc33eFrame 48593.jpg"
+            alt=""
+          />
+          <p>
+            Якщо ми захочемо повідомити вміст цього запису користувачам, то
+            можемо вчинити так — зробити фізичні копії і вручити їх кожному,
+            тобто зробити <strong>множинні</strong> незалежні копії (<strong
+              >присвоєння за значенням</strong
+            >).
+          </p>
+          <img
+            src="../js/images/ad1baa6f-10ba-47b4-96b0-a86a4c8f806aFrame 48594.jpg"
+            alt=""
+          />
+          <p>
+            Або помістити аркуш у зачиненій кімнаті й дати користувачам ключ від
+            цієї кімнати, тобто <strong>один екземпляр</strong> із загальним
+            доступом (<strong>присвоєння за посиланням</strong>).
+          </p>
+          <img
+            src="../js/images/800048a6-6e43-475b-a7f5-8c4f4b126f92Frame 48595.jpg"
+            alt=""
+          />
+          <p>
+            Тепер змінимо дані на аркуші паперу — значення змінної. Очевидно, що
+            відвідувачі кімнати завжди бачитимуть зміни, які ми вносимо, бо
+            змінюється оригінал і вони мають до нього доступ. Власники паперових
+            копій, навпаки, не помітять змін, дивлячись на свої копії.
+          </p>
+          <img
+            src="../js/images/5d111f3f-e6d8-4da8-a155-eb30281ef890Frame 48596.jpg"
+            alt=""
+          />
+          <p>
+            Під час присвоєння за значенням змінним виділяється новий осередок
+            пам'яті, і в нього копіюються дані. Аналогія з множинними копіями
+            паперового аркуша має цілком реальне втілення, окремий аркуш для
+            кожної копії.
+          </p>
+          <p>
+            При присвоєнні за посиланням, замість створення нового значення,
+            змінній присвоюється посилання (покажчик) на вже існуючий масив,
+            тобто на його місце в пам'яті. Таким чином, кілька змінних можуть
+            вказувати на один і той самий масив, за аналогією із закритою
+            кімнатою, у користувачів є ключ доступу до оригіналу аркуша.
+          </p>
+          <p>
+            Усі примітивні типи присвоюються за значенням, тобто створюється
+            копія.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >let a = <span class="hljs-number">5</span>;
+
+let b = a;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a); <span class="hljs-comment">// 5</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b); <span class="hljs-comment">// 5</span>
+<span class="hljs-comment">// Присвоєння за значенням, у пам'яті буде створено ще</span>
+<span class="hljs-comment">// одну ячейку, в яку буде скопійовано значення 5</span>
+
+<span class="hljs-comment">// Змінимо значення a</span>
+a = <span class="hljs-number">10</span>;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a); <span class="hljs-comment">// 10</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(b); <span class="hljs-comment">// 5 Значення b не змінилося, оскільки це окрема копія</span>
+</pre>
+            <button class="copy"></button>
+          </div>
+          <div
+            class="ql-custom-image"
+            contenteditable="false"
+            align="center"
+            data-blot-name="custom-image"
+            data-id="e78b5"
+            data-src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/dd9f04b1-2337-4e9c-b382-eab5c4924c85Frame%2048597.jpg"
+            data-width="300px"
+            data-height="auto"
+          >
+            <div class="next-1bk4wn6 e11xll1g1">
+              <img
+                class="ql-custom-image"
+                id="e78b5"
+                src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/dd9f04b1-2337-4e9c-b382-eab5c4924c85Frame%2048597.jpg"
+                groupid="35474143"
+                courseid="18936918"
+                moduleid="19420991"
+                block="[object Object]"
+                element="[object Object]"
+                userinfo="[object Object]"
+              /><button>
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#fullscreenExpand_svg__a)"
+                    fill="currentcolor"
+                  >
+                    <path
+                      d="M20 19.063V.938A.939.939 0 0 0 19.062 0H.938A.939.939 0 0 0 0 .938v5.625a.312.312 0 1 0 .625 0V.938A.313.313 0 0 1 .938.625h18.125a.313.313 0 0 1 .312.313v18.125a.313.313 0 0 1-.313.312h-5.625a.313.313 0 1 0 0 .625h5.626c.516 0 .937-.42.937-.938Z"
+                    ></path>
+                    <path
+                      d="M.938 8.125A.939.939 0 0 0 0 9.063v10c0 .516.42.937.938.937h10c.516 0 .937-.42.937-.938V8.568l4.375-4.375v4.245a.312.312 0 1 0 .625 0v-5a.312.312 0 0 0-.313-.312h-5a.313.313 0 1 0 0 .625h4.245l-4.375 4.375H.938ZM11.25 19.063a.313.313 0 0 1-.313.312h-10a.312.312 0 0 1-.312-.313v-10a.312.312 0 0 1 .313-.312H11.25v10.313Z"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="fullscreenExpand_svg__a">
+                      <path fill="#fff" d="M0 0h20v20H0z"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p>
+            Масиви (складний тип) присвоюються за посиланням, тобто змінна
+            просто отримує посилання (покажчик у пам'яті) на вже існуючий масив.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-monkey"
+              spellcheck="false"
+              data-highlighted="yes"
+            ><span class="hljs-keyword">const</span> a = [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>];
+<span class="hljs-keyword">const</span> b = a;
+console.<span class="hljs-built_in">log</span>(a); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+console.<span class="hljs-built_in">log</span>(b); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            Оскільки <code>a</code> це масив, у <code>b</code> записується
+            посилання на вже наявний у пам'яті масив. Тепер <code>a</code> і
+            <code>b</code> вказують на один і той самий масив.
+          </p>
+          <div
+            class="ql-custom-image"
+            contenteditable="false"
+            align="center"
+            data-blot-name="custom-image"
+            data-id="pnnqe"
+            data-src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/14060ebd-54f2-46d7-a248-5a33e5f14e3bFrame%2048598.jpg"
+            data-width="300px"
+            data-height="auto"
+          >
+            <div class="next-1bk4wn6 e11xll1g1">
+              <img
+                class="ql-custom-image"
+                id="pnnqe"
+                src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/14060ebd-54f2-46d7-a248-5a33e5f14e3bFrame%2048598.jpg"
+                groupid="35474143"
+                courseid="18936918"
+                moduleid="19420991"
+                block="[object Object]"
+                element="[object Object]"
+                userinfo="[object Object]"
+              /><button>
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-path="url(#fullscreenExpand_svg__a)"
+                    fill="currentcolor"
+                  >
+                    <path
+                      d="M20 19.063V.938A.939.939 0 0 0 19.062 0H.938A.939.939 0 0 0 0 .938v5.625a.312.312 0 1 0 .625 0V.938A.313.313 0 0 1 .938.625h18.125a.313.313 0 0 1 .312.313v18.125a.313.313 0 0 1-.313.312h-5.625a.313.313 0 1 0 0 .625h5.626c.516 0 .937-.42.937-.938Z"
+                    ></path>
+                    <path
+                      d="M.938 8.125A.939.939 0 0 0 0 9.063v10c0 .516.42.937.938.937h10c.516 0 .937-.42.937-.938V8.568l4.375-4.375v4.245a.312.312 0 1 0 .625 0v-5a.312.312 0 0 0-.313-.312h-5a.313.313 0 1 0 0 .625h4.245l-4.375 4.375H.938ZM11.25 19.063a.313.313 0 0 1-.313.312h-10a.312.312 0 0 1-.312-.313v-10a.312.312 0 0 1 .313-.312H11.25v10.313Z"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="fullscreenExpand_svg__a">
+                      <path fill="#fff" d="M0 0h20v20H0z"></path>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p>
+            Змінимо масив, замінивши елемент з індексом <code>1</code>,
+            використовуючи посилання з <code>a</code>.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-monkey"
+              spellcheck="false"
+              data-highlighted="yes"
+            ><span class="hljs-keyword">const</span> a = [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>];
+<span class="hljs-keyword">const</span> b = a;
+console.<span class="hljs-built_in">log</span>(a); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+console.<span class="hljs-built_in">log</span>(b); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+
+a[<span class="hljs-number">1</span>] = <span class="hljs-string">"Jacob"</span>;
+console.<span class="hljs-built_in">log</span>(a); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Jacob"</span>]
+console.<span class="hljs-built_in">log</span>(b); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Jacob"</span>]
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            Те, що зберігається в <code><strong>b</strong></code
+            >, також змінилося, тому що <code><strong>b</strong></code
+            >, як і <code><strong>a</strong></code
+            >, просто містить посилання на одне й те саме місце в пам'яті —
+            масив.
+          </p>
+          <p>
+            Результат повторюється, якщо використовувати посилання у змінній
+            <code>b</code> для зміни масиву.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-prolog"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const a = [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>];
+const b = a;
+console.log(a); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+console.log(b); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Poly"</span>]
+
+a[<span class="hljs-number">1</span>] = <span class="hljs-string">"Jacob"</span>;
+console.log(a); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Jacob"</span>]
+console.log(b); // [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Jacob"</span>]
+
+b[<span class="hljs-number">0</span>] = <span class="hljs-string">"Ajax"</span>;
+console.log(a); // [<span class="hljs-string">"Ajax"</span>, <span class="hljs-string">"Jacob"</span>]
+console.log(b); // [<span class="hljs-string">"Ajax"</span>, <span class="hljs-string">"Jacob"</span>]
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            Два масиви ніколи не дорівнюють один одному, навіть якщо вони
+            порожні або в них однакові елементи.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+const arr2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(arr1 === arr2); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>([] === []); <span class="hljs-comment">// false</span>
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            У прикладах масиви містять однакові значення, але оператор
+            <code><strong>===</strong></code> поверне
+            <code><strong>false</strong></code
+            >, тому що він перевіряє рівність посилань на масиви, а не самих
+            елементів усередині масивів. Це можна порівняти з тим, що змінні
+            <code>arr1</code> та <code>arr2</code> посилаються на різні кімнати,
+            в яких різні папірці, але з однаковим вмістом.
+          </p>
+        </div>
+        <!--Приведення типів: масиви-->
+        <div class="ql-editor">
+          <p><strong class="ql-size-large">Приведення типів: масиви</strong></p>
+          <p>
+            Явне і не явне приведення типів масивів здійснюється за необхідності
+            виконати операції або порівняння, які вимагають сумісності типів
+            даних.
+          </p>
+          <p><strong class="ql-size-normal">Масив → Рядок</strong></p>
+          <p>
+            При перетворенні масиву в рядок усі елементи масиву об'єднуються в
+            один рядок, розділений комами.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const <span class="hljs-built_in">array</span> = [<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">"Poly"</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(String(<span class="hljs-built_in">array</span>));<span class="hljs-comment">// "1,true,Poly"</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">array</span> + <span class="hljs-string">"5"</span>); <span class="hljs-comment">// "1,true,Poly5"</span>
+
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p><strong class="ql-size-normal">Масив → Число</strong></p>
+          <p>
+            При перетворенні масиву в число алгоритм складається з двох кроків:
+          </p>
+          <ul class="ul">
+            <li>спочатку масив приводиться до рядка,</li>
+            <li>а потім цей рядок приводиться до числового значення.</li>
+          </ul>
+          <p>
+            Наприклад, порожній масив приводиться до порожнього рядка, який
+            приводиться до числа <code>0</code>.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            ><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>([])); <span class="hljs-comment">// 0</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>([<span class="hljs-number">1</span>])); <span class="hljs-comment">// 1</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Number</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])); <span class="hljs-comment">// NaN</span>
+</pre>
+            <button class="copy"></button>
+          </div>
+          <p>
+            <strong class="ql-size-normal"
+              >Масив → Логічне значення (буль)</strong
+            >
+          </p>
+          <p>
+            При перетворенні масиву в логічне значення будь-який масив, навіть
+            порожній, перетворюється на <code>true</code>.
+          </p>
+          <div class="ql-syntax-block">
+            <pre
+              class="ql-syntax hljs language-arcade"
+              spellcheck="false"
+              data-highlighted="yes"
+            >const emptyArray = [];
+const nonEmptyArray = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(emptyArray)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">Boolean</span>(nonEmptyArray)); <span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">if</span>(emptyArray) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"if is in progress"</span>)
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"else is not performed"</span>)
+}
+
+<span class="hljs-keyword">if</span>(nonEmptyArray) {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"if is in progress"</span>)
+} <span class="hljs-keyword">else</span> {
+	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">"else is not performed"</span>)
+}
+</pre>
+            <button class="copy"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Методи масиву-->
+    <section>
+      <h2 id="array-methods">Методи масиву</h2>
+      <div class="ql-editor">
+        <p>
+          У масивів є вбудовані методи, які дозволяють виконувати зручні
+          операції для роботи з елементами масиву. Методи масиву дозволяють
+          додавати, видаляти, змінювати та виконувати інші операції над
+          елементами масиву.
+        </p>
+        <p id="join()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>join()</strong></code>
+        </p>
+        <p>
+          Метод масиву <code>join(delimiter)</code> дозволяє об'єднати елементи
+          масиву в рядок.
+        </p>
+        <p>
+          У результуючому рядку елементи будуть розділені символом або групою
+          символів, зазначених у <code>delimiter</code>.
+        </p>
+        <p>Приклади використання методу <code>join()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const words = [<span class="hljs-string">"JavaScript"</span>, <span class="hljs-string">"is"</span>, <span class="hljs-string">"amazing"</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(words.join(<span class="hljs-string">""</span>)); <span class="hljs-comment">// 'JavaScriptisamazing'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(words.join(<span class="hljs-string">" "</span>)); <span class="hljs-comment">// 'JavaScript is amazing'</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(words.join(<span class="hljs-string">"-"</span>)); <span class="hljs-comment">// 'JavaScript-is-amazing'</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Результат роботи методу можна зберегти у змінну для подальшого
+          використання.
+        </p>
+        <p>
+          Метод <code>join()</code> корисний за необхідності перетворення масиву
+          в рядок з певними роздільниками між елементами. Наприклад, нам
+          потрібно написати функцію, яка перетворює рядки зі snake_case (зміїної
+          нотації з підкресленнями) в kebab-case (нотацію з тире).
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-csharp"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-function">function <span class="hljs-title">transformString</span>(<span class="hljs-params"><span class="hljs-built_in">string</span></span>)</span> {
+	<span class="hljs-keyword">const</span> words = <span class="hljs-built_in">string</span>.split(<span class="hljs-string">"_"</span>);
+	<span class="hljs-keyword">return</span> words.<span class="hljs-keyword">join</span>(<span class="hljs-string">"-"</span>);
+}
+
+transformString(<span class="hljs-string">"user_age"</span>); <span class="hljs-comment">// "user-age"</span>
+transformString(<span class="hljs-string">"price_per_droid"</span>); <span class="hljs-comment">// "price-per-droid"</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+      </div>
+      <!--Метод split()-->
+      <div class="ql-editor">
+        <p id="split()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>split()</strong></code>
+        </p>
+        <p>
+          Метод рядків <code>split(delimiter)</code> виконує зворотну операцію
+          порівняно з методом масивів <code>join(delimiter)</code>. Він дозволяє
+          перетворити рядок на масив, розбивши його за вказаним роздільником
+          <code>delimiter</code>.
+        </p>
+        <p>
+          Якщо роздільник є порожнім рядком (рядком, у якому нема символів), то
+          вийде масив окремих символів рядка. Роздільником може бути один або
+          кілька символів. Результат роботи методу можна зберегти у змінну для
+          подальшого використання.
+        </p>
+        <p>Приклади використання методу <code>split()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-monkey"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> name = <span class="hljs-string">"Mango"</span>;
+<span class="hljs-keyword">const</span> letters = name.split(<span class="hljs-string">""</span>);
+console.<span class="hljs-built_in">log</span>(letters); // [<span class="hljs-string">"M"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"n"</span>, <span class="hljs-string">"g"</span>, <span class="hljs-string">"o"</span>]
+
+<span class="hljs-keyword">const</span> message = <span class="hljs-string">"JavaScript essentials"</span>;
+<span class="hljs-keyword">const</span> words = message.split(<span class="hljs-string">" "</span>);
+console.<span class="hljs-built_in">log</span>(words); // [<span class="hljs-string">"JavaScript"</span>, <span class="hljs-string">"essentials"</span>]
+
+<span class="hljs-keyword">const</span> slug = <span class="hljs-string">"amazing-french-recipes"</span>;
+<span class="hljs-keyword">const</span> slugParts = slug.split(<span class="hljs-string">"-"</span>);
+console.<span class="hljs-built_in">log</span>(slugParts); // [<span class="hljs-string">"amazing"</span>, <span class="hljs-string">"french"</span>, <span class="hljs-string">"recipes"</span>]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul>
+          <li>
+            У першому прикладі рядок <code>"Mango"</code> було перетворено на
+            масив, де кожна літера стала окремим елементом масиву. Роздільником
+            було вказано порожній рядок.
+          </li>
+          <li>
+            У другому прикладі рядок <code>"JavaScript essentials"</code> було
+            розділено на два елементи масиву, використовуючи пробіл як
+            роздільник.
+          </li>
+          <li>
+            У третьому прикладі рядок <code>"amazing-french-recipes"</code> було
+            розділено на три елементи масиву, використовуючи тире як роздільник.
+          </li>
+        </ul>
+      </div>
+      <!--Метод slice()-->
+      <div class="ql-editor">
+        <p id="slice()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>slice()</strong></code>
+        </p>
+        <p>
+          Метод масиву <code>slice(begin, end)</code> повертає новий масив, що
+          містить копію частини вихідного масиву, не змінюючи його. Копія
+          створюється від індексу <code>begin</code> до, але не включаючи індекс
+          <code>end</code>.
+        </p>
+        <img
+          src="../js/images/b21ed4ba-dc3b-4927-be29-7797c141aee1Frame 48599.jpg"
+          alt=""
+        />
+        <p>Приклади використання методу <code>slice()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-pgsql"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
+console.log(planets.<span class="hljs-keyword">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)); // [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>]
+console.log(planets.<span class="hljs-keyword">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>)); // [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Jupiter'</span>]
+console.log(planets.<span class="hljs-keyword">slice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)); // [<span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul>
+          <li>
+            У першому прикладі метод <code>slice(0, 2)</code> створює новий
+            масив, що містить елементи з індексами від <code>0</code> до
+            <code>2</code> (не включаючи 2) вихідного масиву
+            <code>planets</code>. Результатом буде
+            <code>['Earth', 'Mars']</code>.
+          </li>
+          <li>
+            У другому прикладі метод <code>slice(0, 4)</code> створює новий
+            масив, що містить елементи з індексами від <code>0</code> до
+            <code>4</code> (не включаючи 4) вихідного масиву
+            <code>planets</code>. Результатом буде
+            <code>['Earth', 'Mars', 'Venus', 'Jupiter']</code>.
+          </li>
+          <li>
+            У третьому прикладі метод <code>slice(1, 3)</code> створює новий
+            масив, що містить елементи з індексами від <code>1</code> до
+            <code>3</code> (не включаючи 3) вихідного масиву
+            <code>planets</code>. Результатом буде
+            <code>['Mars', 'Venus']</code>.
+          </li>
+        </ul>
+        <p>
+          Результат роботи методу <code>slice()</code> можна зберегти у змінну
+          для подальшого використання:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nim"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Jupiter"</span>, <span class="hljs-string">"Saturn"</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">result</span> = planets.slice(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>);
+console.log(<span class="hljs-built_in">result</span>); // [<span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Якщо не вказати параметри <code>begin</code> і <code>end</code>, буде
+          створено повну копію вихідного масиву:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-monkey"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Jupiter"</span>, <span class="hljs-string">"Saturn"</span>];
+console.<span class="hljs-built_in">log</span>(planets.slice()); // [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Jupiter"</span>, <span class="hljs-string">"Saturn"</span>]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Якщо не вказати <code>end</code>, копіювання відбуватиметься від
+          <code>begin</code> до кінця масиву:
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-pgsql"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
+console.log(planets.<span class="hljs-keyword">slice</span>(<span class="hljs-number">1</span>)); // ["Mars", "Venus", "Jupiter", "Saturn"]
+console.log(planets.<span class="hljs-keyword">slice</span>(<span class="hljs-number">2</span>)); // ["Venus", "Jupiter", "Saturn"]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Якщо значення <code>begin</code> негативне, а <code>end</code> не
+          вказано, будуть скопійовані останні <code>begin</code> елементів
+          (тобто стільки елементів з кінця, скільки вказано в параметрі
+          <code>begin</code>):
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Jupiter"</span>, <span class="hljs-string">"Saturn"</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(planets.<span class="hljs-built_in">slice</span>(<span class="hljs-number">-2</span>)); <span class="hljs-comment">// ["Jupiter", "Saturn"]</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Метод <code>slice()</code> корисний, коли необхідно отримати підмасив
+          із вихідного масиву або створити його копію для подальшої роботи з
+          ним.
+        </p>
+      </div>
+      <!--Метод concat()-->
+      <div class="ql-editor">
+        <p id="concat()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>concat()</strong></code>
+        </p>
+        <p>
+          Метод <code>concat(arr1, arr2, ..., arrN)</code> використовується для
+          об'єднання двох або більше масивів.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-nim"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> firstArray = [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>];
+<span class="hljs-keyword">const</span> secondArray = [<span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">result</span> = firstArray.concat(secondArray);
+
+console.log(<span class="hljs-built_in">result</span>); // [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>];
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Зверни увагу, що вихідні масиви <code>firstArray</code> і
+          <code>secondArray</code> залишаються незмінними після виклику
+          <code>concat()</code>. Метод <code>concat()</code> створює і повертає
+          новий масив, що містить усі елементи об'єднаних масивів.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-monkey"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> firstArray = [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>];
+<span class="hljs-keyword">const</span> secondArray = [<span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>];
+<span class="hljs-keyword">const</span> result = firstArray.concat(secondArray);
+
+console.<span class="hljs-built_in">log</span>(firstArray); // [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>];
+console.<span class="hljs-built_in">log</span>(secondArray); // [<span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>];
+console.<span class="hljs-built_in">log</span>(result); // [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>];
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Порядок аргументів методу визначає порядок розташування елементів у
+          новому масиві.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-autoit"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-keyword">const</span> firstArray = [<span class="hljs-string">"Mercury"</span>, <span class="hljs-string">"Venus"</span>]<span class="hljs-comment">;</span>
+<span class="hljs-keyword">const</span> secondArray = [<span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Jupiter"</span>]<span class="hljs-comment">;</span>
+<span class="hljs-keyword">const</span> thirdArray = [<span class="hljs-string">"Saturn"</span>, <span class="hljs-string">"Neptune"</span>]<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(firstArray.concat(secondArray, thirdArray))<span class="hljs-comment">; </span>
+// [<span class="hljs-string">'Mercury'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Jupiter'</span>, <span class="hljs-string">'Saturn'</span>, <span class="hljs-string">'Neptune'</span>]<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(firstArray.concat(thirdArray, secondArray))<span class="hljs-comment">; </span>
+// [<span class="hljs-string">'Mercury'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Saturn'</span>, <span class="hljs-string">'Neptune'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Jupiter'</span>, ]<span class="hljs-comment">;</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+      </div>
+
+      <!--Метод indexOf()-->
+      <div class="ql-editor">
+        <p id="indexOf()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>indexOf()</strong></code>
+        </p>
+        <p>
+          Метод масиву <code>indexOf(elem)</code> використовується для
+          визначення індексу першого входження елемента <code>elem</code> у
+          масиві. Він повертає індекс елемента, якщо він знайдений, або -1, якщо
+          елемент не знайдений. Метод <code>indexOf()</code> виконує сувору
+          рівність (<code>===</code>) при порівнянні елементів.
+        </p>
+        <p>Синтаксис методу <code>indexOf()</code> має такий вигляд:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">array</span>.<span class="hljs-built_in">indexOf</span>(elem)
+</pre>
+          <button class="copy"></button>
+        </div>
+        <ul>
+          <li><code>array</code> — масив, у якому здійснюється пошук.</li>
+          <li>
+            <code>elem</code> — елемент, індекс якого потрібно знайти в масиві.
+          </li>
+        </ul>
+        <p>Приклад використання методу <code>indexOf()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const clients = [<span class="hljs-string">"Mango"</span>, <span class="hljs-string">"Ajax"</span>, <span class="hljs-string">"Poly"</span>, <span class="hljs-string">"Kiwi"</span>, <span class="hljs-string">"Poly"</span>];
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(clients.<span class="hljs-built_in">indexOf</span>(<span class="hljs-string">"Poly"</span>)); <span class="hljs-comment">// 2</span>
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(clients.<span class="hljs-built_in">indexOf</span>(<span class="hljs-string">"Monkong"</span>)); <span class="hljs-comment">// -1</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У цьому прикладі масив <code>clients</code> містить імена клієнтів.
+          Виклик <code>indexOf("Poly")</code> повертає індекс першого входження
+          рядка <code>“Poly"</code> у масиві, який дорівнює 2, усі наступні
+          входження (індекс 4) уже не будуть аналізуватися. Виклик
+          <code>indexOf("Monkong")</code> повертає -1, оскільки елемент
+          <code>**"**Monkong**"**</code> не знайдений у масиві.
+        </p>
+      </div>
+      <!--Метод push()-->
+      <div class="ql-editor">
+        <p id="push()">
+          <strong class="ql-size-large">Метод </strong
+          ><code class="ql-size-large"><strong>push()</strong></code>
+        </p>
+        <p>
+          Метод масиву <code>push()</code> використовується для додавання одного
+          або більше елементів у кінець масиву.
+        </p>
+        <img src="../js/images/3c2a2dbb-316f-4c0a-b29d-0800005b50ddFrame 48601.jpg" alt=""> 
+        <p>Синтаксис методу <code>push()</code> має такий вигляд:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          ><span class="hljs-built_in">array</span>.<span class="hljs-built_in">push</span>(element1, element2, ..., elementN);
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>де:</p>
+        <ul class="ul">
+          <li>
+            <code>array</code> — це вихідний масив, до якого потрібно додати
+            елементи;
+          </li>
+          <li>
+            <code>element1, element2, ..., elementN</code> — елементи, які
+            необхідно додати в кінець масиву.
+          </li>
+        </ul>
+        <p>Приклад використання методу <code>push()</code>:</p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-prolog"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const planets = [<span class="hljs-string">"Earth"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Venus"</span>];
+
+planets.push(<span class="hljs-string">"Jupiter"</span>);
+console.log(planets); // [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Jupiter'</span>]
+
+planets.push(<span class="hljs-string">"Saturn"</span>, <span class="hljs-string">"Neptune"</span>);
+console.log(planets); // [<span class="hljs-string">'Earth'</span>, <span class="hljs-string">'Mars'</span>, <span class="hljs-string">'Venus'</span>, <span class="hljs-string">'Jupiter'</span>, <span class="hljs-string">"Saturn"</span>, <span class="hljs-string">"Neptune"</span>]
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          У прикладі ми створюємо масив <code>planets</code> з вихідними
+          елементами "Earth", "Mars" і "Venus". Потім за допомогою методу
+          <code>push()</code> послідовно додаємо елементи "Jupiter", "Saturn" і
+          "Neptune" у кінець масиву. Після виконання <code>push()</code> масив
+          <code>planets</code> міститиме всі додані елементи.
+        </p>
+        <p>
+          За допомогою циклу ми можемо виконувати повторювані операції і
+          використовувати метод <code>push</code> для додавання нових елементів
+          у масив на кожній ітерації. Це дуже корисно, коли нам потрібно
+          створити масив з елементами, які можна динамічно додавати.
+        </p>
+        <div class="ql-syntax-block">
+          <pre
+            class="ql-syntax hljs language-arcade"
+            spellcheck="false"
+            data-highlighted="yes"
+          >const tags = [];
+
+<span class="hljs-keyword">for</span>(let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i += <span class="hljs-number">1</span>) {
+	tags.<span class="hljs-built_in">push</span>(<span class="hljs-string">`tag-<span class="hljs-subst">${i}</span>`</span>);
+}
+
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(tags); <span class="hljs-comment">// ["tag-0", "tag-1", "tag-2"]</span>
+</pre>
+          <button class="copy"></button>
+        </div>
+        <p>
+          Код прикладу створює порожній масив <code>tags</code> і за допомогою
+          циклу <code>for</code> додає рядки виду <code>"tag-0"</code>,
+          <code>"tag-1"</code>, <code>"tag-2"</code> до масиву. Кожен рядок
+          формується за допомогою шаблонного рядка, де значення <code>i</code> в
+          циклі використовується для створення унікального тега на кожній
+          ітерації. У результаті ми отримуємо масив <code>tags</code>, що
+          містить усі додані значення.
+        </p>
+      </div>
     </section>
   </div>
 </section>

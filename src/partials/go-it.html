@@ -8,39 +8,23 @@
   <div class="course-container">
     <section>
       <h1 id="html" class="hero-title">Що таке GO IT?</h1>
-      <pre>
-Функція calculateTotal(number) приймає ціле число (параметр number). 
-Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. 
-Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
-
-Оголошена функція calculateTotal(number)
-Виклик функції calculateTotal(1) повертає 1
-Виклик функції calculateTotal(3) повертає 6
-Виклик функції calculateTotal(0) повертає 0
-Виклик функції calculateTotal(18) повертає 171
-Виклик функції calculateTotal(24) повертає 300
-Виклик функції calculateTotal() з випадковим числом повертає правильне значення
-      </pre>
     </section>
   </div>
 </section>
 
 <script>
-const start = 2;
-const end = 6;
-let divisor = 5;
+function getSlice(array, value) {
+  console.log(`Array: ${array}`);
+  console.log(`Value to find: ${value}`);
+  console.log(array.indexOf(value));
+  if (array.indexOf(value) !== -1)  {
 
-function findNumber (start, end, divisor) {
- console.log(`Функція запущена з параметрами: start = ${start}, end = ${end}, divisor = ${divisor}`);
-  
-  for (let i = start; i <= end; i++) {
-    
-    if (i % divisor === 0) {
-      number = i;
-      return number;
-    }
+   const newArray = array.slice(0, array.indexOf(value) + 1);
+            return newArray;
+  } else {
+    return [];
   }
 }
-  findNumber(start, end, divisor);
-  console.log(`Знайдене число: ${number}`);
+
+getSlice(["Mango", "Poly", "Ajax"], "Poly");
 </script>
