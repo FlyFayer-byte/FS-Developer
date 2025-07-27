@@ -68,20 +68,16 @@
 </section>
 
 <script>
-function getSlice(array, value) {
-  console.log(`Array: ${array}`);
-  console.log(`Value to find: ${value}`);
-  console.log(array.indexOf(value));
-  if (array.indexOf(value) !== -1)  {
-
-   const newArray = array.slice(0, array.indexOf(value) + 1);
-            return newArray;
-  } else {
-    return [];
+function createArrayOfNumbers(min, max) {
+  const array = [];
+  for (let i = min; min <= max; min +=1) { 
+    console.log(array);  
+    array.push(`${min}`);
   }
+  return array;
 }
 
-getSlice(["Mango", "Poly", "Ajax"], "Poly");
+createArrayOfNumbers(1, 3);
 </script>
     </main>
     <footer class="footer-section">
